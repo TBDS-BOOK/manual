@@ -22,7 +22,7 @@ License
 
 	# cd /data
 	# vim cluster.info
-![](./部署/cluster.info.jpg)
+![](cluster.info.jpg)
 
 
 
