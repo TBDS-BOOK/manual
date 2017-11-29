@@ -1,7 +1,7 @@
 ## 前置条件
 软件清单
 * tbds-mirror-$**version**.tar.gz   (其中$version为TBDS版本号) <font color="red">\*</font>
-* tbds-mirror-patch-$**version**.tar.gz
+* tbds-mirror-patches-$**version**.tar.gz
 * tbds-bootstrap.sh <font color="red">\*</font>
 * tbds-install-portal.sh <font color="red">\*</font>
 * tbds-cli.sh
