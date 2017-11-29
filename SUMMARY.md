@@ -17,15 +17,12 @@
    * [数据导出]
    * [数据服务]
 * [任务调度](workflow/readme.md)
-   * [工作流](workflow/workflow/README.md)
-      * [基本概念](workflow/workflow/basicConcept.md)
-      * [手动安装runner服务](workflow/workflow/addrunner.md)
-      * [任务基本信息](workflow/workflow/runnerBasicInfo.md)
-      * [任务调度设置](workflow/workflow/runnerCycle.md)
-      * [ftp2hdfs](workflow/workflow/ftp2hdfs.md)
-      * [kafka2hbase](workflow/workflow/kafka2hbase.md)
-      * [kafka2hdfs](workflow/workflow/kafka2hdfs.md)
-      * [hdfs2mysql](workflow/workflow/hdfs2mysql.md)
+   * [工作流](workflow/workflow/readme.md)
+      * [手动安装runner服务](workflow/workflow/addrunner.md)  
+      * [基本概念](workflow/workflow/basicConcept.md)  
+      * [任务基本信息](workflow/workflow/runnerBasicInfo.md)  
+      * [任务调度设置](workflow/workflow/runnerCycle.md)  
+      * [任务参数配置](workflow/workflow/runners.md)
    * [任务管理](workflow/tasks/readme.md)
    * [服务器配置](workflow/services/readme.md)
 * [机器学习]
