@@ -1,7 +1,7 @@
 # 概要
 
-* [有关该文档](./README.md)
-* [基本概念](./basicConcept.md)
+* [有关该文档](/workflow/workflow/README.md)
+* [基本概念](/workflow/workflow/basicConcept.md)
 * [手动安装runner服务](addrunner.md)
 * [任务基本信息](runnerBasicInfo.md)
 * [任务调度设置](runnerCycle.md)
