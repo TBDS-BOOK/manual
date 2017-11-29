@@ -30,7 +30,10 @@ License
 
     # sh tbds-bootstrap.sh init
     ...
+    # tar xzf tbds-mirror* -C /data
+    ...
     # sh tbds-install-portal.sh
+    ...
 
 部署成功后会显示portal的访问地址，接下来通过portal进行TBDS集群部署
 
@@ -55,7 +58,7 @@ License
 
 ![](服务主机分配.jpg)
 
-* 服务配置（多磁盘需要在此处调整各服务配置,如下示例）
+* 服务配置（**多磁盘**需要在此处调整各服务配置,如下示例）
 
 ![](服务配置.jpg)
 
@@ -63,7 +66,7 @@ License
 
 ![](部署过程.jpg)
 
-
+集群部署完成大概需要30分钟，完成后请注意<font color="red">修改admin用户的密码</font>
 
 
 
