@@ -24,7 +24,7 @@ License
 	# vim cluster.info
 ![](cluster.info.jpg)
 
-* <font color="red">注：portal节点需要在cluster.info文件的第一行, 此处假设用户/密码为root/123456</font>
+* <font color="red">注：portal节点需要在cluster.info文件的第一行, 此处假设root用户密码为123456</font>
 
 初始化集群并部署portal
 
