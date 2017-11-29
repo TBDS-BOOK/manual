@@ -18,10 +18,20 @@ License
 
 > 确保上述软件清单软件已经在 **/data **目录
 
-创建集群描述文件
+修改 **tbds-bootstrap.sh**
+
+    ROOTPWD="123456"    # 主机root密码，用于portal部署和机器初始化
+    DATAETH=eth0        # 用于内网数据传输的网卡，多网卡机型必须填写
+
+修改 **tbds-install-portal.sh**
+
+    DATAETH=eth0        # 用于内网数据传输的网卡，多网卡机型必须填写
+
+创建 **cluster.info** 集群描述文件
 
 	# cd /data
 	# vim cluster.info
+
 ![](cluster.info.jpg)
 
 * <font color="red">注：portal节点需要在cluster.info文件的第一行, 此处假设root用户密码为123456</font>
@@ -34,6 +44,7 @@ License
     ...
     # sh tbds-install-portal.sh
     ...
+    # sh tbds-bootstrap.sh postinit
 
 部署成功后会显示portal的访问地址，接下来通过portal进行TBDS集群部署
 
@@ -50,7 +61,7 @@ License
 
 ![](选择服务.jpg)
 
-* 输入服务器列表
+* 输入服务器列表(portal节点需要在第一行)
 
 ![](输入服务器列表.jpg)
 
