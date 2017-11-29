@@ -18,8 +18,6 @@ License
 
 > 确保上述软件清单软件已经在 **/data **目录
 
-步骤一：修改脚本
-
 修改 **tbds-bootstrap.sh**
 
     ROOTPWD="123456"    # 主机root密码，用于portal部署和机器初始化
