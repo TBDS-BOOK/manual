@@ -2,41 +2,42 @@
 
 * [前言](README.md)
 * [部署](部署.md)
-   * [安装步骤](部署/TBDS部署.md)
+  * [安装步骤](部署/TBDS部署.md)
 * [开始](开始.md)
-* [平台管理]
-* [数据工厂]
-   * [数据接入]
-   * [离线处理]
-   * [实时处理]
-   * [任务调度]
-* [数据应用]
-   * [数据检索]
-   * [数据分析]
-   * [数据呈现]
-   * [数据导出]
-   * [数据服务]
+* \[平台管理\]
+* \[数据工厂\]
+  * \[数据接入\]
+  * \[离线处理\]
+  * \[实时处理\]
+  * \[任务调度\]
+* \[数据应用\]
+  * \[数据检索\]
+  * \[数据分析\]
+  * \[数据呈现\]
+  * \[数据导出\]
+  * \[数据服务\]
 * [任务调度](/workflow/readme.md)
-   * [工作流](/workflow/workflow/readme.md)
-      * [手动安装runner服务](/workflow/workflow/addrunner.md)  
-      * [基本概念](/workflow/workflow/basicConcept.md)  
-      * [任务基本信息](/workflow/workflow/runnerBasicInfo.md)  
-      * [任务调度设置](/workflow/workflow/runnerCycle.md)  
-      * [任务参数配置](/workflow/workflow/runners.md)
-          * [ftp导入hdfs](/workflow/workflow/runners/ftp2hdfs.md)
-          * [kafka导入hbase](/workflow/workflow/runners/kafka2hbase.md)
-          * [kafka导入hdfs](/workflow/workflow/runners/kafka2hdfs.md)
-          * [hdfs导出mysql](/workflow/workflow/runners/hdfs2mysql.md)
-          * [shell 脚本](/workflow/workflow/runners/shell.md)  
-   * [任务管理](/workflow/tasks/readme.md)
-   * [服务器配置](/workflow/services/readme.md)
-* [机器学习]
-* [数据治理]
-   * [数据质量]
-   * [数据权限]
-   * [数据资产]
-   * [数据备份]
-* [平台运维]
-   * [监控]
-   * [告警]
-   * [诊断]
+  * [工作流](/workflow/workflow/readme.md)
+    * [手动安装runner服务](/workflow/workflow/addrunner.md)
+    * [基本概念](/workflow/workflow/basicConcept.md)
+    * [任务基本信息](/workflow/workflow/runnerBasicInfo.md)
+    * [任务调度设置](/workflow/workflow/runnerCycle.md)
+    * [任务参数配置](/workflow/workflow/runners.md)
+      * [ftp导入hdfs](/workflow/workflow/runners/ftp2hdfs.md)
+      * [kafka导入hbase](/workflow/workflow/runners/kafka2hbase.md)
+      * [kafka导入hdfs](/workflow/workflow/runners/kafka2hdfs.md)
+      * [hdfs导出mysql](/workflow/workflow/runners/hdfs2mysql.md)
+      * [shell 脚本](/workflow/workflow/runners/shell.md)
+  * [任务管理](/workflow/tasks/readme.md)
+  * [服务器配置](/workflow/services/readme.md)
+* \[机器学习\]
+* \[数据治理\]
+  * \[数据质量\]
+  * [\[数据权限\]](数据治理/数据权限/数据权限.md)
+  * \[数据资产\]
+  * \[数据备份\]
+* \[平台运维\]
+  * \[监控\]
+  * \[告警\]
+  * \[诊断\]
+
