@@ -10,9 +10,9 @@ kafka接入hbase
 
 ### 任务设置
 #### 1. 基本信息  
-参考 [基本信息设置](runnerBasicInfo.md)  
+参考 [基本信息设置](/workflow/workflow/runnerBasicInfo.md)  
 #### 2. 调度  
-参考 [调度设置](runnerCycle.md)  
+参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 #### 3. 参数
 kafka 接入hbase 参数设置分成三个部分：kafka配置信息，hbase 配置信息，topology 配置信息。
 ###### 3.1 kafka 配置信息  
