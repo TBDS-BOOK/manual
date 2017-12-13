@@ -6,9 +6,9 @@
 
 ### 原理：
 
-通过添加header实现   
-header名称：Authorization   
-header值：通过获取AccessKey并加密获取；格式：TBDS SecretId Timestamp Nonce Signature   
+通过添加header实现  
+header名称：Authorization  
+header值：通过获取AccessKey并加密获取；格式：TBDS SecretId Timestamp Nonce Signature  
 其中：TBDS 为固定字符串，表示以TBDS方式去认证
 
 ```
