@@ -181,7 +181,7 @@ jdbc:phoenix:tbds-10-255-0-10,tbds-10-255-0-4,tbds-10-255-0-2:2181:/hbase-unsecu
     </dependency>
 ```
 
-**3）基于开源maven库开发    （强烈不建议使用）**&lt;/br&gt;  
+**3）基于开源maven库开发    （强烈不建议使用）**  
    这种方式建议不使用。&lt;/br&gt;  
   （1）在客户端maven工程引入对应的社区版本hbase依赖。
 
