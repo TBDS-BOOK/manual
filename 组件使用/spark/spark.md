@@ -28,7 +28,7 @@ Kafka认证支持两种方式，接下来分别说明。
 　　     “sasl.tbds.secure.key” -> “o8AnGFYQ2lIB0AJ78TIeoJ0Uu1nkph12”
 ```
 其中认证相关的密钥信息同上述。
-2.2 SASL_PLAIN认证访问
+### 2.2 SASL_PLAIN认证访问
 需要在Kafka参数里面增加参数，
 ```
 　　      "security.protocol" -> "SASL_PLAINTEXT",
