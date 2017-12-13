@@ -5,7 +5,7 @@
   * [安装步骤](部署/TBDS部署.md)
 * [开始](开始/README.md)
 * \[平台管理\]
-* \[组件使用\]
+* \[组件访问开发\]
   * [kafka](组件使用/kafka/kafka.md)
   * [hadoop](组件使用/hadoop/hadoop.md)
   * [hbase](组件使用/hbase/hbase.md)
@@ -59,4 +59,6 @@
   * [\[告警\]](平台运维/诊断/gao-8b665d.md)
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
+
+
 
