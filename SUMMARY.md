@@ -10,7 +10,7 @@
   * [hadoop](组件使用/hadoop/hadoop.md)
   * [hbase](组件使用/hbase/hbase.md)
   * [accessKey](组件使用/accesskey/acckey.md)
-  * hive
+  * [hive](组件使用/kafka/hive.md)
   * [spark](组件使用/spark/spark.md)
 * \[数据工厂\]
   * \[数据接入\]
