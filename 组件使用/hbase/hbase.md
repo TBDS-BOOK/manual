@@ -71,7 +71,7 @@ UserGroupInformation ugi =
 
 #### 3.Thrift RPC访问
 
-1）生成认证签名&lt;/br&gt;  
+1）生成认证签名  
  以用户的secureId、secureKey，当前时间戳timestamp，任意随机数nonce为输入， 根据公开的算法得到用户签名Signature。签名算法实现如下：
 
 ```
@@ -90,9 +90,9 @@ public static String generateSignature(String secureId, long timestamp, int rand
 }
 ```
 
-2）准备认证参数&lt;/br&gt;  
+2）准备认证参数  
  把1）中的secureId，timestamp，nonce，Signature以空格分隔组成一个字符串，作为认证信息userAuthInfo&lt;/br&gt;  
-3\) 使用认证参数进行hbase Thrift连接&lt;/br&gt;  
+3\) 使用认证参数进行hbase Thrift连接  
       这里的代码是标准的Thrift sasl连接代码，代码片段如下：
 
 ```
