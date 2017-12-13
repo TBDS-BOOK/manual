@@ -169,7 +169,7 @@ jdbc:phoenix:tbds-10-255-0-10,tbds-10-255-0-4,tbds-10-255-0-2:2181:/hbase-unsecu
 ** 1）套件版hbase jar命名规则**  
     套件的hbase是基于社区二次开发，命名规则采用"社区版本号-TBDS-套件版本号"的方式命名.例：我们现在基于社区1.2.1版本的hbase进行开发，套件版本是4.0.3.3，则我们打出的hbase jar版本为1.2.1-TBDS-4.0.3.3，完整的hbase client maven jar文件名为：hbase -client-1.2.1-TBDS-4.0.3.3.jar
 
-** 2）基于套件提供的maven库开发**&lt;/br&gt;  
+** 2）基于套件提供的maven库开发**  
    （1）拷贝或部署套件提供的maven库到开发者可访问的本地仓库或远程仓库  
 （2）在客户端maven工程pom引入对应的套件版hbase依赖，以套件4.0.3.3版本为例，需要在pom中加入的依赖片段（其他版本依次类推）：
 
