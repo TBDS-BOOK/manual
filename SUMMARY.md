@@ -16,8 +16,8 @@
   * [portalApi](组件使用/portalApi/portalApi.md)
   * [\[代码访问组件demos\]](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos.md)
     * [hbase](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hbase.md)
-    * hdfs
-    * kafka
+    * [hdfs](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hdfs.md)
+    * [kafka](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/kafka.md)
     * hive
 * \[数据工厂\]
   * \[数据接入\]
