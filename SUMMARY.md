@@ -8,7 +8,7 @@
 * \[组件使用\]
   * [kafka](组件使用/kafka/kafka.md)
   * [hadoop](组件使用/hadoop/hadoop.md)
-  * hbase
+  * [hbase](组件使用/hbase/hbase.md)
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
@@ -53,6 +53,4 @@
   * \[监控\]
   * [\[告警\]](平台运维/诊断/gao-8b665d.md)
   * [\[诊断\]](平台运维/诊断/诊断.md)
-
-
 
