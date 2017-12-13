@@ -31,12 +31,15 @@
 ![](/平台运维/链接归集/user_see_links.png)  
 ** 步骤6.** 根据链接归集页面上的提示配置普通用户所在机器的主机-ip映射。以windows为例，则需要配置C:\Windows\System32\drivers\etc\host，在该文件里加上想要访问的链接的host项。
 
-  
+![](/平台运维/链接归集/client_hosts.png)
+
 ** 步骤7.** 在浏览器输入链接地址，并输入用户名密码就可以打开具体web页面了。用户名密码同登录portal所用的用户名密码。
 
-
+![](/平台运维/链接归集/hbase_example_link.png)
 
 ### 2.访问端口列表
 
 直接进入portal的链接归集页面，点击右侧的“端口列表”即可。
+
+![](/平台运维/链接归集/port_list.png)
 
