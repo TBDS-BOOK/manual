@@ -135,3 +135,65 @@ sasl.tbds.secure.key=xxx
 **python客户端**
 
 不支持
+
+
+## 4.集群外客户端部署
+**方案1：**
+
+	1）通过yum源或rpm安装套件版本的kafka到集群外机器：
+		yum  install  kafka_2_2_0_0_2041
+	  或
+		rpm  -ivh  kafka_2_2_0_0_2041-0.10.0.1-xxxx.xxxx.x86_64.rpm
+	2）拷贝集群内任一kafka客户端机器/etc/kafka/config目录的内容，替换集群外客户端		   对应路径:
+	集群内客户端节点：
+		cd  /etc/kafka/conf
+		tar  zcvf  kafka.tar.gz  /etc/kafka/conf/*
+	集群外客户端节点：
+		cd  /etc/kafka/conf
+		tar  zxvf  kafka.tar.gz
+**方案2：**
+
+	1.打包集群内任一kafka客户端所在节点的/usr/hdp/2.2.0.0-2041/kafka/，并拷贝到集群外目标客户端节点
+	2.同方案1的步骤2
+
+## 5.客户端代码编译打包
+
+**1）套件版kafka jar命名规则**
+
+  套件的kafka是基于社区二次开发命名规则采用"社区版本号-TBDS-套件版本号"的方式命名.例：我们现在基于社区0.10.0.1版本的kafka进行开发，套件版本是4.0.3.3，则我们打出的kafka jar版本为0.10.0.1-TBDS-4.0.3.3，完整的kafka client maven jar文件名为：kafka-clients-0.10.0.1-TBDS-4.0.3.3.jar
+
+**2）基于套件提供的maven库开发**
+
+   （1）拷贝或部署套件提供的maven库到开发者可访问的本地仓库或远程仓库
+（2）在客户端maven工程pom引入对应的套件版kafka依赖，以套件4.0.3.3版本为例， 需要在pom中加入的依赖片段（其他版本依次类推）：
+```
+	<dependency> <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>0.10.0.1-TBDS-4.0.3.3</version>
+        </dependency>
+        <dependency> <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.0.1-TBDS-4.0.3.3</version>
+        </dependency>
+```
+
+3）基于开源maven库开发	（强烈不建议使用）
+   这种方式建议不使用。
+  （1）在客户端maven工程引入对应的社区版本kafka依赖。
+```
+<dependency> <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.11</artifactId>
+            <version>0.10.0.1</version>
+        </dependency>
+        <dependency> <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.0.1</version>
+        </dependency>
+```
+  （2）编译完成之后，在运行客户端程序运行之前，把套件版的kafka jar加入classpath	  中：
+```
+			kafka_2.11-0.10.0.1-TBDS-4.0.3.3.jar,  
+			kafka-clients-0.10.0.1-TBDS-4.0.3.3.jar
+```
+## 6.运行
+运行客户端代码与社区方式无区别
