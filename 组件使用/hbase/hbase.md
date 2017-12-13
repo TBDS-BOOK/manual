@@ -126,7 +126,7 @@ transport.open();
 
 phoenix访问方式不变，只是在连接字符串中多加两个参数（用户的secureId，secureKey）。  
 在原来的链接字符串之后增加认证参数：hbase.security.authentication.tbds.secureid 和 hbase.security.authentication.tbds.securekey。 &lt;/br&gt;  
-示例：   
+示例：  
 原认证字符串&lt;/br&gt;
 
 ```
@@ -153,14 +153,14 @@ jdbc:phoenix:tbds-10-255-0-10,tbds-10-255-0-4,tbds-10-255-0-2:2181:/hbase-unsecu
 
 ## 集群外客户端部署
 
-** 1）准备安装软件，可以通过以下3种方式任选其一获取**&lt;/br&gt;  
+** 1）准备安装软件，可以通过以下3种方式任选其一获取**  
    （1）在任一安装hbase客户端的集群内节点，打包hbase的安装路径：/usr/hdp/2.2.0.0-2041/hbase/，并拷贝到集群外目标客户端安装节点
 
 （2）如果有套件的yum源，在集群外目标安装节点使用yum install安装
 
 （3）如果有hbase安装包，在集群外目标安装节点使用rpm -ivh安装
 
-** 2）获取hbase集群配置，可以通过以下2中方式任选其一获取：**&lt;/br&gt;  
+** 2）获取hbase集群配置，可以通过以下2中方式任选其一获取：**  
 （1）在任一安装hbase客户端的集群内节点，打包hbase的配置路径： /etc/hbase/conf，并拷贝到集群外目标客户端安装节点对应路径  
 （2）通过ambari界面下载hbase配置：选中任一一台安装有hbase客户端的机器，在机器操作选项中选择“下载客户端配置--&gt;Hbase client”，如下图所示：
 
