@@ -10,17 +10,17 @@
 
 ** 获取认证信息 **
 
-admin用户可以在portal创建所有用户的securekey密钥。普通用户需要securekey密钥则向管理员申请。详情请见1.2章节《1.2 创建身份认证id和key》
+admin用户可以在portal创建所有用户的securekey密钥。普通用户需要securekey密钥则向管理员申请。
 
 ** 客户端访问Hadoop **
 
 客户端访问Hadoop只需要两步：
 
-** jar包替换 **
+_ jar包替换_** **
 
 将客户端相关hadoop jar包替换成套件hadoop ja包，目前是2.7.2-TBDS-4.0.3.1版本。
 
-** 设置环境环境变量**
+** **_设置环境环境变量_
 
 设置环境变量三种方式  
 Shell访问  
