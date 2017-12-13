@@ -15,7 +15,10 @@
   * [ftp](组件使用/ftpOverHdfs/ftp.md)
   * [portalApi](组件使用/portalApi/portalApi.md)
   * [\[代码访问组件demos\]](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos.md)
-    * hbase
+    * [hbase](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hbase.md)
+    * hdfs
+    * kafka
+    * hive
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
