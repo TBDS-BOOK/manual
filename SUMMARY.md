@@ -8,6 +8,7 @@
 * \[组件使用\]
   * [kafka](组件使用/kafka/kafka.md)
   * [hadoop](组件使用/hadoop/hadoop.md)
+  * hbase
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
