@@ -72,7 +72,7 @@ KafkaClient {
 
 username和password的具体值需要参考broker安装路径下的config/kafka_jaas.conf文件中的值，从JAAS的KafkaServer段中选择一个用户
 
-python客户端
+** python客户端 **
 
 python只支持pykafka访问，API很简单，示例片段：
 
