@@ -40,13 +40,13 @@ public class KafkaConsumerDemo implements Runnable{
         props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "30000");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
-        
+
         confForAuthentication(props, secureId, secureKey);
-        
+
         consumer = new KafkaConsumer<String,String>(props);
         this.topic = topic;
     }
-    
+
     private void confForAuthentication(Properties props,String secureId,String secureKey) {
       // 设置认证参数
       props.put(TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL, TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL_AVLUE);
@@ -73,7 +73,7 @@ public class KafkaConsumerDemo implements Runnable{
             System.out.println("Received message: (" + record.key() + ", " + record.value() + ") at offset " + record.offset());
         }
     }
-    
+
     public static void main(String[] args) {
       if (args == null || args.length != 5) {
         System.out.println("Usage: topic group brokerlist[host1:port,host2:port,host3:port] secureId secureKey");
@@ -84,7 +84,6 @@ public class KafkaConsumerDemo implements Runnable{
       thread.start();
     }
 }
-
 ```
 
 Producer
@@ -147,7 +146,7 @@ public class KafkaProducerDemo extends Thread {
         props.put("request.timeout.ms", 1000000);//请求超时时间，异步发送时某个批次在缓冲区中存在时间超过这个时间就会报metadata超时
 
         confForAuthentication(props, secureId, secureKey);
-        
+
         producer = new KafkaProducer<Long, String>(props);
         this.topic = topic;
         this.isAsync = isAsync;
@@ -155,17 +154,17 @@ public class KafkaProducerDemo extends Thread {
 
     private void confForAuthentication(Properties props,String secureId,String secureKey) {
     //测试TBDS
-//        props.put(TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL, TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL_AVLUE);
-//        props.put(TbdsAuthenticationUtil.KAFKA_SASL_MECHANISM, TbdsAuthenticationUtil.KAFKA_SASL_MECHANISM_VALUE);
-//        props.put(TbdsAuthenticationUtil.KAFKA_SASL_TBDS_SECURE_ID,secureId);
-//        props.put(TbdsAuthenticationUtil.KAFKA_SASL_TBDS_SECURE_KEY,secureKey);
+        props.put(TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL, TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL_AVLUE);
+        props.put(TbdsAuthenticationUtil.KAFKA_SASL_MECHANISM, TbdsAuthenticationUtil.KAFKA_SASL_MECHANISM_VALUE);
+        props.put(TbdsAuthenticationUtil.KAFKA_SASL_TBDS_SECURE_ID,secureId);
+        props.put(TbdsAuthenticationUtil.KAFKA_SASL_TBDS_SECURE_KEY,secureKey);
 
         //测试PLAIN
 //        props.put(TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL,"SASL_PLAINTEXT");
 //        props.put(TbdsAuthenticationUtil.KAFKA_SASL_MECHANISM, "PLAIN");
 
         //测试PLAINTEXT
-        props.put(TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL,"PLAINTEXT");
+        //props.put(TbdsAuthenticationUtil.KAFKA_SECURITY_PROTOCOL,"PLAINTEXT");
     }
 
     public void run() {
@@ -191,7 +190,7 @@ public class KafkaProducerDemo extends Thread {
             ++messageNo;
         }
     }
-    
+
     public static void main(String[] args) {
       if (args == null || args.length != 6) {
         System.out.println("Usage: topic brokerlist[host1:port,host2:port,host3:port] secureId secureKey messageCount producerInstance");
@@ -257,7 +256,6 @@ class DemoCallBack implements Callback {
         }
     }
 }
-
 ```
 
 
