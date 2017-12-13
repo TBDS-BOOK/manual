@@ -11,6 +11,7 @@
   * [hbase](组件使用/hbase/hbase.md)
   * [accessKey](组件使用/accesskey/acckey.md)
   * hive
+  * spark
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
