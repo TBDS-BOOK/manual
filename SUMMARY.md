@@ -14,8 +14,8 @@
   * [spark](组件使用/spark/spark.md)
   * [ftp](组件使用/ftpOverHdfs/ftp.md)
   * [portalApi](组件使用/portalApi/portalApi.md)
-  * \[代码访问组件demos\]
-
+  * [\[代码访问组件demos\]](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos.md)
+    * hbase
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
@@ -61,6 +61,4 @@
   * [\[告警\]](平台运维/诊断/gao-8b665d.md)
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
-
-
 
