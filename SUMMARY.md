@@ -12,6 +12,7 @@
   * [accessKey](组件使用/accesskey/acckey.md)
   * [hive](组件使用/hive/hive.md)
   * [spark](组件使用/spark/spark.md)
+  * ftp
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
@@ -56,4 +57,6 @@
   * \[监控\]
   * [\[告警\]](平台运维/诊断/gao-8b665d.md)
   * [\[诊断\]](平台运维/诊断/诊断.md)
+
+
 
