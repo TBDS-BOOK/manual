@@ -20,23 +20,30 @@
 
 **生产示例：**
 
-`$KAFKA_HOME/bin/kafka-console-producer.sh --broker-list broker_ip:6668 --topic first_topic --producer.config ./config/client_sasl.properties`
+```
+$KAFKA_HOME/bin/kafka-console-producer.sh --broker-list broker_ip:6668 --topic first_topic --producer.config ./config/client_sasl.properties
+```
 
 **消费示例：**
 
-`$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server broker_ip:6668 --topic first_topic --new-consumer --consumer.config ./config/client_sasl.properties --from-beginning`
+```
+$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server broker_ip:6668 --topic first_topic --new-consumer --consumer.config ./config/client_sasl.properties --from-beginning
+```
 
 其中，一定要用新版的消费API即加参数--new-consumer ，client_sasl.properties文件位置随意，内容必须包含如下配置：
 
-`security.protocol=SASL_PLAINTEXT
+```
+security.protocol=SASL_PLAINTEXT
 
-sasl.mechanism=PLAIN`
+sasl.mechanism=PLAIN
+```
 
 **java客户端**
 
 步骤1：用新消费者API去访问，在consumer的参数中多加两个认证相关参数，代码片段：
 
-`Properties props = new Properties();
+```
+Properties props = new Properties();
 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, brokerList);
 props.put(ConsumerConfig.GROUP_ID_CONFIG, group);
 props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
@@ -44,20 +51,23 @@ props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
 props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "30000");
 props.put(security.protocol,"SASL_PLAIN");
 props.put(sasl.mechanism, "PLAIN");
-KafkaConsumer<string, string="string"> consumer = new KafkaConsumer<string,string>(props);`
+KafkaConsumer<string, string="string"> consumer = new KafkaConsumer<string,string>(props);
+```
 
 producer代码类似，也只需要给producer的参数加上红色部分的配置
 步骤2：启动client java程序，加jvm参数：
-
+```
 -Djava.security.auth.login.config=/data/home/tbds/kafka/kafka010/config/kafka_client_jaas.conf
-
+```
 kafka_client_jaas.conf内容：
 
-`KafkaClient {
+```
+KafkaClient {
     org.apache.kafka.common.security.plain.PlainLoginModule required
                 username="kafka"
                 password="kafka@Tbds.com";
-            };`
+            };
+```
 
 
 username和password的具体值需要参考broker安装路径下的config/kafka_jaas.conf文件中的值，从JAAS的KafkaServer段中选择一个用户
@@ -84,18 +94,23 @@ python只支持pykafka访问，API很简单，示例片段：
 
 **生产示例：**
 
-``$KAFKA_HOME/bin/kafka-console-producer.sh --broker-list broker_ip:6667 --topic first_topic --producer.config ./config/client_sasl.properties``
+```
+$KAFKA_HOME/bin/kafka-console-producer.sh --broker-list broker_ip:6667 --topic first_topic --producer.config ./config/client_sasl.properties
+```
 
 **消费示例：**
 
-``` $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server broker_ip:6667 --topic first_topic --new-consumer --consumer.config ./config/client_sasl.properties --from-beginning ```
+```
+$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server broker_ip:6667 --topic first_topic --new-consumer --consumer.config ./config/client_sasl.properties --from-beginning
+```
 
 需要注意的是端口，端口号跟SASL_PLAIN认证的端口是不一样的，即每种认证都有独立的端口。client_sasl.properties文件中的内容：
-
+```
 security.protocol=SASL_TBDS
 sasl.mechanism=TBDS
 sasl.tbds.secure.id=xxxx
 sasl.tbds.secure.key=xxx
+```
 
 其中id和key是用户对应kafka模块的accesskey相关信息，记住一定是kafka模块的，然后一定是在portal里处于enabled状态（默认申请的是disabled，管理员控制使能）
 
@@ -116,6 +131,7 @@ sasl.tbds.secure.key=xxx
         props.put("sasl.tbds.secure.id","U6hXsHKVGwwBc0dZRBGPjaby1a3VCf0NfMnV");
         props.put("sasl.tbds.secure.key", "riglLTEAk2fBCWZdmjvhskKpsvXAn7rj");
         KafkaConsumer<string, string="string"> consumer = new KafkaConsumer<string,string>(props);
+
 **python客户端**
 
 不支持
