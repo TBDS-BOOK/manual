@@ -21,7 +21,7 @@ TBDS、SecretId、Timestamp、Nonce、Signature直接以空格拼
 --header "Authorization:TBDS CHTZh3auty0S6gyjJkN6k8G3VGw5nS2GjrSK 1508161241426 64 FDen%2FTOQ9Q%2F%2BV60H8KBn65wWVEI%3D"
 ```
 　　备注：若添加的api 不在 /api/* 的请求目录下，如添加/openapi/platform/*的api需要通过AccessKey 方式调用，则修改 tbds-portal-common/resources/custom.properties 的 portal.auth.urls ，添加需要控制的url请求。
-#api need user login
+api need user login
 portal.auth.urls=/api/*,*.html,/openapi/platform/*
 　　
 
