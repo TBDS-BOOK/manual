@@ -7,7 +7,7 @@
 * \[平台管理\]
 * \[组件使用\]
   * [\[kafka\]](组件使用/kafka/kafka.md)
-  * \[hadoop\]
+  * [\[hadoop\]](组件使用/kafka/hadoop.md)
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
