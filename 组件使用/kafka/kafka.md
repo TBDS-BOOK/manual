@@ -88,7 +88,7 @@ python只支持pykafka访问，API很简单，示例片段：
 
 **消费示例：**
 
-``$KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server broker_ip:6667 --topic first_topic --new-consumer --consumer.config ./config/client_sasl.properties --from-beginning`
+``` $KAFKA_HOME/bin/kafka-console-consumer.sh --bootstrap-server broker_ip:6667 --topic first_topic --new-consumer --consumer.config ./config/client_sasl.properties --from-beginning ```
 
 需要注意的是端口，端口号跟SASL_PLAIN认证的端口是不一样的，即每种认证都有独立的端口。client_sasl.properties文件中的内容：
 
