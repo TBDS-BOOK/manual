@@ -12,7 +12,6 @@
 
 admin用户可以在portal创建所有用户的securekey密钥。普通用户需要securekey密钥则向管理员申请。详情请见1.2章节《1.2 创建身份认证id和key》
 
-  
 ** 客户端访问Hadoop **
 
 客户端访问Hadoop只需要两步：
@@ -109,8 +108,8 @@ Python示例：
 
 #### 1.3.2 web访问
 
-header名称：tbds-auth   
-header取值：secureId+" " + curTime + " " + random + " " + signature   
+header名称：tbds-auth  
+header取值：secureId+" " + curTime + " " + random + " " + signature  
 例子：
 
 ```
@@ -122,16 +121,18 @@ curl -i --header "tbds-auth:PxKf1JVUDHzP0ItYSzeMIaq6HSy7STURQbPO 1506411029889 6
 
 Tbds统一权限控制，hdfs和yarn所有的目录访问和资源权限都有Tbds统一权限控制。用户如果需要对某些目录和资源访问需要像管理员申请权限。  
 　　权限管理界面在Portal 运维中心-访问管理-访问策略 页面。  
-　　  
+　　![](/组件使用/hadoop/ranger_hdfs.png)  
 　　  
 　　  
 　　对于hdfs，我们会细分到每个目录对于哪些组哪些用户有哪些使用使用权限，比如读写等：  
+　　![](/组件使用/hadoop/ranger_hdfs_detail.png)  
 　　  
 　　  
 　　  
-　　  
-　　  
-　　对于yarn，我们细分到每个资源队列对于那些组哪些用户有哪些权限，不如提交app等。
+　　对于yarn，我们细分到每个资源队列对于那些组哪些用户有哪些权限，不如提交app等。  
+![](/组件使用/hadoop/ranger_yarn_detail.png)
+
+![](/组件使用/hadoop/ranger_yarn_detail.png)
 
 # 三．集群外客户端部署
 
