@@ -18,7 +18,7 @@
     * [hbase](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hbase.md)
     * [hdfs](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hdfs.md)
     * [kafka](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/kafka.md)
-    * hive
+    * [hive](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hive.md)
 * \[数据工厂\]
   * \[数据接入\]
   * \[离线处理\]
