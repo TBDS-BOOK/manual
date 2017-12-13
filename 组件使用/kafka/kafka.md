@@ -53,8 +53,8 @@ props.put(security.protocol,"SASL_PLAIN");
 props.put(sasl.mechanism, "PLAIN");
 KafkaConsumer<string, string="string"> consumer = new KafkaConsumer<string,string>(props);
 ```
-
 producer代码类似，也只需要给producer的参数加上红色部分的配置
+
 步骤2：启动client java程序，加jvm参数：
 ```
 -Djava.security.auth.login.config=/data/home/tbds/kafka/kafka010/config/kafka_client_jaas.conf
