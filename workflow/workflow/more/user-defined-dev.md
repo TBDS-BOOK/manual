@@ -142,6 +142,10 @@ public class Helloword extends AbstractCustomTaskTypeRunner {
 
 			this.writeLocalLog(Level.INFO, "get parameter 1 =" + p1);
 
+      List<ServerRuntime> sourceServerList = taskRuntime.getSourceServers();  // 源服务器列表
+      if (CollectionUtils.isEmpty(sourceServerList) || sourceServerList.size() < 1) {//少于1台
+          throw new Exception("服务器配置异常");
+      }
 			if(!"kill".equals(p1)){
 				commitTaskAndLog(LState.FAILED, "", "parameter is kill");
 			}
