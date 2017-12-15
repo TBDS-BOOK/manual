@@ -32,7 +32,6 @@
   * \[数据服务\]
 * [任务调度](/workflow/readme.md)
   * [工作流](/workflow/workflow/readme.md)
-    * [手动安装runner服务](/workflow/workflow/addrunner.md)
     * [基本概念](/workflow/workflow/basicConcept.md)
     * [任务基本信息](/workflow/workflow/runnerBasicInfo.md)
     * [任务调度设置](/workflow/workflow/runnerCycle.md)
@@ -47,6 +46,9 @@
       * [hive导入hdfs](/workflow/workflow/runners/hive2hdfs.md)
       * [hdfs导出DB\(mysql,postgreSQL,sql server\)](/workflow/workflow/runners/hdfs2db.md)
       * [tstorm任务](/workflow/workflow/runners/customerTstorm.md)
+    * [补充](/workflow/workflow/other.md)
+      * [手动安装runner服务](/workflow/workflow/more/addrunner.md)
+      * [自定义任务开发文档](/workflow/workflow/more/user-defined-dev.md)
   * [任务管理](/workflow/tasks/readme.md)
   * [服务器配置](/workflow/services/readme.md)
 * \[Tstorm\]
@@ -65,4 +67,3 @@
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
   * [备份](平台运维/备份/backup.md)
-
