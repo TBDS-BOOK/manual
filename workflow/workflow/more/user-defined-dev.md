@@ -1,7 +1,7 @@
 ## 自定义Runner代码设计说明文档
 
 ### 1 .需要依赖的jar包
- 自定义runner任务依赖 runner-common.jar
+ 自定义runner任务依赖 runner-common.jar 
 ``` 
 <dependency>
     <groupid>tencent.lhotse.runner</groupid>
@@ -9,6 +9,14 @@
     <version>1.2.2-SNAPSHOT</version>
  </dependency>
 ``` 
+如果是4.0.3.1 的版本我们依赖
+```
+<dependency>
+    <groupId>com.tencent.teg.dc.runner</groupId>
+    <artifactId>runner-common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+ </dependency>
+```
 
 ### 2 .继承的基类  
 1. 与hive相关的实现可以继承AbstractTDWDDCTaskRunner这个基类，继承其中对数据库表的debug。    
