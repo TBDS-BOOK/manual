@@ -30,8 +30,8 @@ ${YYYYMMDDHH} 小时
 ${YYYYMMDDHHFF} 分钟
 ```
 
-__特别重要__  
-如果sql 文件中带有中文，而且是在windows上编辑的，务必确保你的文件是无BOM的UTF-8编码格式  
+<font color=#DC143C size=5>特别重要：</font>  
+如果sql 文件中带有中文，在windows上编辑时，务必确保文件是无BOM的UTF-8编码格式  
 Notepad++有转换此格式的选项  
 ![](/workflow/workflow/images/node1.jpg)
 
