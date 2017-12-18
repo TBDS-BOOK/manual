@@ -6,17 +6,18 @@ hdfs导入hbase
 
 ### 其他说明
 
-
 ### 任务设置
 #### 1. 基本信息  
-参考 [基本信息设置](runnerBasicInfo.md)  
+参考 [基本信息设置](/workflow/workflow/runnerBasicInfo.md)  
+
 #### 2. 调度  
-参考 [调度设置](runnerCycle.md)  
+参考 [调度设置](/workflow/workflow/runnerCycle.md)  
+
 #### 3. 参数
 HDFS导出hbase 参数设置只需要 hbase 配置信息。  
 HDFS 连接信息使用的集群默认HDFS地址。  
 
-###### 3.1 hbase配置
+###### 3.1 hbase 配置
 1. hbase表名  
 格式为dbName:tableName ,如：hbase_autotest:auto_kafka_hbase  
 
