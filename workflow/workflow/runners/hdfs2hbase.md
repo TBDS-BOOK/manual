@@ -1,4 +1,4 @@
-hdfs导入hbase 
+hdfs导入hbase
 
 
 ### 功能说明
@@ -17,40 +17,56 @@ HDFS导出hbase 参数设置只需要 hbase 配置信息。
 HDFS 连接信息使用的集群默认HDFS地址。  
 
 ###### 3.1 hbase配置
-
-
-String tableName = getExtPropValueWithDefault("hbase.table", "");// hbase表名
-String hbaseColumnList = getExtPropValueWithDefault("hbase.column.list", "");//列列表
-String hbaseRowRules = getExtPropValueWithDefault("hbase.row.rule", "");//行key规则
-String tdwColumnList = getExtPropValueWithDefault("tdw.column.list", "");//列规则
-String tsIndex = getExtPropValueWithDefault("hbase.ts.index", "");//时间戳所在列索引
-String dataPath = getExtPropValueWithDefault("dataPath", "");//HDFS路径
-String fieldCount = getExtPropValueWithDefault("tdw.column.number", "");//HDFS存放数据记录字段个数
-String fieldDelim = getExtPropValueWithDefault("tdw.column.fieldDelim", "");//HDFS存放数据字段之间分隔符
-String hbase_root = getExtPropValueWithDefault("hbase_root","/hbase-unsecure");//hbase在zk上的根路径
-        
-        
 1. hbase表名  
-格式为dbName:tableName ,如：hbase_autotest:auto_kafka_hbase 
-2. 列列表 
-列簇1名:列1名,列2名;列簇2名:列3名|列3值,列4名|列4值。
-3. 行key规则 
+格式为dbName:tableName ,如：hbase_autotest:auto_kafka_hbase  
 
-4. 列规则
+2. 列列表  
+使用逗号分隔，用来表示hbase 需要写入数据的字段。  
+格式为：列簇1名:列1名,列簇1名:列2名,列簇2名:列3名,列簇2名:列4值,列簇3名:列5值。
+
+3. 行key规则  
+指定行主键的生成方式：  
+a. RANDOM(5)表示生成生成一个随机长度为5字符串作为hbase的row key.
+
+4. 列规则  
+使用逗号分隔，跟列列表对应。用来表示对应的列名被写入的数值为hdfs记录被切分生成数组的下标。  
+如hdfs 其中一行的为: hello,word,i,come,from,20171216120000   
+列列表为 f1:c1,f1:c2,f1:c3,f2:c4,f3:c5,f4:c6  
+列规则为 0,1,2,3,4,5  
+则表示 hello 将被写入 列簇为f1 列名为c1的位置
 
 5. 时间戳所在列索引  
-6. HDFS路径  
-7. HDFS存放数据记录字段个数  
-8. HDFS存放数据字段之间分隔符  
-切分消息使用的分隔符。   
-9. hbase在zk上的根路径  
-为hbase 在zk 上的根目录, 默认为：/hbase-unsecure  
+不填或者或者为-1 ,使用HConstants.LATEST_TIMESTAMP  
+其他情况下，将使用 列规则对应位置的数值为下标的被切分的数组的数值。该数值必须能够被转为long 类型，否则该记录写入hbase失败。  
+例如：   
+如hdfs 其中一行的为: hello,word,i,come,from,20171216120000   
+列列表为 f1:c1,f1:c2,f1:c3,f2:c4,f3:c5,f4:c6  
+列规则为 1,1,2,3,4,5  
+时间戳所在列索引为5 ，则表示hdfs上的该记录对应的时间戳为20171216120000  
+如果时间戳所在列索引为0 ，表示将word 作为时间戳，那么记录写入hbase则会失败。
 
-10. zookeeper连接地址  
+6. zookeeper连接地址  
+hbase 所在zk 集群  
 
-11. 成功记录数占比  
+7. hbase在zk上的根路径  
+为hbase 在zk 上的根目录, 默认为：/hbase-unsecure
 
-  
+###### 3.2 HDFS配置
+1. HDFS路径  
+待写入hbase 的数据所在目录  
+该参数直接作为job inputpath 参数（替换here）  
+FileInputFormat.addInputPath(job, here);
+
+2. HDFS存放数据记录字段个数   
+表示对应别切分的数据字段个数  
+实际使用位置为map 类map 方法，对应value 进行切分后的个数判断。  
+
+3. HDFS存放数据字段之间分隔符  
+切分HDFS 存放的记录。   
+
+###### 3.3 其他配置项  
+1. 成功记录数占比  
+写入成功的记录数超过该设置的值，任务成功，否则失败。  
 
 ### demo   
 HBase表名：hbase_autotest:auto_kafka_hbase  
