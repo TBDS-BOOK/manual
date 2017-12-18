@@ -14,7 +14,7 @@ kafka接入hbase
 #### 2. 调度  
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 #### 3. 参数
-kafka 接入hbase 参数设置分成三个部分：kafka配置信息，hbase 配置信息，topology 配置信息。
+kafka 接入hbase 参数设置分成三个部分：kafka配置，hbase 配置，topology 配置信息。
 ###### 3.1 kafka 配置信息  
 1. 消息中间件主题  
 kafka topic 在创建任务前，需要确保topic已经存在，系统不会创建对应的topic。
@@ -33,9 +33,9 @@ port  kafka 开放给client 连接端口，可以参考kafka broker 服务配置
 2. HBase行主键  
 每次插入一条记录，会根据配置的行主键信息生成行主键，格式${topic}:#{abc}:${1}。  
 topic 为kafka 主题，  
-#{}内容（ 如：abc）为随意指定的一个固定值，可以方便查询。  
-最后一个参数${n}为 消息被分隔符切分之后，对应的数值，n 是整数。  
-假如现在从kafka 集群 主题为firstTopic 消费了一条内容为“a,b,c,d”的记录，设置分割符为 “,” ,行主键设置是${topic}:#{ABC}:${1}。则这条记录插入hbase ，生成的主键为 主题为firstTopicABCa。  
+__#{}__内容（ 如：abc）为随意指定的一个固定值，可以方便查询。  
+最后一个参数${n}为 消息被分隔符切分得到的数组下标所对应的值(n 是整数)。    
+假如现在从kafka 集群 主题为firstTopic 消费了一条内容为“a,b,c,d”的记录，设置分割符为 “,” ,行主键设置是${topic}:#{ABC}:${1}。则这条记录插入hbase ，生成的主键为 主题为firstTopicABCb。  
 3. HBase列簇  
 列簇1名:列1名|列1值,列2名|列2值;列簇2名:列3名|列3值,列4名|列4值。  
 比如：s1:#{name}|${0};s2:#{age}|${1}  
