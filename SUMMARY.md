@@ -49,6 +49,8 @@
     * [补充](/workflow/workflow/other.md)
       * [手动安装runner服务](/workflow/workflow/more/addrunner.md)
       * [自定义任务开发文档](/workflow/workflow/more/user-defined-dev.md)
+    * [常见问题定位和解决方式](/workflow/workflow/qa.md)
+      * [数据接入 hdfs2hive (tdsort)](/workflow/workflow/qa/hdfs2hive_tdsort.md)  
   * [任务管理](/workflow/tasks/readme.md)
   * [服务器配置](/workflow/services/readme.md)
 * \[Tstorm\]
