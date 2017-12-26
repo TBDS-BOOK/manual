@@ -1,0 +1,44 @@
+[20Lhotse task logLhotse任务当前运行日志38RUNNER执行日志  
+[2017-12-22 23:25:16]-[INFO] ######################     
+[2017-12-22 23:25:16]-[INFO] TaskRunner(0/ 0 )----开始执行任务     
+[2017-12-22 23:25:16]-[INFO] ######################     
+[2017-12-22 23:25:16]-[INFO] =====================     
+[2017-12-22 23:25:16]-[INFO] begin to fetch parameters...     
+[2017-12-22 23:25:16]-[INFO] shellCmd=./sleep.sh, shellArgs=100     
+[2017-12-22 23:25:16]-[INFO] Command: [chmod, 777, -R, /usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000]     
+[2017-12-22 23:25:16]-[INFO] overMin is 1000     
+[2017-12-22 23:25:16]-[WARN] exit code is 0     
+[2017-12-22 23:25:16]-[INFO] cmd execute success!     
+[2017-12-22 23:25:16]-[INFO] ######################     
+[2017-12-22 23:25:16]-[INFO] TaskRunner(1/ 0 )----修改shell脚本为可执行权限     
+[2017-12-22 23:25:16]-[INFO] ######################     
+[2017-12-22 23:25:16]-[WARN] change priv OK     
+[2017-12-22 23:25:16]-[INFO] try to add user autotest_1     
+[2017-12-22 23:25:16]-[INFO] overMin is 1000     
+[2017-12-22 23:25:16]-[INFO] useradd: user 'autotest_1' already exists     
+[2017-12-22 23:25:26]-[WARN] try to add user autotest_1.exit code is 9     
+[2017-12-22 23:25:26]-[INFO] Command: [/usr/local/lhotse_runners/script/2.sh, /usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000/./sleep.sh, 100]     
+[2017-12-22 23:25:26]-[INFO] ######################     
+[2017-12-22 23:25:26]-[INFO] TaskRunner(2/ 0 )----准备启动执行shell的进程,pwd is /usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000     
+[2017-12-22 23:25:26]-[INFO] ######################     
+[2017-12-22 23:25:26]-[INFO] overMin is 36000     
+[2017-12-22 23:25:26]-[INFO] hadoop_job_ugi=autotest_1     
+[2017-12-22 23:25:26]-[INFO] task_id=20171222232318365     
+[2017-12-22 23:25:26]-[INFO] cur_run_date=1513785600000     
+[2017-12-22 23:25:26]-[INFO] PWD=/data/bigdata/tbds/usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000     
+[2017-12-22 23:25:26]-[INFO] cycle_uinit=D     
+[2017-12-22 23:25:26]-[INFO] SHLVL=1     
+[2017-12-22 23:25:26]-[INFO] HADOOP_PROXY_USER=autotest_1     
+[2017-12-22 23:25:26]-[INFO] _=/usr/bin/env     
+[2017-12-22 23:25:26]-[INFO]      
+[2017-12-22 23:25:26]-[INFO] /data/bigdata/tbds/usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000     
+[2017-12-22 23:25:26]-[INFO] begin to sleep 100     
+[2017-12-22 23:27:06]-[INFO] success to sleep     
+[2017-12-22 23:27:16]-[WARN] exit code is 0     
+[2017-12-22 23:27:16]-[INFO] cmd execute success!     
+[2017-12-22 23:27:16]-[INFO] Command done, exit value=0     
+[2017-12-22 23:27:16]-[INFO] ######################     
+[2017-12-22 23:27:16]-[INFO] TaskRunner(3/ 0 )----执行shell的进程执行完成     
+[2017-12-22 23:27:16]-[INFO] ######################     
+[2017-12-22 23:27:16]-[INFO] Command output:hadoop_job_ugi=autotest_1    task_id=20171222232318365    cur_run_date=1513785600000    PWD=/data/bigdata/tbds/usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000    cycle_uinit=D    SHLVL=1    HADOOP_PROXY_USER=autotest_1    _=/usr/bin/env        /data/bigdata/tbds/usr/local/lhotse_runners/tdcp/workspace/20171222232318365/20171221000000    begin to sleep 100    success to sleep         
+[2017-12-22 23:27:17]-[INFO] =====================       ===========3

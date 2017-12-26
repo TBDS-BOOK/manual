@@ -199,3 +199,7 @@ public class TaskRunner extends AbstractCustomTaskTypeRunner {
     }
 }
 ```
+
+### 十、新建自定义任务
+登陆portal，进入如下页面   
+![]()
