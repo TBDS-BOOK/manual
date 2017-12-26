@@ -38,9 +38,11 @@ License
 
 初始化集群并部署portal
 
-    # sh tbds-bootstrap.sh init
+    # tar xzf tbds-mirror-$**version**.tar.gz -C /data
     ...
-    # tar xzf tbds-mirror* -C /data
+    # tar xzf tbds-mirror-patches-$**version**.tar.gz -C /data
+    ...
+    # sh tbds-bootstrap.sh init
     ...
     # sh tbds-install-portal.sh
     ...
