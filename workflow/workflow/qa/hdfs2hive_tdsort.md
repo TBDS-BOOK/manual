@@ -48,6 +48,15 @@ select flag,count(1)  from tdsort_upload_info where topic_name="topic_hive" and 
 select m.project_id as projectid, m.user_name as portaluser, m.topic_name as topicName ,m.tid as tid ,m.db_name as dbName,m.table_name as tableName ,m.fields as fields ,m.time_partion as partition ,m.spliter as separate,i.partition_value as partitionValue ,m.hdfs_url as hdfsUrl ,m.hive_url as hiveUrl,i.path as path ,i.id  as upload_infoID from tdsort_upload_info i,hdfs2hive_metainfo m where i.topic_name = m.topic_name and i.tid=m.tid and i.flag = 'pend' order by dbName ,tableName, partitionValue limit 100
 ```
 
+4. 根据errorinfo 提示作为关键字查看任务实例日志  
+a. 登陆任务实例运行所在节点。  
+b. 切到/usr/local/lhotse_runners 目录  
+c. 查询任务实例日志  find ./ |grep realtaskid  
+d. 打开查询结果中对应的 *.1.log  
+e. errorinfo 提示作为关键字查看任务实例日志,查看前后日志，找到对应的错误日志    
+
+
+
 #### 000. 任务实例日志不新增
 **问题表现**  
 >问题
