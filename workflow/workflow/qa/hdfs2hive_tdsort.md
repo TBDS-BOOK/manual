@@ -15,6 +15,9 @@
 4. 查看输出结果，如果有两个或两个以上的进程,则有问题。
 5. 如果输出中有写入和查询的进程同时存在，则是hive 表被锁住。
 
+**解决办法**  
+1. 如果定位方式第五点出现多个进程，直接杀死所有进程，然后前台重启实时接入任务实例。 
+
 ### 2. 实时接入的数据没有落地到hive
 **问题表现**  
 > hdfs2hive_tdsort 任务运行正常，数据通过实时接入写入hdfs,但是查询hive表没有对应的记录
@@ -43,19 +46,22 @@ b. 查询对应记录，如果有error 记录，则需要特别注意
 select flag,count(1)  from tdsort_upload_info where topic_name="topic_hive" and tid="TEST_BLUES_TBLX" group by flag\G
 ```
 
-3. 如果tdsort_upload_info记录中有pend 记录，但是没有在任务实例日志体现。通过如下记录查看
+3. 根据errorinfo 提示作为关键字查看任务实例日志  
+查询错误记录
 ```
-select m.project_id as projectid, m.user_name as portaluser, m.topic_name as topicName ,m.tid as tid ,m.db_name as dbName,m.table_name as tableName ,m.fields as fields ,m.time_partion as partition ,m.spliter as separate,i.partition_value as partitionValue ,m.hdfs_url as hdfsUrl ,m.hive_url as hiveUrl,i.path as path ,i.id  as upload_infoID from tdsort_upload_info i,hdfs2hive_metainfo m where i.topic_name = m.topic_name and i.tid=m.tid and i.flag = 'pend' order by dbName ,tableName, partitionValue limit 100
+select * from tdsort_upload_info where topic_name="topic_hive" and tid="TEST_BLUES_TBLX" and flag="error" \G
 ```
-
-4. 根据errorinfo 提示作为关键字查看任务实例日志  
 a. 登陆任务实例运行所在节点。  
 b. 切到/usr/local/lhotse_runners 目录  
 c. 查询任务实例日志  find ./ |grep realtaskid  
 d. 打开查询结果中对应的 *.1.log  
 e. errorinfo 提示作为关键字查看任务实例日志,查看前后日志，找到对应的错误日志    
 
-
+4. 如果tdsort_upload_info记录中有pend 记录，但是状态一直不变，而且没有在任务实例日志体现。通过如下记录查看，是否有对应的记录出现。
+```
+select m.project_id as projectid, m.user_name as portaluser, m.topic_name as topicName ,m.tid as tid ,m.db_name as dbName,m.table_name as tableName ,m.fields as fields ,m.time_partion as partition ,m.spliter as separate,i.partition_value as partitionValue ,m.hdfs_url as hdfsUrl ,m.hive_url as hiveUrl,i.path as path ,i.id  as upload_infoID from tdsort_upload_info i,hdfs2hive_metainfo m where i.topic_name = m.topic_name and i.tid=m.tid and i.flag = 'pend' order by dbName ,tableName, partitionValue limit 100
+```
+如果tdsort_upload_info 有pend 记录，但是上面的查询语句没有记录，那就是hdfs2hive_metainfo表没有存在对应topic_name和tid 记录。  
 
 #### 000. 任务实例日志不新增
 **问题表现**  
