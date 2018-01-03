@@ -119,7 +119,7 @@ doAndRedo_url=http://lhotse-yh-webCgi.tencent-distribute.com:8081/LService/RedoA
 type.list=37,38,39,66,67,68,69,70,72,75,92,98,99,100,104,105,106,118,119,120  
 discovery.service.zk.conn.str=tbds-10-151-140-233:2181,tbds-10-254-100-141:2181,tbds-10-254-99-28:2181  
 discovery.cluster.name=tdw  
-cluster_type=tbds
+cluster_type=zhx_cdh
 
 ---
 **该文档接下来的部分只对在原集群上升级系统适用，对于新安装的环境不适用**  
