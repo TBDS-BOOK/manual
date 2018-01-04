@@ -82,7 +82,7 @@ chown -R hdfs:hadoop /run/httpd
 ### 六、修改runner配置  
 **使用hdfs用户做如下操作**  
 切到 /usr/local/lhotse_runners/cfg 目录，编辑如下文件
-1. discover.properties   
+##### 1. discover.properties   
 将discovery.service.zk.conn.str 属性修改为tbds 集群中 zk host name list  
 其他属性不变<br>
 <br>**例子如下：**   
@@ -95,7 +95,7 @@ discovery.service.zk.session.timeout.millis=600000
 discovery.service.zk.conn.str=tbds-10-151-140-233:2181,tbds-10-254-100-141:2181,tbds-10-254-99-28:2181
 discovery.cluster.name=tdw
   
-2. lhotse_base.properties  
+##### 2. lhotse_base.properties  
 编辑该文件 修改如下内容：<br>  
 ```
 base_ip = taskscheduler hostname  
@@ -121,17 +121,46 @@ discovery.service.zk.conn.str=tbds-10-151-140-233:2181,tbds-10-254-100-141:2181,
 discovery.cluster.name=tdw  
 cluster_type=zhx_cdh
 
----
-**该文档接下来的部分只对在原集群上升级系统适用，对于新安装的环境不适用**  
+##### 3. 修改hbase依赖
+**该修改是为解决中航信cdh 集群hbase(1.2.0) 版本比tbds hbase(1.2.1) 低的问题，导致适用tbds的hdfs2hbase 任务，不适用于cdh **  
+  
+**如果其他集群也存在hdfs2hbase 任务存在版本冲突，解决方法类似**  
 
+3.1. 切到/usr/local/lhotse_runners/jar/37/hdfs2hbase-core/lib/ 目录  
+3.2. 执行过滤操作 ls |grep hbase 找到需要处理的hbase start_jar 
+执行结果如下
+```
+hbase-annotations-1.2.1-TBDS.jar
+hbase-client-1.2.1-TBDS.jar
+hbase-common-1.2.1-TBDS-tests.jar
+hbase-common-1.2.1-TBDS.jar
+hbase-hadoop-compat-1.2.1-TBDS.jar
+hbase-hadoop2-compat-1.2.1-TBDS.jar
+hbase-prefix-tree-1.2.1-TBDS.jar
+hbase-procedure-1.2.1-TBDS.jar
+hbase-protocol-1.2.1-TBDS.jar
+hbase-server-1.2.1-TBDS.jar
+```
+3.3 替换依赖文件  
+a. 删除3.2 步骤查询的所有hbase 依赖  
+b. 将/opt/cloudera/parcels/CDH-5.7.2-1.cdh5.7.2.p0.18/jars/ 目录下对应的3.2 步骤查询的jar 迁移到/usr/local/lhotse_runners/jar/37/hdfs2hbase-core/lib/ 目录  
+例如：
+```
+cp /opt/cloudera/parcels/CDH-5.7.2-1.cdh5.7.2.p0.18/jars/hbase-server-1.2.0-cdh5.7.2.jar /usr/local/lhotse_runners/jar/37/hdfs2hbase-core/lib/
+```
+---
+<font size="5" color="red">该文档接下来的部分只对在原集群上升级系统适用，对于新安装的环境不适用</font>  
+<br>
 *ps:*  tdbank  给江苏消防的环境，需要执行下面的步骤。  
 
 ### 七、 修改base 设置  
+**该操作是为添加sql server 导入hive 任务类型,如果这个任务类型已经存在，则跳过改步骤。**  
 1. 添加sql server 导入hive 任务类型    
 登陆portal(或者8080端口)修改lhots-runner 配置type.list属性，在其中添加106 任务类型,并保存。    
 ![添加新任务类型](https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/0317fd959cc95c7d20198aa2443b77a1c15a11fa3c77eb0b24bf9675441ed24e5a2d6d6c7459f64aa6df4572e589786b?pictype=scale&from=30113&version=2.0.0.2&uin=821244074&fname=1508908165%281%29.jpg&size=1024) 
 
 ### 八、 更新metadb  
+**该操作是为添加sql server 导入hive 任务类型,如果这个任务类型已经存在，则跳过改步骤。**  
 1. 连接metadb  
 通过portal(或8080端口查询)METADATA master 节点ip  
 mysql -hmetaDataMasterIP -ulhotse -plhotse@Tbds.com lhotse_open;  
@@ -202,7 +231,9 @@ update lb_task_type_ext set regex='{"tab":"1-基本属性","tip":"必须是整�
 执行命令： jps ,有TaskRunnerLoader 相关进程信息，确认runner启动ok.    
 
 ### 十一、 更改lhotse service  
-**以下操作使用 lhotse 用户**  
+**该操作是为解决服务器配置失败的问题，如果是新安装的环境，比如4301版本，则跳过该操作。**  
+
+__以下操作使用 lhotse 用户__  
 1. 切到lhotse serices 节点  
 <br>
 2. 更新并重启lhotse sercice  
