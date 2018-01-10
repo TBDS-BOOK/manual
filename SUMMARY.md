@@ -5,7 +5,7 @@
   * [安装步骤](部署/TBDS部署.md)
 * [开始](开始/README.md)
 * \[平台管理\]
-* \[组件访问开发\]
+* [\[组件访问开发\]](zu-jian-fang-wen-kai-53d15d.md)
   * [kafka](组件使用/kafka/kafka.md)
   * [hadoop](组件使用/hadoop/hadoop.md)
   * [hbase](组件使用/hbase/hbase.md)
@@ -26,7 +26,7 @@
   * \[任务调度\]
 * \[数据应用\]
   * \[数据检索\]
-  * \[数据分析\]
+  * [\[数据分析\]](shu-ju-fen-67905d.md)
   * \[数据呈现\]
   * \[数据导出\]
   * \[数据服务\]
@@ -50,8 +50,8 @@
       * [手动安装runner服务](/workflow/workflow/more/addrunner.md)
       * [自定义任务开发文档](/workflow/workflow/more/user-defined-dev.md)
     * [常见问题定位和解决方式](/workflow/workflow/qa.md)
-      * [常用操作](/workflow/workflow/qa/common_operation.md) 
-      * [实时接入任务hdfs2hive (tdsort)](/workflow/workflow/qa/hdfs2hive_tdsort.md)  
+      * [常用操作](/workflow/workflow/qa/common_operation.md)
+      * [实时接入任务hdfs2hive \(tdsort\)](/workflow/workflow/qa/hdfs2hive_tdsort.md)
   * [任务管理](/workflow/tasks/readme.md)
   * [服务器配置](/workflow/services/readme.md)
 * \[Tstorm\]
@@ -70,3 +70,4 @@
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
   * [备份](平台运维/备份/backup.md)
+
