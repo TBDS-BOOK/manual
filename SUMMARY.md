@@ -5,7 +5,7 @@
   * [安装步骤](部署/TBDS部署.md)
 * [开始](开始/README.md)
 * \[平台管理\]
-  * 用户管理
+  * [用户管理](用户管理/readme.md)
 * [\[组件访问开发\]](zu-jian-fang-wen-kai-53d15d.md)
   * [kafka](组件使用/kafka/kafka.md)
   * [hadoop](组件使用/hadoop/hadoop.md)
