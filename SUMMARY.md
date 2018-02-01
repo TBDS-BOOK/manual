@@ -59,6 +59,7 @@
   * [任务管理](/workflow/tasks/readme.md)
   * [服务器配置](/workflow/services/readme.md)
     * [基本概念](workflow/services/ji-ben-gai-nian.md)
+    * [操作指南](workflow/services/cao-zuo-zhi-nan.md)
 * \[Tstorm\]
   * [Tstorm介绍](/tstorm/readme.md)
   * [开发实例](/tstorm/demo/readme.md)
