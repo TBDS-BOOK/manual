@@ -95,7 +95,7 @@
 
 选择服务器类型:mr_group，进行MR_GROUP类型的服务器配置。MR_GROUP的配置与HDFS配置保持一致。
 
-**HDFS与MR_GROUP区别：**
+_**HDFS与MR_GROUP区别：**_
 1. 执行MR_GROUP类型的任务，使用对应的MR_GROUP服务器配置；执行HDFS相关任务，使用HDFS的服务器配置；
 2. MR_GROUP有分组的概念
 
