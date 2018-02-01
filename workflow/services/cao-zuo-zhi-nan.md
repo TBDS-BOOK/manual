@@ -93,7 +93,7 @@
 
 ####8、MR_GROUP
 
-选择服务器类型:mr_group，进行MR_GROUP类型的服务器配置。MR_GROUP的配置与HDFS配置保持一致。MR_GROUP主要用于跑MR任务，指定MR任务使用HDFS。
+选择服务器类型:mr_group，进行MR_GROUP类型的服务器配置。MR_GROUP的配置与HDFS配置保持一致。MR_GROUP主要用于跑MR任务，指定MR任务使用的HDFS。
 
 ![](/assets/mr.png)
 
