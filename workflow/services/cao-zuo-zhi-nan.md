@@ -14,7 +14,7 @@
 - 端口：MYSQL的连接端口，默认：3306
 - database名称：服务器配置所指向的MYSQL database；
 - 数据库用户名：连接MYSQL并进行后续相应任务操作的用户名；
-- 数据库密码：连接MYSQL并进行后续相应任务操作的用户所对应的密码；
+- 数据库密码：连接MYSQL的用户所对应的密码；
 - 服务器并发度：并行执行的数量，默认是10；
 
 ![](/assets/3.png)
@@ -27,18 +27,25 @@
 - 端口：POSTGRES的连接端口，默认：5432
 - database名称：服务器配置所指向的POSTGRES database；
 - 数据库用户名：连接POSTGRES并进行后续相应任务操作的用户名；
-- 数据库密码：连接POSTGRES并进行后续相应任务操作的用户所对应的密码；
+- 数据库密码：连接POSTGRES的用户所对应的密码；
 
 ![](/assets/5.png)
 
 
 ####3、ORACLE
+选择服务器类型:oracle，进行ORACLE类型的服务器配置。
+- 主机地址：ORACLE的连接IP地址，如：10.0.0.1；
+- 端口：ORACLE的连接端口，默认：1521；
+- database名称：ORACLE数据库的实例名，常用：orcl；
+- 数据库用户名：连接ORACLE并进行后续相应任务操作的用户名；
+- 数据库密码：连接ORACLE的用户所对应的密码；
 
+![](/assets/oracle.png)
 
 
 ####4、SQLSERVER
 
-
+![](/assets/sever.png)
 ####5、HIVE
 
 
