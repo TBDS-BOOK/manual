@@ -44,6 +44,16 @@
 
 
 ####4、SQLSERVER
+选择服务器类型:sqlserver，进行SQLSERVER类型的服务器配置。
+- 服务器版本：SQLSERVER的版本：MSSQL_2008：SQLSERVER 2008版本；
+- 主机地址：SQLSERVER的连接IP地址，如：10.0.0.1；
+- 端口：SQLSERVER的连接端口，默认：1433；
+- database名称：SQLSERVER连接的database
+- 数据库用户名：连接SQLSERVER并进行后续相应任务操作的用户名；
+- 数据库密码：连接SQLSERVER的用户所对应的密码；
+
+
+
 
 ![](/assets/sever.png)
 ####5、HIVE
