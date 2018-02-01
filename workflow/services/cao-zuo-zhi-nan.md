@@ -2,7 +2,7 @@
 点击服务器配置右上角按钮【新建配置】创建新增服务器配置。
 ![](/assets/4.png)
 
-####1、MYSQL
+#### 1、MYSQL
 选择服务器类型:mysql，进行MYSQL类型的服务器配置，配置完成后，可以点击【连接测试】按钮，校验服务器配置是否有效。【连接测试】会根据所填的服务器信息去进行连接的测试，判断连接是否正常。
 
 参数说明：
@@ -20,7 +20,7 @@
 ![](/assets/3.png)
 
 
-####2、POSTGRES
+#### 2、POSTGRES
 选择服务器类型:postgre，进行POSTGRES类型的服务器配置。
 
 - 主机地址：POSTGRES的连接IP地址，如：10.0.0.1；
@@ -32,7 +32,7 @@
 ![](/assets/5.png)
 
 
-####3、ORACLE
+#### 3、ORACLE
 选择服务器类型:oracle，进行ORACLE类型的服务器配置。
 - 主机地址：ORACLE的连接IP地址，如：10.0.0.1；
 - 端口：ORACLE的连接端口，默认：1521；
@@ -43,7 +43,7 @@
 ![](/assets/oracle.png)
 
 
-####4、SQLSERVER
+#### 4、SQLSERVER
 选择服务器类型:sqlserver，进行SQLSERVER类型的服务器配置。
 - 服务器版本：SQLSERVER的版本：MSSQL_2008：SQLSERVER 2008版本；
 - 主机地址：SQLSERVER的连接IP地址，如：10.0.0.1；
@@ -54,7 +54,7 @@
 
 ![](/assets/sever.png)
 
-####5、FTP
+#### 5、FTP
 选择服务器类型:ftp，进行FTP类型的服务器配置。
 - 主机地址：FTP服务的连接IP地址，如：10.0.0.1；
 - 端口：FTP的连接端口，默认：2222；
@@ -65,7 +65,7 @@
 
 ![](/assets/ftp.png)
 
-####6、HIVE
+#### 6、HIVE
 选择服务器类型:hive，进行HIVE类型的服务器配置。
 
 - 连接地址：Hive server的主机地址；
@@ -79,7 +79,7 @@
 ![](/assets/hive.png)
 
 
-####7、HDFS
+#### 7、HDFS
 选择服务器类型:HDFS，进行HDFS类型的服务器配置。
 
 - namenode主机地址：默认获取集群内HDFS的namenode主机IP，若namenode为HA，则获取配置的文件空间，集群内默认是：hdfs://hdfsCluster
@@ -91,7 +91,7 @@
 ![](/assets/hdfs.png)
 
 
-####8、MR_GROUP
+#### 8、MR_GROUP
 
 选择服务器类型:mr_group，进行MR_GROUP类型的服务器配置。MR_GROUP的配置与HDFS配置保持一致。MR_GROUP主要用于跑MR任务，指定MR任务使用的HDFS。
 
