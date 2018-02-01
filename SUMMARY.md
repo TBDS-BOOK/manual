@@ -23,7 +23,7 @@
     * [hdfs](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hdfs.md)
     * [kafka](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/kafka.md)
     * [hive](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hive.md)
-* \[数据工厂\]
+* [\[数据工厂\]](shu-ju-gong-53825d.md)
   * \[数据接入\]
   * \[离线处理\]
   * \[实时处理\]
@@ -59,7 +59,8 @@
   * [任务管理](/workflow/tasks/readme.md)
   * [服务器配置](/workflow/services/readme.md)
     * [基本概念](workflow/services/ji-ben-gai-nian.md)
-* \[Tstorm\]
+    * [操作指南](workflow/services/cao-zuo-zhi-nan.md)
+* [\[Tstorm\]](tstorm.md)
   * [Tstorm介绍](/tstorm/readme.md)
   * [开发实例](/tstorm/demo/readme.md)
     * [wordcount](/tstorm/demo/wordcountTstormDemo.md)
