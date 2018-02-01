@@ -15,7 +15,7 @@
 - database名称：服务器配置所指向的MYSQL database；
 - 数据库用户名：连接MYSQL并进行后续相应任务操作的用户名；
 - 数据库密码：连接MYSQL的用户所对应的密码；
-- 服务器并发度：并行执行的数量，默认是10；
+- 服务器并发度：并行执行的数量，默认是10，在运行任务时，规定使用该server的任务实例数的上限。
 
 ![](/assets/3.png)
 
@@ -93,11 +93,7 @@
 
 ####8、MR_GROUP
 
-选择服务器类型:mr_group，进行MR_GROUP类型的服务器配置。MR_GROUP的配置与HDFS配置保持一致。
-
-_**HDFS与MR_GROUP区别：**_
-1. 执行MR_GROUP类型的任务，使用对应的MR_GROUP服务器配置；执行HDFS相关任务，使用HDFS的服务器配置；
-2. MR_GROUP有分组的概念
+选择服务器类型:mr_group，进行MR_GROUP类型的服务器配置。MR_GROUP的配置与HDFS配置保持一致。MR_GROUP主要用于跑MR任务，指定MR任务使用HDFS。
 
 ![](/assets/mr.png)
 
