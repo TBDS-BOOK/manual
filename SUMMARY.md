@@ -4,7 +4,7 @@
 * [部署](部署/README.md)
   * [安装步骤](部署/TBDS部署.md)
 * [开始](开始/README.md)
-* [平台管理]
+* \[平台管理\]
   * [用户管理](平台管理/usermanage.md)
   * [项目管理](平台管理/projectmanage.md)
   * [资源管理](平台管理/resourcemanage.md)
@@ -58,6 +58,7 @@
       * [实时接入任务hdfs2hive \(tdsort\)](/workflow/workflow/qa/hdfs2hive_tdsort.md)
   * [任务管理](/workflow/tasks/readme.md)
   * [服务器配置](/workflow/services/readme.md)
+    * [基本概念](workflow/services/ji-ben-gai-nian.md)
 * \[Tstorm\]
   * [Tstorm介绍](/tstorm/readme.md)
   * [开发实例](/tstorm/demo/readme.md)
@@ -74,3 +75,4 @@
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
   * [备份](平台运维/备份/backup.md)
+
