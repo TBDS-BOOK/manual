@@ -66,14 +66,34 @@
 ![](/assets/ftp.png)
 
 ####6、HIVE
-选择服务器类型:sqlserver，进行SQLSERVER类型的服务器配置。
+选择服务器类型:hive，进行HIVE类型的服务器配置。
+
+- 连接地址：Hive server的主机地址；
+- 端口：Hive server的端口，默认：10000；
+
+**备注：** 
+1. 选择创建Hive服务器配置时，默认会加载套件内安装的Hive服务的配置信息；
+2. 服务器配置目前仅支持套件内的Hive集群，不支持外部的Hive集群；
+3. Hive的连接信息用户默认取任务的执行用户和对应的LDAP密码；
+
+![](/assets/hive.png)
+
+
 
 
 
 
 
 ####7、HDFS
+选择服务器类型:HDFS，进行HDFS类型的服务器配置。
 
+- namenode主机地址：默认获取集群内HDFS的namenode主机IP，若namenode为HA，则获取配置的文件空间，集群内默认是：hdfs://hdfsCluster
+
+**备注：** 
+1. 选择创建HDFS服务器配置时，默认会加载套件内安装的HDFS服务的配置信息；
+2. 服务器配置目前仅支持套件内的HDFS集群，不支持外部的HDFS集群；
+
+![](/assets/hdfs.png)
 
 
 ####8、MR_GROUP
