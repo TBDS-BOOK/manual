@@ -4,8 +4,6 @@
 
 [1.用户管理](平台管理/用户管理/usermanage.md)
 
-[2.项目管理](平台管理/用户管理/projectmanage.md)
+[2.项目、资源管理](平台管理/用户管理/projectmanage.md)
 
-[3.资源管理](平台管理/用户管理/resourcemanage.md)
-
-[4.系统设置](平台管理/用户管理/systemconfig.md)
+[3.系统设置](平台管理/用户管理/systemconfig.md)
