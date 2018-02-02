@@ -23,15 +23,14 @@
     * [hdfs](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hdfs.md)
     * [kafka](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/kafka.md)
     * [hive](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hive.md)
-* [\[数据工厂\]](shu-ju-gong-53825d.md)
-  * \[数据接入\]
-    * [血缘分析](数据接入/血缘分析/lineage_fenxi.md)
-  * \[离线处理\]
-  * \[实时处理\]
-  * \[任务调度\]
+* [\[数据接入\]](shu-ju-gong-53825d.md)
+  * 数据接入
+  * [Hippo管理](/数据接入/Hippo管理/hippo_mamage.md)
+  * 进度监控
+  * [血缘分析](/数据接入/血缘分析/lineage_fenxi.md)
 * \[实时计算\]
-  * 任务管理
-  * [库表模板管理](平台管理/projectmanage.md)
+  * [任务管理](/实时计算/任务管理/task_manage.md)
+  * [库表模板管理](/实时计算/库表模板管理/table_model_mamage.md)
 * \[数据应用\]
   * \[数据检索\]
   * [\[数据分析\]](shu-ju-fen-67905d.md)
