@@ -6,13 +6,17 @@ HippoUI
 
 登录到套件主页面之后，选择数据接入，如下图。
 
-
+![](/数据接入/Hippo管理/enter_step1.png)
 
 然后进入如图1-1所示页面，
 
-图1-1 套件主页面
+![](/数据接入/Hippo管理/enter_step2.png)
+
+                                         图1-1 套件主页面
 
 然后选择hippo管理，计入hippo主页面 如图1-2所示。
+
+![](/数据接入/Hippo管理/enter_step3.png)
 
 图1-2 hippo主页面
 
