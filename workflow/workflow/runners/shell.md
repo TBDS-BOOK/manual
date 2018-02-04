@@ -13,9 +13,17 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 
 #### 3. 参数
+参数设置如下图所示：
+![shell 参数设置](/workflow/workflow/images/shell.jpg)
+<br>
+1. 执行包路径  
+将需要执行的shell 文件，压缩为一个zip包，点击‘上传脚本’ 将zip 上传到tbds
+
+2. shell 命令  
+执行上传shell 文件的shell 命令。可以带运行参数
 
 
 ### demo
-
-
-### demo资源
+执行一个简单的while 循环  
+执行包路径：[zip 下载](/workflow/workflow/resources/testovertime.zip)  
+shell执行命令： ./testovertime.sh  
