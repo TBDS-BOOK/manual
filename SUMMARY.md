@@ -43,12 +43,12 @@
     * [任务基本信息](/workflow/workflow/runnerBasicInfo.md)
     * [任务调度设置](/workflow/workflow/runnerCycle.md)
     * [任务参数配置](/workflow/workflow/runners.md)
+      * [shell 脚本](/workflow/workflow/runners/shell.md)
       * [ftp导入hdfs](/workflow/workflow/runners/ftp2hdfs.md)
       * [kafka导入hbase](/workflow/workflow/runners/kafka2hbase.md)
       * [kafka导入hdfs](/workflow/workflow/runners/kafka2hdfs.md)
       * [hdfs导出mysql](/workflow/workflow/runners/hdfs2mysql.md)
       * [hdfs导出hbase](/workflow/workflow/runners/hdfs2hbase.md)
-      * [shell 脚本](/workflow/workflow/runners/shell.md)
       * [hive sql 脚本](/workflow/workflow/runners/hivesql.md)
       * [hive导入hdfs](/workflow/workflow/runners/hive2hdfs.md)
       * [hdfs导出DB\(mysql,postgreSQL,sql server\)](/workflow/workflow/runners/hdfs2db.md)
@@ -80,6 +80,3 @@
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
   * [备份](平台运维/备份/backup.md)
-
-
-
