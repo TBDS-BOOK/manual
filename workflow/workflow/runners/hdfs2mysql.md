@@ -16,6 +16,7 @@ hdfs数据导入到mysql。
 参数设置如下图所示：
 ![hdfs2mysql](/workflow/workflow/images/hdfs2mysql.png)
 
+
 ### demo
 
 
