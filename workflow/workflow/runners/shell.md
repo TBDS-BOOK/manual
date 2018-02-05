@@ -26,5 +26,5 @@ ruguo
 
 ### demo
 执行一个简单的while 循环  
-执行包路径：[zip 下载](http://dl.download.csdn.net/down11/20180205/441ee758c6d4e3f90395d998076900dd.zip?response-content-disposition=attachment%3Bfilename%3D%22testovertime.zip%22&OSSAccessKeyId=9q6nvzoJGowBj4q1&Expires=1517813646&Signature=aET4puXUfTutmA6VAcMzaVEWJyo%3D&user=wuyinxian&sourceid=10240523&sourcescore=2&isvip=0)  
+执行包路径：[zip 下载](http://download.csdn.net/download/wuyinxian/10240523)  
 shell执行命令： ./testovertime.sh  
