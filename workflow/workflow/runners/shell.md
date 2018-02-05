@@ -22,8 +22,9 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 2. shell 命令  
 执行上传shell 文件的shell 命令。可以带运行参数
 
+ruguo
 
 ### demo
 执行一个简单的while 循环  
-执行包路径：[zip 下载](/workflow/workflow/resources/testovertime.zip)  
+执行包路径：[zip 下载](http://dl.download.csdn.net/down11/20180205/441ee758c6d4e3f90395d998076900dd.zip?response-content-disposition=attachment%3Bfilename%3D%22testovertime.zip%22&OSSAccessKeyId=9q6nvzoJGowBj4q1&Expires=1517813646&Signature=aET4puXUfTutmA6VAcMzaVEWJyo%3D&user=wuyinxian&sourceid=10240523&sourcescore=2&isvip=0)  
 shell执行命令： ./testovertime.sh  
