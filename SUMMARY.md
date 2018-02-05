@@ -40,6 +40,7 @@
 * [任务调度](/workflow/readme.md)
   * [工作流](/workflow/workflow/readme.md)
     * [基本概念](/workflow/workflow/basicConcept.md)
+    * [操作指引](/workflow/workflow/guide.md)
     * [任务基本信息](/workflow/workflow/runnerBasicInfo.md)
     * [任务调度设置](/workflow/workflow/runnerCycle.md)
     * [任务参数配置](/workflow/workflow/runners.md)
