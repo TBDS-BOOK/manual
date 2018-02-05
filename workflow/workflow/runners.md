@@ -1,6 +1,11 @@
 工作流包括如下任务
+* [shell 脚本](/workflow/workflow/runners/shell.md)
 * [ftp导入hdfs](/workflow/workflow/runners/ftp2hdfs.md)
 * [kafka导入hbase](/workflow/workflow/runners/kafka2hbase.md)
 * [kafka导入hdfs](/workflow/workflow/runners/kafka2hdfs.md)
 * [hdfs导出mysql](/workflow/workflow/runners/hdfs2mysql.md)
-* [shell 脚本](/workflow/workflow/runners/shell.md)
+* [hdfs导出hbase](/workflow/workflow/runners/hdfs2hbase.md)
+* [hive sql 脚本](/workflow/workflow/runners/hivesql.md)
+* [hive导入hdfs](/workflow/workflow/runners/hive2hdfs.md)
+* [hdfs导出DB\(mysql,postgreSQL,sql server\)](/workflow/workflow/runners/hdfs2db.md)
+* [tstorm任务](/workflow/workflow/runners/customerTstorm.md)
