@@ -26,5 +26,8 @@ ruguo
 
 ### demo
 执行一个简单的while 循环  
-执行包路径：[zip 下载](http://download.csdn.net/download/wuyinxian/10240523)  
-shell执行命令： ./testovertime.sh  
+执行包路径：[简单while循环](http://download.csdn.net/download/wuyinxian/10240523)  
+&nbsp;&nbsp;如果要测试 执行失败，可以下载[任务失败](http://download.csdn.net/download/wuyinxian/10240542)  
+shell执行命令：  
+&nbsp;&nbsp;./testovertime.sh  
+&nbsp;&nbsp;任务失败 使用./testerror.sh 
