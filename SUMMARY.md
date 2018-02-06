@@ -69,6 +69,22 @@
   * [开发实例](/tstorm/demo/readme.md)
     * [wordcount](/tstorm/demo/wordcountTstormDemo.md)
 * \[机器学习\]
+  * [系统简介](/机器学习/README.md)
+  * [工作流](/机器学习/gong-zuo-liu.md)
+    * [新建工程](/机器学习/new_project.md)
+    * [新建工作流](/机器学习/new_workflow.md)
+    * [创建和配置节点](/机器学习/config_parameter.md)
+    * [运行](/机器学习/run.md)
+    * [日志查看](/机器学习/log_view.md)
+* [数据输入输出](/机器学习/dataset.md)
+* [组件](/机器学习/zu-jian.md)
+  * [Spark组件](/机器学习/spark.md)
+  * [Sparkstreaming组件](/机器学习/spark-streaming.md)
+  * [pySpark组件](/机器学习/pyspark.md)
+* [多实例并发](/机器学习/duo-shi-li-bing-fa.md)
+  * [3种方式驱动实例](/机器学习/multiple_drive.md)
+  * [实例查询](/机器学习/instanceview.md)
+  * [历史实例](/机器学习/history_instance.md)
 * \[数据治理\]
   * \[数据质量\]
   * [数据权限](数据治理/数据权限/数据权限.md)

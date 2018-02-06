@@ -1,0 +1,42 @@
+{
+  "output": "./output",
+  "title": "gitbook tutorial",
+  "description": "",
+  "language" : "zh-hans",
+  "plugins": [
+    "-lunr",
+    "-search",
+    "search-plus",
+    "splitter@^0.0.8",
+    "simple-page-toc@^0.1.1",
+    "anchor-navigation-ex@0.1.8",
+    "multipart"
+    ],
+  "pluginsConfig": {
+    "simple-page-toc": {
+      "maxDepth": 3,
+      "skipFirstH1": true
+    },
+    "anchor-navigation-ex": {
+      "isShowTocTitleIcon": false,
+      "tocLevel1Icon": "fa fa-hand-o-right",
+      "tocLevel2Icon": "fa fa-hand-o-right",
+      "tocLevel3Icon": "fa fa-hand-o-right"
+    },
+    "theme-default": {
+      "showLevel": true
+    }
+  },
+  "links": {
+    "sidebar": {
+      "TDInsight 机器学习平台": ""
+    },
+    "gitbook": false,
+    "sharing": {
+      "google": false,
+      "facebook": false,
+      "twitter": false,
+      "all": false
+    }
+  }
+}
