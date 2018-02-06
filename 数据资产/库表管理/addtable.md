@@ -20,6 +20,7 @@
 
 
 设置Hive表的高级属性值，丰富Hive表的创建能力；
+
 ![table_high_01](pictures\table_high_01.png)
 
 **参数解释：**
@@ -30,6 +31,7 @@
 - 文件格式：支持Hive常用的文件格式，包括：TextFile、SequenceFile、InputFormat，默认使用TextFile;
 
 设置Hive表的字段值和对应的数据类型，备注信息等；
+
 ![table_column](pictures\table_column.png)
 
 **参数解释：**

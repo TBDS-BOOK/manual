@@ -17,7 +17,6 @@
 点击库名，可以查看库的详情信息，如：库下所包含的表信息：
 
 ![db_table_list](pictures\db_table_list.png)
-
 ### 2、新增数据库
 ![manage_db](pictures\manage_db.png)
 
