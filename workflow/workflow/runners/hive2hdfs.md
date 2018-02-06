@@ -13,6 +13,9 @@
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 
 #### 3. 参数
+任务配置参考：
+![hive2hdfs](/workflow/workflow/images/hive2hdfs.png)
+
 ###### 3.1 源服务器
 执行hive sql 查询语句所在的hive server  
 更多信息参考 [服务器配置](/workflow/services/readme.md)
@@ -23,7 +26,8 @@
 指定查询sql 所在hive db库  
 
 ###### 3.4 源SQL
-hive sql 查询语句
+hive sql 查询语句  
+支持[时间隐式参数](/workflow/more/implicitVariable.md)
 
 ###### 3.5 源SQL查询结果字段数量（可选）
 对于稍微复杂的查询，可能会出现无法识别查询结果的字段个数，需要特别指定查询结果字段个数。  
@@ -45,8 +49,7 @@ hive beeline 命令行的输出格式，基于4.0.3.1 的hive 采用默认值 **
 ##### 3.11 hive参数
 用来支持非tbds 集群安装的hive 集群，可能需要的特殊参数
 
-
 ### demo
-
+参考上图
 
 ### demo资源
