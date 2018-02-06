@@ -13,6 +13,9 @@ hive sql脚本执行者为任务第一个责任人（portal登录用户)
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 
 #### 3.3 参数
+参数设置参考：
+![hivesql](/workflow/workflow/images/hivesql.png)
+
 ###### 3.3.1 源服务器配置信息  
 执行hive sql 脚本所在的hive server.  
 更多信息参考 [服务器配置](/workflow/services/readme.md)
