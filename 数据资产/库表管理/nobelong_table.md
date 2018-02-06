@@ -1,6 +1,6 @@
 ### 1、无归属库表采集
 
-![nobelong_table_list](pictures\nobelong_table_list.png)
+![nobelong_table_list](pictures/nobelong_table_list.png)
 
 TBDS会定时连接Hive、HBase采集通过其他方式创建的数据库表，如通过Hive shell、HBase shell创建的，采集的库表数据会归属到**无归属库表**页签中。
 
@@ -12,7 +12,7 @@ TBDS会定时连接Hive、HBase采集通过其他方式创建的数据库表，�
 
 ### 2、设置库表归属
 
-![table_set_belong](pictures\table_set_belong.png)
+![table_set_belong](pictures/table_set_belong.png)
 
 设置无归属库表的权限，**应首先设置数据库的权限**，即设置数据库所属的项目和责任人，对于数据表可以自定义对应的责任人。
 

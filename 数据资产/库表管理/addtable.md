@@ -1,12 +1,12 @@
 库表管理支持Hive、Hbase的数据表操作，点击右上角** 数据表**tab页签，点击 **新建表** 进行新建数据表操作。
 
-![add_table](pictures\add_table.png)
+![add_table](pictures/add_table.png)
 
 ### 1、Hive表新建
 新建Hive表支持手动创建、SQL脚本创建、文件导入三种方式。
 #### 1.1、手动创建
 
-![table_base_01](pictures\table_base_01.png)
+![table_base_01](pictures/table_base_01.png)
 填写创建Hive表的基本信息，便于数据表的授权、管理；
 
 **参数解释：**
@@ -21,7 +21,7 @@
 
 设置Hive表的高级属性值，丰富Hive表的创建能力；
 
-![table_high_01](pictures\table_high_01.png)
+![table_high_01](pictures/table_high_01.png)
 
 **参数解释：**
 - 记录格式：支持按照分隔符分隔、SerDe序列化；
@@ -32,7 +32,7 @@
 
 设置Hive表的字段值和对应的数据类型，备注信息等；
 
-![table_column](pictures\table_column.png)
+![table_column](pictures/table_column.png)
 
 **参数解释：**
 - 字段名：新建Hive表字段的名称；
@@ -45,7 +45,7 @@
 #### 1.2、SQL脚本创建
 库表管理支持以Hive SQL的方式直接创建数据表，便于添加已有SQL语句的数据表，方便用户执行SQL语句。
 
-![table_sql](pictures\table_sql.png)
+![table_sql](pictures/table_sql.png)
 
 **备注：**
 - 脚本编辑：输入框，里面填写创建Hive表语句，末尾无需以";" 分号分隔；
@@ -53,11 +53,11 @@
 
 #### 1.3、文件导入
 
-![table_load_file](pictures\table_load_file.png)
+![table_load_file](pictures/table_load_file.png)
 
 库表管理支持上传数据文件的形式，创建Hive表，并将数据文件加载到对应的Hive表。数据文件从HDFS**用户根目录**和所属项目的HDFS**项目目录**两个路径加载。
 
-![table_load_column](pictures\table_load_column.png)
+![table_load_column](pictures/table_load_column.png)
 
 可以通过下载示例模板参考支持上传的文件格式。加载时默认第一个行是字段名信息。目前支持字段分隔符有逗号、分号；
 
@@ -68,5 +68,5 @@
 ### 2、HBase表新建
 
 #### 2.1、手动创建
-![table_hbase_create](pictures\table_hbase_create.png)
+![table_hbase_create](pictures/table_hbase_create.png)
 填写HBase的基本信息，基本信息与Hive一致，不重复介绍。在创建Hbase表时，设置Hbase的列簇信息；

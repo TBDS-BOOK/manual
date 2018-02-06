@@ -3,7 +3,7 @@
 ### 1、数据库列表
 点击右上角** 数据库**tab页签，查看当前用户可管理的数据库（hive、hbase）。通过列表可以获取数据库详细信息：
 
-![manage_db_list](pictures\manage_db_list.png)
+![manage_db_list](pictures/manage_db_list.png)
 
 **参数解释：**
 - 库名：创建的数据库名称；
@@ -16,9 +16,9 @@
 
 点击库名，可以查看库的详情信息，如：库下所包含的表信息：
 
-![db_table_list](pictures\db_table_list.png)
+![db_table_list](pictures/db_table_list.png)
 ### 2、新增数据库
-![manage_db](pictures\manage_db.png)
+![manage_db](pictures/manage_db.png)
 
 点击数据管理，进入库表管理页面；点击右上角** 数据库**tab页签，点击 **新建库** 新建数据库，支持创建Hive数据库、Hbase namespace。
 
@@ -36,7 +36,7 @@
 ### 1、数据表列表
 点击右上角** 数据表**tab页签，查看当前用户可管理的数据表（hive、hbase）。
 
-![table_list](pictures\table_list.png)
+![table_list](pictures/table_list.png)
 
 **参数解释：**
 - 表名：创建的数据表的名称；
@@ -49,7 +49,7 @@
 
 点击表名，可以查看表的详情信息，如下图所示：
 
-![table_detail](pictures\table_detail.png)
+![table_detail](pictures/table_detail.png)
 
 在表详情页面，一共有四个操作页签：
 - 表信息：展示对应表的详情和该表的权限信息;
@@ -63,6 +63,6 @@
 ### 3、表字段增删改
 在表结构页签支持对表进行ALTER操作，如下图：
 
-![table_hive_column_edit](pictures\table_hive_column_edit.png)
+![table_hive_column_edit](pictures/table_hive_column_edit.png)
 
 hive表支持对非分区字段的增删改操作，对已有的分区字段不能修改，可以新增分区字段。

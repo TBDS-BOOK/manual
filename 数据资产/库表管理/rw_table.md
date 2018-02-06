@@ -1,13 +1,13 @@
 ### 1、可读写表
 
-![table_rw_list](pictures\table_rw_list.png)
+![table_rw_list](pictures/table_rw_list.png)
 
 若数据库库表的责任人包含当前登录用户，则这些库表显示在当前登录用户的**可管理库表**页签下；
 若同项目下的其他用户创建了库表，且责任人不包含当前登录用户，则创建的数据表会显示在**可读写表**页签下，同项目的用户默认拥有读写权限；
 
 
 ### 2、申请库表权限
-![table_rw_apply](pictures\table_rw_apply.png)
+![table_rw_apply](pictures/table_rw_apply.png)
 
 用户可以申请所有项目下数据表权限，并将申请的数据表，关联到某个项目下（用户属于该项目的项目成员）。
 
@@ -25,7 +25,7 @@
 
 ### 3、权限审批
 
-![table_approve_list](pictures\table_approve_list.png)
+![table_approve_list](pictures/table_approve_list.png)
 
 被申请数据表所属的项目，拥有项目管理员ProjectManager角色的所有用户有权限审批库表管理的申请单。项目管理员可以执行**通过**或**驳回**操作更新审批单状态。执行**通过**操作，TBDS集群会触发Ranger进行授权。
 
@@ -33,6 +33,6 @@
 ### 4、权限回收
 库表责任人可以通过点击表名，查看表的申请信息，如图所示：
 
-![table_approve_revoke](pictures\table_approve_revoke.png)
+![table_approve_revoke](pictures/table_approve_revoke.png)
 
 点击“权限回收” 可以对已经授权的库表进行权限回收；
