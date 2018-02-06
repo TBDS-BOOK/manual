@@ -17,7 +17,7 @@
 ![自定义topology](/workflow/workflow/images/custormTopology.png)
 
 1. Topology名称  
-提交到storm 集群topology名称
+提交到storm 集群topology名称.建议从参数中获取。
 
 2. 程序包   
 topology可执行jar,当前环境建议使用如下依赖
