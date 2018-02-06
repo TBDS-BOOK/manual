@@ -24,7 +24,7 @@
     * [kafka](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/kafka.md)
     * [hive](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hive.md)
 * [\[数据接入\]](shu-ju-gong-53825d.md)
-  * 数据接入
+  * [数据接入](/数据接入/数据接入/tdbank_intro.md)
   * [Hippo管理](/数据接入/Hippo管理/hippo_mamage.md)
   * 进度监控
   * [血缘分析](/数据接入/血缘分析/lineage_fenxi.md)
