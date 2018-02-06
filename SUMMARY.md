@@ -30,7 +30,7 @@
     * [TDBank采集接口详解](/数据接入/数据接入/tdbank_conf.md)
     * [OGG Flume Adapter 部署文档](/数据接入/数据接入/ogg_flume_adapter.md)
   * [Hippo管理](/数据接入/Hippo管理/hippo_mamage.md)
-  * 进度监控
+  * []进度监控](/数据接入/进度监控/progress_monitor.md)
   * [血缘分析](/数据接入/血缘分析/lineage_fenxi.md)
 * \[实时计算\]
   * [任务管理](/实时计算/任务管理/task_manage.md)
