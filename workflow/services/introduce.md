@@ -11,4 +11,3 @@
 #### 3、类型
 目前服务器类型支持有8种，分别是：mysql, postgres, oracle, sqlserver, hive, ftp, hdfs, mr-group。
 ![](./pictures/type.png)
-dfgd
