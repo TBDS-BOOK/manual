@@ -69,21 +69,6 @@
   * [Tstorm介绍](/tstorm/readme.md)
   * [开发实例](/tstorm/demo/readme.md)
     * [wordcount](/tstorm/demo/wordcountTstormDemo.md)
-<<<<<<< HEAD
-* \[机器学习\]
-* \[数据治理\]
-  * \[数据质量\]
-  * [数据权限](数据治理/数据权限/数据权限.md)
-  * \[数据资产\]
-    * [数据血缘](数据资产/数据血缘/lineage.md)
-  * \[数据备份\]
-* \[平台运维\]
-  * [\[监控\]](平台运维/诊断/jian-63a75d.md)
-  * [\[告警\]](平台运维/诊断/gao-8b665d.md)
-  * [\[诊断\]](平台运维/诊断/诊断.md)
-  * [链接归集](平台运维/链接归集/links.md)
-  * [备份](平台运维/备份/backup.md)
-=======
 * \[数据展现\]
   * [自助报表](/数据展现/idea.md)
 * \[数据资产\]
@@ -124,4 +109,3 @@
     * [3种方式驱动实例](/机器学习/multiple_drive.md)
     * [实例查询](/机器学习/instanceview.md)
     * [历史实例](/机器学习/history_instance.md)
->>>>>>> a2d89190b0a4ef481600c85b21e52772d04c8f84

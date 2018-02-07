@@ -109,13 +109,13 @@ curl http://hermesserver:port/config -d ‘tableinfo={"hermesFields":[{"fieldnam
 
 # Hermes 支持的SQL操作
 |    Sql 操作    | 说明 | 备注
-| ---------- | --- |
+| ---------- | --- | --- |
 |count统计操作|对表进行count统计|注意下count(*)与count(age)的区别，前者不管列的值是否是null，计数都会加1，而且因为不需要读取字段的值，性能很高，后者需要判断改字段的值是否为null，如果是null则不会进行累加计数，所以大部分场景都推荐使用count(*)|
 |select count(*),count(ddwuid) from sngsearch03 where hermespartion=20140921 limit 0,100|--|--|
-|avg 取平均值|对表字段进行取平均值操作||
-|sum求和|字段求和||
-|min取最小值|字段取最小值|
-|max取最大值|字段取最大值||
+|avg 取平均值|对表字段进行取平均值操作|--|
+|sum求和|字段求和|--|
+|min取最小值|字段取最小值|--|
+|max取最大值|字段取最大值|--|
 |select sum(acnt),average(acnt),max(acnt),min(acnt) from sngsearch03 where hermespartion= 20140921 and hermestopic='qqface' limit 0,100|--|--|
 |group by分类操作|分类汇总，支持对多列进行group by|--|
 |order by排序操作|对查询的结果进行排序|排序的列目前只能是单列|
