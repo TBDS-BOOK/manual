@@ -138,6 +138,7 @@ curl http://hermesserver:port/config -d ‘tableinfo={"hermesFields":[{"fieldnam
 |删除参数|cmd=delete  //如果需要终止或者删除某个导出任务可加上该参数|
 </br>
 返回值：
+</br>
 ```
 ｛
     "projectName": "t_webitil_490",
