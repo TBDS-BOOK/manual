@@ -136,9 +136,8 @@ curl http://hermesserver:port/config -d ‘tableinfo={"hermesFields":[{"fieldnam
 |查询接口|http:// hermesserver:port /exportstatus|
 |参数|projectname=t_webitil_490   //导出任务时所指定的projectname</br>user.data.package.userpackageIds=kaynewu213  //导出任务id|
 |删除参数|cmd=delete  //如果需要终止或者删除某个导出任务可加上该参数|
-</br>
+
 返回值：
-</br>
 ```
 ｛
     "projectName": "t_webitil_490",
@@ -155,6 +154,7 @@ curl http://hermesserver:port/config -d ‘tableinfo={"hermesFields":[{"fieldnam
     "share": false
 }
 ```
+
 userPackageProgressStatus：
 ```
 INIT,//初始化
@@ -163,6 +163,7 @@ SUCCESS, // 成功
 ERROR, // 错误
 FAIL;// 失败
 ```
+
 示例：
 ```
 http://10.240.130.35:8080/exportstatus?projectname=t_webitil_490&user.data.package.userpackageIds=kaynewu213
