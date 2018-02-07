@@ -1,7 +1,9 @@
 hdfs导出DB
 
 ### 功能说明
-hdfs数据导出到DB ,支持mysql,postgre
+hdfs数据导出到DB ,支持mysql,postgre,sql server,oracle  
+<br>
+hdfs导入mysql [参考](/workflow/workflow/runners/hdfs2mysql.md)
 
 ### 其他说明
 

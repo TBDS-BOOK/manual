@@ -14,10 +14,27 @@ hdfs导入hbase
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 
 #### 3. 参数
+任务配置如下图所示：
+![hdfs2hbase](/workflow/workflow/images/hdfs2hbase1.png)
+
 HDFS导出hbase 参数设置只需要 hbase 配置信息。  
 HDFS 连接信息使用的集群默认HDFS地址。  
 
-###### 3.1 hbase 配置
+###### 3.1 HDFS配置
+1. HDFS目录  
+待写入hbase的hdfs 文件所在目录（或文件）。**不支持目录不存在**   
+该参数直接作为job inputpath 参数（替换here）  
+FileInputFormat.addInputPath(job, here);
+
+2. 文本文件字段个数  
+hdfs存放的数据文件，每行记录被分隔符切分的个数。 
+表示对应切分的数据字段个数  
+实际使用位置为map 类map 方法，对应value 进行切分后的个数判断。  
+
+3. 文本文件字段分隔符  
+指定hdfs存放的数据文件，每行记录被切分为字段值的分隔符。  
+
+###### 3.2 hbase 配置  
 1. hbase表名  
 格式为dbName:tableName ,如：hbase_autotest:auto_kafka_hbase  
 
@@ -52,24 +69,12 @@ hbase 所在zk 集群
 7. hbase在zk上的根路径  
 为hbase 在zk 上的根目录, 默认为：/hbase-unsecure
 
-###### 3.2 HDFS配置
-1. HDFS路径  
-待写入hbase 的数据所在目录  
-该参数直接作为job inputpath 参数（替换here）  
-FileInputFormat.addInputPath(job, here);
-
-2. HDFS存放数据记录字段个数   
-表示对应别切分的数据字段个数  
-实际使用位置为map 类map 方法，对应value 进行切分后的个数判断。  
-
-3. HDFS存放数据字段之间分隔符  
-切分HDFS 存放的记录。   
-
 ###### 3.3 其他配置项  
 1. 成功记录数占比  
 写入成功的记录数超过该设置的值，任务成功，否则失败。  
 
-### demo   
+### demo  
+更多参考上图。   
 HBase表名：hbase_autotest:auto_kafka_hbase  
 列列表 ：s1:id,s2:name,s2:age  
 行key规则：RANDOM(5)  
