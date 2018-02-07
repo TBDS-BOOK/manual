@@ -18,6 +18,7 @@
   * [spark](组件使用/spark/spark.md)
   * [ftp](组件使用/ftpOverHdfs/ftp.md)
   * [portalApi](组件使用/portalApi/portalApi.md)
+  * [hermes](组件使用/hermes/hermesapi.md)
   * [\[代码访问组件demos\]](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos.md)
     * [hbase](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hbase.md)
     * [hdfs](组件使用/kafka/dai-ma-fang-wen-zu-jian-demos/hdfs.md)
@@ -80,6 +81,3 @@
   * [\[诊断\]](平台运维/诊断/诊断.md)
   * [链接归集](平台运维/链接归集/links.md)
   * [备份](平台运维/备份/backup.md)
-
-
-
