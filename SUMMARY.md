@@ -35,7 +35,7 @@
   * [任务管理](/实时计算/任务管理/task_manage.md)
   * [库表模板管理](/实时计算/库表模板管理/table_model_mamage.md)
 * \[数据分析\]
-  * [数据交互](shu-ju-fen-67905d.md)
+  * [数据交互](/数据应用/数据分析/shu-ju-fen-67905d.md)
 * [任务调度](/workflow/readme.md)
   * [工作流](/workflow/workflow/readme.md)
     * [基本概念](/workflow/workflow/basicConcept.md)
