@@ -35,12 +35,8 @@
 * \[实时计算\]
   * [任务管理](/实时计算/任务管理/task_manage.md)
   * [库表模板管理](/实时计算/库表模板管理/table_model_mamage.md)
-* \[数据应用\]
-  * \[数据检索\]
-  * [\[数据分析\]](shu-ju-fen-67905d.md)
-  * [\[数据呈现\]](shu-ju-cheng-73b05d.md)
-  * [\[数据导出\]](shu-ju-dao-51fa5d.md)
-  * \[数据服务\]
+* \[数据分析\]
+  * [数据交互](shu-ju-fen-67905d.md)
 * [任务调度](/workflow/readme.md)
   * [工作流](/workflow/workflow/readme.md)
     * [基本概念](/workflow/workflow/basicConcept.md)
@@ -75,6 +71,21 @@
     * [wordcount](/tstorm/demo/wordcountTstormDemo.md)
 * \[数据展现\]
   * [自助报表](/数据展现/idea.md)
+* \[数据资产\]
+  * [数据管理](数据资产/库表管理/readme.md)
+    * [可管理库表](数据资产/库表管理/manage_table.md)
+    * [可读写库表](数据资产/库表管理/rw_table.md)
+    * [无归属库表](数据资产/库表管理/nobelong_table.md)
+    * [维表管理](数据资产/库表管理/meta_table.md)
+  * [数据血缘](数据资产/数据血缘/lineage.md)
+  * [数据提取]
+* \[运维中心\]
+  * [\[监控\]](平台运维/诊断/jian-63a75d.md)
+  * [\[告警\]](平台运维/诊断/gao-8b665d.md)
+  * [\[诊断\]](平台运维/诊断/诊断.md)
+  * [数据权限](数据治理/数据权限/数据权限.md)
+  * [链接归集](平台运维/链接归集/links.md)
+  * [备份](平台运维/备份/backup.md)
 * \[机器学习\]
   * [系统简介](/机器学习/README.md)
   * [工作流](/机器学习/gong-zuo-liu.md)
@@ -88,24 +99,7 @@
     * [Spark组件](/机器学习/spark.md)
     * [Sparkstreaming组件](/机器学习/spark-streaming.md)
     * [pySpark组件](/机器学习/pyspark.md)
-* [多实例并发](/机器学习/duo-shi-li-bing-fa.md)
-  * [3种方式驱动实例](/机器学习/multiple_drive.md)
-  * [实例查询](/机器学习/instanceview.md)
-  * [历史实例](/机器学习/history_instance.md)
-* \[数据治理\]
-  * \[数据质量\]
-  * [数据权限](数据治理/数据权限/数据权限.md)
-  * \[数据资产\]
-    * [数据管理](数据资产/库表管理/readme.md)
-      * [可管理库表](数据资产/库表管理/manage_table.md)
-      * [可读写库表](数据资产/库表管理/rw_table.md)
-      * [无归属库表](数据资产/库表管理/nobelong_table.md)
-      * [维表管理](数据资产/库表管理/meta_table.md)
-    * [数据血缘](数据资产/数据血缘/lineage.md)
-  * \[数据备份\]
-* \[平台运维\]
-  * [\[监控\]](平台运维/诊断/jian-63a75d.md)
-  * [\[告警\]](平台运维/诊断/gao-8b665d.md)
-  * [\[诊断\]](平台运维/诊断/诊断.md)
-  * [链接归集](平台运维/链接归集/links.md)
-  * [备份](平台运维/备份/backup.md)
+  * [多实例并发](/机器学习/duo-shi-li-bing-fa.md)
+    * [3种方式驱动实例](/机器学习/multiple_drive.md)
+    * [实例查询](/机器学习/instanceview.md)
+    * [历史实例](/机器学习/history_instance.md)
