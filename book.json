@@ -11,6 +11,7 @@
         "anchors",
         "katex",
         "etoc",
+        "tree",
         "exercises",
         "video",
         "unicodecss",
@@ -47,4 +48,5 @@
         "tags": {
             "placement": "top"
         }
+    }
 }
