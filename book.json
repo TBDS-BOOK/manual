@@ -80,16 +80,9 @@
 
             "facebook": true,
 
-            "twitter": true,
-
             "google": true,
 
-            "weibo": true,
-
-            "instapaper": true,
-
-            "vk": true
-
+            "weibo": true
         },
 
         "anchorjs": {
