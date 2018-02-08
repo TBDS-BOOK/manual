@@ -56,6 +56,7 @@
       * [hdfs导出mysql](/workflow/workflow/runners/hdfs2mysql.md)
       * [tstorm任务](/workflow/workflow/runners/customerTstorm.md)
       * [spark任务](/workflow/workflow/runners/spark.md)
+      * [mapreduce任务](/workflow/workflow/runners/mapreduce.md)
     * [补充](/workflow/workflow/other.md)
       * [手动安装runner服务](/workflow/workflow/more/addrunner.md)
       * [自定义任务开发文档](/workflow/workflow/more/user-defined-dev.md)
