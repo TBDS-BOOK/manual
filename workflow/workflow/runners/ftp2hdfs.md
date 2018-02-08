@@ -18,7 +18,7 @@ FTP导入HDFS
 ![ftp2hdfs](/workflow/workflow/images/ftp.png)
 __ps:__ 红框部分为需要关注参数  
 1. 源服务器  
-源目标服务器是ftp 服务器连接信息。[更多参数](/workflow/services/readme.md)  
+源服务器是ftp 服务器连接信息。[更多参数](/workflow/services/readme.md)  
 
 2. 目标服务器  
 目标服务器是hdfs 服务器连接信息。[更多参数](/workflow/services/readme.md)  
