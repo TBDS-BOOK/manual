@@ -1,0 +1,115 @@
+{
+
+    "plugins": [
+
+        "disqus",
+
+        "github",
+
+        "editlink",
+
+        "prism",
+
+        "splitter",
+
+        "sitemap",
+
+        "anchors",
+
+        "anchorjs",
+
+        "youtube",
+
+        "etoc",
+
+        "katex",
+
+        "exercises",
+
+        "video",
+
+        "unicodecss",
+
+        "tree",
+
+        "toolbar",
+
+        "todo",
+
+        "toggle-chapters",
+
+        "tbfed-pagefooter",
+
+        "tabs",
+
+        "tasklist",
+
+        "pyweb",
+
+        "markdown-parse-add-br",
+
+        "katex-full",
+
+        "code-highlighter",
+
+        "chart"
+
+    ],
+
+    "pluginsConfig": {
+
+        "disqus": {
+
+            "shortName": "ielts-1"
+
+        },
+
+        "highlight": {
+
+            "highlightCommented": true
+
+        },
+
+        "tags": {
+
+            "placement": "top"
+
+        },
+
+        "sharing": {
+
+            "facebook": true,
+
+            "twitter": true,
+
+            "google": true,
+
+            "weibo": true,
+
+            "instapaper": true,
+
+            "vk": true
+
+        },
+
+        "anchorjs": {
+
+            "icon": "#",
+
+            "placement": "left",
+
+            "visible": "always",
+
+            "class": "custom-class another-one"
+
+        }
+
+    },
+
+    "title": "TBDS 手册",
+
+    "language": "zh",
+
+    "gitbook": "2.x.x"
+
+}
