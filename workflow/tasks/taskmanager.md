@@ -8,9 +8,10 @@
 可以根据任务名称，任务ID,工作流名称查询对应的任务（支持模糊查询）。
 
 ### 显示说明
-参考 [说明](/workflow/tasks/property.md)
+参考 [说明](/workflow/tasks/property.md)　
 
-### 操作说明
+##### 在返回的记录中可以做如下操作：
+
 1. 任务id  
 点击任务对应的任务id，将会跳转到任务实例管理页面
 ![workflow-task](/workflow/workflow/images/workflowmanager1.png)
@@ -30,3 +31,10 @@
 ![workflowlist3-1](/workflow/workflow/images/workflowlist3-1.png)
 将会跳转到任务编辑页面
 ![workflowlist3-2](/workflow/workflow/images/workflowlist3-2.png)
+
+### 操作说明
+1. 停止  
+选中对应任务，点击停止，可以停止对应任务。（只有任务对应的所有实例都是终止或成功状态，才能操作成功。）
+
+2. 运行  
+选中停止（审批通过）任务，点击运行，将停止的任务运行起来。
