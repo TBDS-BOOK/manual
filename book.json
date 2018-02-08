@@ -1,57 +1,29 @@
 {
-
+    "title": "TBDS 手册",
+    "language": "zh-hans",
+    "gitbook": ">=3.0.0",
     "plugins": [
-
-        "disqus",
-
         "github",
-
         "editlink",
-
-        "prism",
-
         "splitter",
-
+        "-sharing",
         "sitemap",
-
         "anchors",
-
-        "anchorjs",
-
-        "youtube",
-
         "katex",
-
+        "etoc",
         "exercises",
-
         "video",
-
         "unicodecss",
-
         "toolbar",
-
-        "todo",
-
         "toggle-chapters",
-
         "tbfed-pagefooter",
-
         "tabs",
-
-        "tasklist",
-
         "pyweb",
-
         "markdown-parse-add-br",
-
         "katex-full",
-
         "code-highlighter",
-
         "chart"
-
     ],
-
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/TBDS-BOOK/manual"
@@ -64,45 +36,16 @@
         "sitemap": {
             "hostname": "https://tbds-book.gitbooks.io/tbds"
         },
-        "disqus": {
-            "shortName": "ielts-1"
-        },
-
         "highlight": {
             "highlightCommented": true
         },
-
+        "tbfed-pagefooter": {
+            "copyright":"&copy Tencent TBDS Team",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
         "tags": {
             "placement": "top"
-        },
-
-        "sharing": {
-
-            "facebook": true,
-
-            "google": true,
-
-            "weibo": true
-        },
-
-        "anchorjs": {
-
-            "icon": "#",
-
-            "placement": "left",
-
-            "visible": "always",
-
-            "class": "custom-class another-one"
-
         }
-
-    },
-
-    "title": "TBDS 手册",
-
-    "language": "zh",
-
-    "gitbook": "2.x.x"
-
+    }
 }
