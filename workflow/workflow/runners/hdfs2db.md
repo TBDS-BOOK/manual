@@ -15,11 +15,14 @@ hdfs导入mysql [参考](/workflow/workflow/runners/hdfs2mysql.md)
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 
 #### 3. 参数
+参数配置参考下图：
+![hdfs2mysql](/workflow/workflow/images/hdfs2mysql1.png)
+
 ###### 3.1 源服务器
 待导入数据所在的hdfs server  
 更多信息参考 [服务器配置](/workflow/services/readme.md)
 ###### 3.2 目标服务器
-存储最终结果所在的HDFS server   
+存储最终结果的 db server   
 更多信息参考 [服务器配置](/workflow/services/readme.md)
 ###### 3.3 源目录
 存放待导入DB数据所在hdfs 存放目录
@@ -41,13 +44,11 @@ hdfs导入mysql [参考](/workflow/workflow/runners/hdfs2mysql.md)
 ###### 3.10 分区字段
 指定数据导出的目标表的分区字段，只支持时间格式的分区，如按小时，天，月等。
 ###### 3.11 读并发度
-指定读取db 数据时使用的读并发线程数。
+指定读取HDFS 数据时使用的读并发线程数。
 ###### 3.12 写并发度
-指定写入hdfs 时使用的写并发线程数。
-
-
+指定写入DB 时使用的写并发线程数。
 
 ### demo
-
+如上图所示
 
 ### demo资源
