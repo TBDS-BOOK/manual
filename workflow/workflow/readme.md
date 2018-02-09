@@ -6,13 +6,10 @@
 &emsp;&emsp;用户利用该文档能够熟知腾讯大数据套件（以下简称tbds）工作流提供的所有任务类型的配置，熟知工作流出现的相关描述和概念。  
 
 ### 目录
-* [shell 脚本](/workflow/workflow/runners/shell.md)
-* [ftp导入hdfs](/workflow/workflow/runners/ftp2hdfs.md)
-* [kafka导入hbase](/workflow/workflow/runners/kafka2hbase.md)
-* [kafka导入hdfs](/workflow/workflow/runners/kafka2hdfs.md)
-* [hdfs导出mysql](/workflow/workflow/runners/hdfs2mysql.md)
-* [hdfs导出hbase](/workflow/workflow/runners/hdfs2hbase.md)
-* [hive sql 脚本](/workflow/workflow/runners/hivesql.md)
-* [hive导入hdfs](/workflow/workflow/runners/hive2hdfs.md)
-* [hdfs导出DB\(mysql,postgreSQL,sql server\)](/workflow/workflow/runners/hdfs2db.md)
-* [tstorm任务](/workflow/workflow/runners/customerTstorm.md)
+* [基本概念](/workflow/workflow/basicConcept.md)
+* [操作指引](/workflow/workflow/guide.md)
+* [任务基本信息](/workflow/workflow/runnerBasicInfo.md)
+* [任务调度设置](/workflow/workflow/runnerCycle.md)
+* [任务参数配置](/workflow/workflow/runners.md)
+* [补充](/workflow/workflow/other.md)
+* [常见问题定位和解决方式](/workflow/workflow/qa.md)
