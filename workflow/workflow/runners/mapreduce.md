@@ -40,7 +40,7 @@ mr 可执行脚本,可以包括多个文件，最终压缩为zip
 前置check 命令如果存在多个，每个前置命令执行时间不超过5min,总执行时间不超过该设置值（min）
  
 8. 后置done命令  
-任务执行后的done命令,在hdfs中touchz一个文件或执行清理脚本。对在hdfs中touch 一个文件，采用“done hdfsdir”; 对于清理脚本，采用“ ***.sh  argv”
+任务执行后的done命令,在hdfs中touchz一个文件或执行清理脚本。对在hdfs中touchz 一个文件，采用“done hdfsdir”; 对于清理脚本，采用“ ***.sh  argv”
 
 
 ### demo
