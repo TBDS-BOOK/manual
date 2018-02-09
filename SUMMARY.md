@@ -58,6 +58,7 @@
       * [spark任务](/workflow/workflow/runners/spark.md)
       * [mapreduce任务](/workflow/workflow/runners/mapreduce.md)
       * [db导入hdfs](/workflow/workflow/runners/db2hdfs.md)
+      * [hdfs导出hive](/workflow/workflow/runners/hdfs2hive.md)
     * [补充](/workflow/workflow/other.md)
       * [手动安装runner服务](/workflow/workflow/more/addrunner.md)
       * [自定义任务开发文档](/workflow/workflow/more/user-defined-dev.md)

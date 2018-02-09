@@ -13,6 +13,8 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 
 #### 3. 参数
+![mysql2hive](/workflow/workflow/images/mysql2hive.png)
+
 
 ### demo
 
