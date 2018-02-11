@@ -15,6 +15,6 @@
 * [db导入hdfs](/workflow/workflow/runners/db2hdfs.md)
 * [hdfs导出hive](/workflow/workflow/runners/hdfs2hive.md)
 * [hdfs导出hive-tdsort](/workflow/workflow/runners/hdfs2hive-tdsort.md)
-* * [hive导出mysql](/workflow/workflow/runners/hive2mysql.md)
+* [hive导出mysql](/workflow/workflow/runners/hive2mysql.md)
 * * [mysql导入hive](/workflow/workflow/runners/mysql2hive.md)
 * * [sqlserver导入hive](/workflow/workflow/runners/sqlserver2hive.md)
