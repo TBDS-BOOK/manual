@@ -71,7 +71,7 @@
   * [任务管理](/workflow/tasks/readme.md)
       * [工作流列表](/workflow/tasks/workflowlist.md)
       * [任务管理](/workflow/tasks/taskmanager.md)
-      * [任务运行管理](/workflow/tasks/instancemanager.md) 
+      * [任务运行管理](/workflow/tasks/instancemanager.md)
       * [其他](/workflow/tasks/property.md)
   * [服务器配置](/workflow/services/readme.md)
     * [基本概念](workflow/services/introduce.md)
@@ -90,8 +90,10 @@
     * [维表管理](数据资产/库表管理/meta_table.md)
   * [数据血缘](数据资产/数据血缘/lineage.md)
   * [数据提取](数据资产/数据提取/readme.md)
+    * [数据地图](数据资产/数据提取/数据地图.md)
+    * [任务列表](数据资产/数据提取/任务列表.md)
+    * [架构关联](数据资产/数据提取/架构关联.md)
 * \[运维中心\]
-  * [全局概况]
   * [系统运维]
     * [组件部署](平台运维/组件部署/文档.md)
     * [链接归集](平台运维/链接归集/links.md)
