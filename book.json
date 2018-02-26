@@ -65,23 +65,19 @@
             "label": "Edit This Page",
             "multilingual": false
         },
-
+        "sitemap": {
+            "hostname": "https://tbds-book.gitbooks.io/tbds"
+        },
         "disqus": {
-
             "shortName": "ielts-1"
-
         },
 
         "highlight": {
-
             "highlightCommented": true
-
         },
 
         "tags": {
-
             "placement": "top"
-
         },
 
         "sharing": {
