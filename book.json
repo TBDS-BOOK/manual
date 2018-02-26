@@ -60,6 +60,11 @@
         "github": {
             "url": "https://github.com/TBDS-BOOK/manual"
         },
+        "editlink": {
+            "base": "https://github.com/TBDS-BOOK/manual/edit/master",
+            "label": "Edit This Page",
+            "multilingual": false
+        },
 
         "disqus": {
 
