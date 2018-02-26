@@ -57,6 +57,9 @@
     ],
 
     "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/TBDS-BOOK/manual"
+        },
 
         "disqus": {
 
