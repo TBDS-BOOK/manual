@@ -1,4 +1,4 @@
-<font color=green>**备注：10.0.0.3为TBDS的Portal地址**</font>
+<font color=red>**备注：10.0.0.3为TBDS的Portal地址**</font>
 
 # 1.集群相关 #
 
