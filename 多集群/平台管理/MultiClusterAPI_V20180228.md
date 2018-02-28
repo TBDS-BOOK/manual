@@ -1,4 +1,4 @@
-<font color=red>**备注** *http://10.0.0.3/为TBDS的Portal地址*</font>
+<font color=red>**备注：10.0.0.3为TBDS的Portal地址**</font>
 
 # 1.集群相关 #
 
@@ -72,8 +72,8 @@ curl -H "Content-Type:application/json" -X POST --data '{
     }]
 }
 </pre>
-# 2.项目相关 #
 
+# 2.项目相关 #
 ## 2.1创建项目 ##
 
 **参数说明**
@@ -109,6 +109,7 @@ curl -H "Content-Type:application/json" -X POST --data '{
 **参数说明**
 
 - id:项目的ID
+
 <pre>
 curl -X GET --header 'Authorization:XXXX' http://10.0.0.3/api/project/findProjectById?id=4
 </pre>
@@ -647,4 +648,38 @@ curl -H "Content-Type:application/json" -X POST --data '{
 # 6.多集群相关 #
 ## 6.1获取公共服务配置信息 ##
 **参数说明**
+<pre>
+curl -X GET  --header "Authorization:XXXX" http://10.0.0.3/api/multiserver/query
+</pre>
 **返回结果**
+<pre>
+{
+	"resultCode": "0",
+	"message": null,
+	"resultData": [{
+		"id": 28,
+		"serverName": "ORACLE_ALL",
+		"serverType": "ORACLE",
+		"multiHired": "0",
+		"creator": "wliang",
+		"status": "1",
+		"properties": "{\"host\":\"10.0.0.0\",\"parallelism\":\"10\",\"password\":\"******\",\"port\":\"****\",\"service\":\"****\",\"user_name\":\"*****\"}",
+		"description": "",
+		"clusterId": null,
+		"projectId": null,
+		"createTime": "2018-01-03 15:07:50",
+		"updateTime": "2018-01-03 16:29:32",
+		"jsonProperties": {
+			"password": "******",
+			"port": "****",
+			"service": "****",
+			"user_name": "****",
+			"parallelism": "10",
+			"host": "10.0.0.0"
+		},
+		"enableChangeMultiHired": false,
+		"projectName": null
+	}],
+	"markInfo": "xxx"
+}
+</pre>
