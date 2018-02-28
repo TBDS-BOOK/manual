@@ -79,4 +79,13 @@
   * [链接归集](平台运维/链接归集/links.md)
   * [备份](平台运维/备份/backup.md)
 * [多集群](多集群/readme.md)
-
+  * [平台管理]
+    * [集群管理](平台管理/cluster.md)
+    * [项目管理](平台管理/project.md)
+    * [常用API](平台管理/MultiClusterAPI_V20180228.md)
+  * [数据管理]
+    * [可管理库表](数据管理/managertable.md)
+    * [可读写库表](数据管理/rwtable.md)
+    * [无归属库表](数据管理/nobelongtable.md)
+  * [数据接入]
+    * [KAFKA接入](数据接入/kafka.md)
