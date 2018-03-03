@@ -2,8 +2,8 @@
 
 整个套件平台安装完成后就要完成整个平台一些基础信息的录入，包括系统用户及其对应的角色。通过新建项目隔离系统中的资源。
 
-[1.用户管理](平台管理/用户管理/usermanage.md)
+[1.用户管理](usermanage.md)
 
-[2.项目、资源管理](平台管理/用户管理/projectmanage.md)
+[2.项目、资源管理](projectmanage.md)
 
-[3.系统设置](平台管理/用户管理/systemconfig.md)
+[3.系统设置](systemconfig.md)
