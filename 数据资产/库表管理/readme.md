@@ -10,3 +10,4 @@
 2. [可读写库表](./rw_table.md)
 3. [无归属库表](./nobelong_table.md)
 4. [维表管理](./meta_table.md)
+5. [新建表](./addtable.md)
