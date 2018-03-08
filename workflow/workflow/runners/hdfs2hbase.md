@@ -54,7 +54,7 @@ a. RANDOM(5)表示生成生成一个随机长度为5字符串作为hbase的row k
 则表示 hello 将被写入 列簇为f1 列名为c1的位置
 
 5. 时间戳所在列索引  
-不填或者或者为-1 ,使用HConstants.LATEST_TIMESTAMP  
+为-1时，使用HConstants.LATEST_TIMESTAMP  
 其他情况下，将使用 列规则对应位置的数值为下标的被切分的数组的数值。该数值必须能够被转为long 类型，否则该记录写入hbase失败。  
 例如：   
 如hdfs 其中一行的为: hello,word,i,come,from,20171216120000   
