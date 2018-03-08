@@ -1,108 +1,51 @@
 {
-
-    "plugins": [
-
-        "disqus",
-
-        "github",
-
-        "editlink",
-
-        "prism",
-
-        "splitter",
-
-        "sitemap",
-
-        "anchors",
-
-        "anchorjs",
-
-        "youtube",
-
-        "etoc",
-
-        "katex",
-
-        "exercises",
-
-        "video",
-
-        "unicodecss",
-
-        "tree",
-
-        "toolbar",
-
-        "todo",
-
-        "toggle-chapters",
-
-        "tbfed-pagefooter",
-
-        "tabs",
-
-        "tasklist",
-
-        "pyweb",
-
-        "markdown-parse-add-br",
-
-        "katex-full",
-
-        "code-highlighter",
-
-        "chart"
-
-    ],
-
-    "pluginsConfig": {
-
-        "disqus": {
-
-            "shortName": "ielts-1"
-
-        },
-
-        "highlight": {
-
-            "highlightCommented": true
-
-        },
-
-        "tags": {
-
-            "placement": "top"
-
-        },
-
-        "sharing": {
-
-            "facebook": true,
-
-            "google": true,
-
-            "weibo": true
-        },
-
-        "anchorjs": {
-
-            "icon": "#",
-
-            "placement": "left",
-
-            "visible": "always",
-
-            "class": "custom-class another-one"
-
-        }
-
-    },
-
     "title": "TBDS 手册",
-
-    "language": "zh",
-
-    "gitbook": "2.x.x"
-
+    "language": "zh-hans",
+    "gitbook": ">=3.0.0",
+    "plugins": [
+        "github",
+        "editlink",
+        "splitter",
+        "-sharing",
+        "sitemap",
+        "anchors",
+        "katex",
+        "back-to-top-button",
+        "exercises",
+        "video",
+        "toolbar",
+        "toggle-chapters",
+        "tbfed-pagefooter",
+        "-tabs",
+        "-pyweb",
+        "-etoc",
+        "markdown-parse-add-br",
+        "katex-full",
+        "code-highlighter",
+        "chart"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/TBDS-BOOK/manual"
+        },
+        "editlink": {
+            "base": "https://github.com/TBDS-BOOK/manual/edit/master",
+            "label": "Edit This Page",
+            "multilingual": false
+        },
+        "sitemap": {
+            "hostname": "https://tbds-book.gitbooks.io/tbds"
+        },
+        "highlight": {
+            "highlightCommented": true
+        },
+        "tbfed-pagefooter": {
+            "copyright":"&copy Tencent TBDS Team",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "tags": {
+            "placement": "top"
+        }
+    }
 }

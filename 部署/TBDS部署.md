@@ -1,31 +1,27 @@
 ## 前置条件
 软件清单
-* tbds-mirror-$**version**.tar.gz   (其中$version为TBDS版本号) <font color="red">\*</font>
+* tbds-mirror-$**version**.tar   (其中$version为TBDS版本号) <font color="red">\*</font>
 * tbds-mirror-patches-$**version**.tar.gz
-* tbds-bootstrap.sh <font color="red">\*</font>
-* tbds-install-portal.sh <font color="red">\*</font>
-* tbds-cli.sh
+* tbds-tools.tar.gz <font color="red">\*</font>
 
 License
 * 请联系腾讯大数据商务或供应商
 
 系统
 * 部署TBDS需要root用户
-* 请提前格式化并挂载好数据盘
+* 请提前格式化并挂载好数据盘,多块数据盘须按照/data1, /data2 ... 顺序挂载
 
 
 ## 部署Portal节点
 
 > 确保上述软件清单软件已经在 **/data **目录
 
-修改 **tbds-bootstrap.sh**
+修改 **/data/.tbds.ini**
 
     ROOTPWD="123456"    # 主机root密码，用于portal部署和机器初始化
-    DATAETH=eth0        # 用于内网数据传输的网卡，多网卡机型必须填写
+    DATAETH=eth0        # 用于内网数据传输的网卡，多网卡机型注意填写正确，必须填写
+    PUBLICIP=公网IP     # portal对外提供访问的ip，如纯内网访问则填内网ip，必须填写
 
-修改 **tbds-install-portal.sh**
-
-    DATAETH=eth0        # 用于内网数据传输的网卡，多网卡机型必须填写
 
 创建 **cluster.info** 集群描述文件
 
@@ -42,11 +38,15 @@ License
     ...
     # tar xzf tbds-mirror-patches-$**version**.tar.gz -C /data
     ...
-    # sh tbds-bootstrap.sh init
+    # tar xzf tbds-tools.tar.gz -C /data
     ...
-    # sh tbds-install-portal.sh
+    # /data/tools/tbds-bootstrap.sh init
     ...
-    # sh tbds-bootstrap.sh postinit
+    # /data/tools/tbds-bootstrap.sh check
+    ...
+    # /data/tools/tbds-install-portal.sh
+    ...
+    # /data/tools/tbds-bootstrap.sh postinit
 
 部署成功后会显示portal的访问地址，接下来通过portal进行TBDS集群部署
 
