@@ -14,6 +14,9 @@ kafka接入HDFS
 #### 2. 调度  
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 #### 3. 参数
+参数配置如下图所示：
+![kafka2hdfs](/workflow/workflow/images/kafka2hdfs.png)
+
 kafka 接入hbase 参数设置分成三个部分：kafka 连接信息，hdfs 连接信息，topology 配置信息。
 ###### 3.1 kafka 配置信息  
 1. 消息中间件主题  
@@ -28,6 +31,19 @@ ip地址为Kafka Broker 服务所在节点ip
 port  kafka 开放给client 连接端口，可以参考kafka broker 服务配置。 
 
 ###### 3.2 hdfs配置
+1. 出库HDFS目录  
+数据落地目录
+
+2. HDFS地址  
+数据落地所属的HDFS环境（连接地址）
+
+3. 文件最大落地大小  
+单位为：Byte 。如果文件最大落地大小设置的值小于64k，会使用64k ，如果设置的值大于64k，将使用实际设置的值。  
+实际落地hdfs 的文件大小会稍微小于设置的文件最大落地大小。
+  
+4. 文件最小落地周期  
+单位为小时，必须整数。  
+ 如果时间周期到了，系统会将缓存的数据保存到hdfs ,这是时候落地的数据可能少于64k ，也可能稍微大于设置的文件最小落地大小。  
 
 ###### 3.3 toplogy配置
 1. Work进程数  
@@ -47,7 +63,10 @@ port  kafka 开放给client 连接端口，可以参考kafka broker 服务配置
 消息中间件主题： kafka_export_hbase    
 消息中间件消费组：kafka_export_hbase   
 kafka集群broker list：10.254.83.70:6668   
-
+出库HDFS目录：/project/tbds_autotest/autotest/kafka_export   
+HDFS地址 ：hdfsCluster  
+文件最大落地大小：1024000   
+文件最小落地周期 ：24  
 Work进程数: 1  
 Spout线程数: 1  
 Bolt线程数: 1
