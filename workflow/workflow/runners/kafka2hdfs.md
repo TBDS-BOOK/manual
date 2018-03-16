@@ -73,3 +73,17 @@ Bolt线程数: 1
 kafka消费线程数：1
 
 ### demo资源
+
+
+### 问题定位方式
+通过nimbus ，或者storm ui 获取topology日志
+1. 确认从kafka 获取内容成功  
+receive data ,the size 
+
+2. 确认获取对应的配置成功（不能为0）  
+spout receive message from kafka ,the data size   
+这里需要进一步确认(如果有改记录那就不会往下走)：DataInterfaceKafkaSout.java:1030): onlineconfig is null  
+
+3. 接近写成功会出现  
+desc=[name=
+ 
