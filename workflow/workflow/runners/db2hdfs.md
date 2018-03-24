@@ -26,7 +26,7 @@
 
 3. select SQL  
 查询SQL
-支持[时间隐式参数](/workflow/more/implicitVariable.md)
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
 
 4. 读并发度  
 指定读取db 数据时使用的读并发线程数。

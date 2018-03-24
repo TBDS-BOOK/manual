@@ -27,7 +27,7 @@
 
 ###### 3.4 源SQL
 hive sql 查询语句  
-支持[时间隐式参数](/workflow/more/implicitVariable.md)
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
 
 ###### 3.5 源SQL查询结果字段数量（可选）
 对于稍微复杂的查询，可能会出现无法识别查询结果的字段个数，需要特别指定查询结果字段个数。  

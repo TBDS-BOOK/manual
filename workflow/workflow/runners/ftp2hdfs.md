@@ -26,10 +26,10 @@ __ps:__ 红框部分为需要关注参数
 3. 源目录  
 指定将ftp 服务器哪些目录数据导入hdfs。  
 该参数不能直接到文件。请务必确保源目录用户有权限访问。  
-支持[时间隐式参数](/workflow/more/implicitVariable.md)
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
 
 4. 文件名正则表达式  
-支持java 正则表达规则， .* 为任意文件，支持[时间隐式参数](/workflow/more/implicitVariable.md)  
+支持java 正则表达规则， .* 为任意文件，支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)  
 
 5. 是否遍历子目录  
 选择是，表示任务会遍历源目录下的子目录，遍历的深度由最大遍历层数决定。  

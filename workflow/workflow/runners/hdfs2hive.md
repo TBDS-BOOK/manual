@@ -26,11 +26,11 @@ HDFS数据导出HIVE表
 
 3. 源目录  
 待导出数据所在HDFS 目录  
-支持[时间隐式参数](/workflow/more/implicitVariable.md)
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
 
 4. 源文件名  
 默认为 * ,暂时没有启用改功能。
-支持[时间隐式参数](/workflow/more/implicitVariable.md)
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
 
 5. 源文件字符集  
 指定hdfs server 存放数据的编码格式。   
