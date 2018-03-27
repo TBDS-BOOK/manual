@@ -1,10 +1,8 @@
 ## 前置条件
 软件清单
-* tbds-mirror-$**version**.tar.gz   (其中$version为TBDS版本号) <font color="red">\*</font>
+* tbds-mirror-$**version**.tar   (其中$version为TBDS版本号) <font color="red">\*</font>
 * tbds-mirror-patches-$**version**.tar.gz
-* tbds-bootstrap.sh <font color="red">\*</font>
-* tbds-install-portal.sh <font color="red">\*</font>
-* tbds-cli.sh
+* tbds-tools.tar.gz <font color="red">\*</font>
 
 License
 * 请联系腾讯大数据商务或供应商
@@ -39,6 +37,8 @@ License
     # tar xzf tbds-mirror-$**version**.tar.gz -C /data
     ...
     # tar xzf tbds-mirror-patches-$**version**.tar.gz -C /data
+    ...
+    # tar xzf tbds-tools.tar.gz -C /data
     ...
     # /data/tools/tbds-bootstrap.sh init
     ...
