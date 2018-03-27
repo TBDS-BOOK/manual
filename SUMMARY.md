@@ -151,7 +151,7 @@
       * [关系](/机器学习/javis/tdw_ml_jarvis_visualization.md#1-关系)
       * [分布](/机器学习/javis/tdw_ml_jarvis_visualization.md#2-分布)
       * [对比](/机器学习/javis/tdw_ml_jarvis_visualization.md#3-对比)
-      * [组合](./javis/tdw_ml_jarvis_visualization.md#4-组合)
+      * [组合](/机器学习/javis/tdw_ml_jarvis_visualization.md#4-组合)
     * [深度学习算法简介](/机器学习/deeplearning/Introduction_deeplearning.md)
       * [计算机视觉](/机器学习/deeplearning/tdw-dl-cv.md)
       * [自然语言处理](/机器学习/deeplearning/tdw-dl-nlp.md)
