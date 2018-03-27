@@ -127,7 +127,7 @@
   * [模型的训练与使用](/机器学习/model.md)
   * [模型在线服务](/机器学习/modelservice.md)
 
-* [ 4. TDInsight算法/组件说明]
+* [TDInsight算法/组件说明]
 
   * [数据说明](/机器学习/javis/tdw_ml_jarvis_dataformat.md)
   * [特征工程](/机器学习/javis/te-zheng-gong-cheng.md)
