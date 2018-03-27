@@ -118,7 +118,7 @@
       * [Spark组件](/机器学习/spark.md)
       * [Sparkstreaming组件](/机器学习/spark-streaming.md)
       * [pySpark组件](/机器学习/pyspark.md)
-      * [xgboost组件]((/机器学习/xgboost.md)
+      * [xgboost组件](/机器学习/xgboost.md)
   * [多实例并发](/机器学习/duo-shi-li-bing-fa.md)
       * [3种方式驱动实例](/机器学习/multiple_drive.md)
       * [实例查询](/机器学习/instanceview.md)
