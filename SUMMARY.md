@@ -120,3 +120,38 @@
     * [3种方式驱动实例](/机器学习/multiple_drive.md)
     * [实例查询](/机器学习/instanceview.md)
     * [历史实例](/机器学习/history_instance.md)
+
+* [3. TDInsight模型与在线推理]
+
+  * [数据流](/机器学习/data_flow.md)
+  * [模型的训练与使用](/机器学习/model.md)
+  * [模型在线服务](/机器学习/modelservice.md)
+
+* [ 4. TDInsight算法/组件说明]
+
+  * [数据说明](/机器学习/javis/tdw_ml_jarvis_dataformat.md)
+  * [特征工程](/机器学习/javis/te-zheng-gong-cheng.md)
+    * [数据预处理](/机器学习/data_preprocessing.md)
+    * [特征提取](/机器学习/javis/tdw_ml_jarvis_feature_extraction.md)
+    * [特征转换](/机器学习/javis/tdw_ml_jarvis_feature_transformation.md)
+    * [特征选择](/机器学习/javis/tdw_ml_jarvis_feature_selection.md)
+    * [特征评估](/机器学习/javis/tdw_ml_jarvis_feature_evaluation.md)
+  * [机器学习](/机器学习/javis/ji-qi-xue-xi.md)
+    * [分类算法](/机器学习/javis/tdw_ml_jarvis_classifier.md)
+    * [聚类算法](/机器学习/javis/tdw_ml_jarvis_cluster.md)
+    * [回归算法](/机器学习/javis/tdw_ml_jarvis_regression.md)
+    * [推荐算法](/机器学习/javis/tdw_ml_jarvis_recommendation.md)
+    * [关联规则](/机器学习/javis/tdw_ml_jarvis_fpGrowth.md)
+  * [模型评估](/机器学习/javis/tdw_ml_jarvis_evaluator.md)
+    * [Binary Evaluator](/机器学习/javis/tdw_ml_jarvis_evaluator.md#1-binary-evaluator)
+    * [Multi Evaluator](/机器学习/javis/tdw_ml_jarvis_evaluator.md#2-multi-evaluator)
+    * [Regression Evaluator](/机器学习/javis/tdw_ml_jarvis_evaluator.md#3-regression-evaluator)
+  * [可视化](/机器学习/javis/tdw_ml_jarvis_visualization.md)
+    * [关系](/机器学习/javis/tdw_ml_jarvis_visualization.md#1-关系)
+    * [分布](/机器学习/javis/tdw_ml_jarvis_visualization.md#2-分布)
+    * [对比](/机器学习/javis/tdw_ml_jarvis_visualization.md#3-对比)
+    * [组合](./javis/tdw_ml_jarvis_visualization.md#4-组合)
+  * [深度学习算法简介](/机器学习/deeplearning/Introduction_deeplearning.md)
+    * [计算机视觉](/机器学习/deeplearning/tdw-dl-cv.md)
+    * [自然语言处理](/机器学习/deeplearning/tdw-dl-nlp.md)
+    * [表示学习](/机器学习/deeplearning/tdw-dl-representation_learning.md)
