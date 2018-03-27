@@ -121,13 +121,9 @@
     * [实例查询](/机器学习/instanceview.md)
     * [历史实例](/机器学习/history_instance.md)
 
-* [3. TDInsight模型与在线推理]
-
   * [数据流](/机器学习/data_flow.md)
   * [模型的训练与使用](/机器学习/model.md)
   * [模型在线服务](/机器学习/modelservice.md)
-
-* [TDInsight算法/组件说明]
 
   * [数据说明](/机器学习/javis/tdw_ml_jarvis_dataformat.md)
   * [特征工程](/机器学习/javis/te-zheng-gong-cheng.md)
