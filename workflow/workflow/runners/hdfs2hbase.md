@@ -48,6 +48,9 @@ a. RANDOM(n)表示生成生成一个随机长度n个数字作为hbase的row key.
 b. REVERSE(n) 表示使用hdfs记录中被切分后的第n个部分反转值作为主键.  
 c. n 表示使用hdfs记录中被切分后的第n个部分作为主键.   
 d. ```'__'``` 表示使用常量```__```作为row key.   
+e. PADLEFT(n;m;str) 表示使用hdfs记录中被切分后的第n个部分，作为row key 最右边的部分，余下的m-n个部分由str组成。比如PADLEFT(0;5;c) 表示row key 最右边的部分为hdfs记录被切分的第一部分内容，余下不足的部分由字符串c 填充。  
+f. PADRIGHT(n;m;a) 表示使用hdfs记录中被切分后的第n个部分，作为row key 最左边的部分，余下的m-n个部分由str填充。比如PADRIGHT(0;5;c) 表示row key 最左边的部分为hdfs记录被切分后的第一个内容，余下不足的部分由字符串c 填充。  
+——     
 **PS:** 当然你也可以使用以上几者的组合比如``` RANDOM(5),'__',0``` ，主键将是随机的五个数字加```__```加hdfs记录被切分后的第一个部分作为rowkey
 
 4. 列规则  
