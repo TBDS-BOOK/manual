@@ -43,7 +43,7 @@ hive sql 文件内容：
 ```
 use demoDB;
 show tables;
-select count(1) from tablename where update_date = ${YYYYMMDDHH}
+select count(1) from tablename where update_date=${YYYYMMDDHH}
 ```
 
 ### demo资源
