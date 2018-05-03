@@ -29,3 +29,6 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 shell执行命令：  
 &nbsp;&nbsp;./testovertime.sh  
 &nbsp;&nbsp;任务失败 使用./testerror.sh 
+
+有关在shell命令执行hdfs 命令说明
+shell 任务会将hdfs 认证信息和鉴权用户加上，用户不用手动导入对应的认证ID和KEY。只需要保证任务第一责任人在对应hdfs 目录上有权限就ok。
