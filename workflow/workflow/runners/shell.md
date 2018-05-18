@@ -20,7 +20,14 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 将需要执行的shell 文件，压缩为一个zip包，点击‘上传脚本’ 将zip 上传到tbds
 
 2. shell 命令  
-执行上传shell 文件的shell 命令。可以带运行参数
+执行上传shell 文件的shell 命令。  
+如果要让不同的实例，执行不同的shell 命令，该参数
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
+
+3. 执行参数
+需要传入给shell 命令的参数。  
+支持[时间隐式参数](/workflow/workflow/more/implicitVariable.md)
+
 
 ### demo
 执行一个简单的while 循环  
