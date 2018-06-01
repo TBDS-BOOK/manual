@@ -32,6 +32,12 @@
 将会跳转到任务编辑页面
 ![workflowlist3-2](/workflow/workflow/images/workflowlist3-2.png)
 
+4. 诊断  
+等待下发的实例可以通过诊断判断实例下发的进度
+![instancemanager](/workflow/workflow/images/taskrunmanager1.png)
+因为页面刷新延时的问题，可能出现如下提醒
+![instancemanager](/workflow/workflow/images/taskrunmanager2.png)
+
 ### 操作说明
 1. 停止  
 选中对应任务，点击停止，可以停止对应任务。（只有任务对应的所有实例都是终止或成功状态，才能操作成功。）
