@@ -170,3 +170,301 @@ Topic的负责人根据申请内容，决定是否通过审批。审批通过的
 * 已拉取未提交数：已经从服务端拉取但是还没有执行提交的数量
 * 创建时间：消费的起始时间
 * 修改时间：最后一次消费的时间
+
+# Hippo客户端使用
+Hippo客户端的使用分为两部分，生产者和消费者，生产者申请topic，然后生产该topic的数据；消费者申请消费，然后消费改topic的数据。生产、消费都要依赖sdk，下载方式前文已有描述。
+无论是生产者还是消费者，在生产或者消费数据之前都需要一些必要的配置，主要是包括5项：
+* UserName: 套件用户名
+* SecretId:套件用户的secretId，生产者可以在topic详情处获取，消费者可以咨询套件管理员
+* SecretKey:套件用户的secretKey，生产者可以在topic详情处获取，消费者可以咨询套件管理员
+* controllerIpList：Hippo controller的ip地址列表，如果是多台controller，那么每个controllerIp之间使用逗号分隔
+* groupName:生产者和消费者都必须设定一个组名，消费者会根据组名进行负载均衡
+
+## 生产者
+生产者的配置是在ProducerConfig对象中完成的，示例如下：
+
+```
+String controllerIpList = "10.151.139.83:8066,10.151.139.83:8066，10.151.139.83:8066";
+String producerGroupName = "music_producer_group";
+ProducerConfig producerConf = new ProducerConfig(controllerIpList, producerGroupName);
+producerConf.setSecretId("jSUAxMgVUHu4CaiCEJCc74ZBteVR7Gl2ouqE");
+producerConf.setSecretKey("6ZfejyHmoWG7aIVL7SSxjFL0VDk72xGD");
+producerConf.setUserName("admin");
+```
+
+生产数据之前需要进行topic的发布，即publish，topic发布之后，就可以进行数据的生产了，生产者有两种生产数据的方式，同步方式和异步方式，用户只需选择一种即可。
+发送是的数据是封装在Message对象中的，Message可以携带一些属性信息，通过Message的addHeader()来实现。
+同步方式发送数据会产生SendResult对象作为发送结果，根据这个对象可以判断是否发送成功，并执行后续操作；异步方式发送需要一个实现了SendCallback接口的对象来处理回调，在SendCallback中处理发送结果。
+附件中有Producer使用的示例可以参考。
+
+## 消费者
+消费者消费数据时也需要和生产者一样需要执行一些配置，
+```
+String controllerIpList = "10.151.139.83:8066,10.151.139.83:8066，10.151.139.83:8066";
+String consumerGroupName = "music_consumer_group";
+ConsumerConfig consumerConf = new ConsumerConfig(controllerIpList, consumerGroupName);
+consumerConf.setSecretId("igeU2BeH0BJFmstP8uikuAiRvpuEoHFN16hR");
+consumerConf.setSecretKey("wdR8rihoNt0fhUKcV2ibBRPCbvM8J7Io");
+consumerConf.setUserName("admin");
+consumerConf.setConfirmTimeout(10000, TimeUnit.MILLISECONDS);
+```
+消费者消费数据之后需要进行消费的确认，这就涉及到消费数据处理的时机，一般推荐消费到的数据处理完成之后再调用确认，这样可以避免数据丢失。由于数据处理需要一定的时间，因此可能会需要配置确认的超时时间，超时时间应该大于数据处理时间加客户端和服务端网络通信时间之和。上面代码最后一行就是确认超时时间的设置方法。
+配置完成之后，就可以拉取数据，拉取数据时要指定topic，batchSize和timeout时间，这里batchSize是指每次拉取的数据条数，timeout是客户端选取队列的最大等待时间。
+数据消费会产生一个MessageResult作为结果，根据这个结果来判断消费是否成功。
+消费的各个步骤在附件中示例可以参考。
+
+
+# 附件
+## 生产者示例代码
+
+```
+import com.google.common.base.Charsets;
+import com.tencent.hippo.Message;
+import com.tencent.hippo.client.producer.ProducerConfig;
+import com.tencent.hippo.client.producer.SendCallback;
+import com.tencent.hippo.client.producer.SendResult;
+import com.tencent.hippo.client.producer.SimpleMessageProducer;
+import com.tencent.hippo.common.HippoConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.concurrent.TimeUnit;
+
+
+public class Producer {
+    private static final Logger LOG = LoggerFactory.getLogger(Producer.class);
+
+    public static void main(String[] args) {
+
+       String controllerIpList = "10.151.139.83:8066,10.151.139.83:8066，10.151.139.83:8066";
+       String producerGroupName = "music_producer_group";
+
+        /**
+         * 初始化producer配置信息
+         * @param controllerIpList  所属集群地址列表,根据实际情况填写
+         * @param producerGroupName 生产组名称，一般建议生产同一类消息的所有进程使用相同的组名
+         */
+        ProducerConfig producerConf = new ProducerConfig(controllerIpList, producerGroupName);
+        producerConf.setSecretId("jSUAxMgVUHu4CaiCEJCc74ZBteVR7Gl2ouqE");
+        producerConf.setSecretKey("6ZfejyHmoWG7aIVL7SSxjFL0VDk72xGD");
+        producerConf.setUserName("admin");
+
+        try {
+            /**
+             * 根据producerConf创建一个producer实例
+             * producer全局共享，只需要实例化一次
+             */
+            SimpleMessageProducer producer = new SimpleMessageProducer(producerConf);
+
+            /**
+             * 发布相应的主题（告知服务端即将生产哪些主题的消息）
+             */
+            String[] topics = {"country_music", "rock_music"};
+            for (String topic : topics) {
+                producer.publish(topic);
+            }
+
+            /**
+             * 构建一条country_music主题的消息
+             */
+            String countryMusicTopic = "country_music";
+            byte[] messageBody = "country music message body".getBytes(Charsets.UTF_8);
+            Message message = new Message(countryMusicTopic, messageBody);
+
+            /**
+             * 消息发送方式分为两种:同步（当前线程会阻塞直到结果返回为止），异步（当前线程不会阻塞，响应结果将以回调的方式进行反馈），可根据需要选择其中一种方式进行发送
+             *
+             * 同步方式: 调用producer同步方法发送消息
+             */
+            SendResult sendResult = producer.sendMessage(message);
+            if (sendResult.isSuccess()) {
+                LOG.info("Send message success.");
+                /**
+                 * TODO write your code
+                 */
+            } else {
+                LOG.info("Send message fail,error message:" + sendResult.getErrorMessage() + ",error code:" + sendResult.getCode());
+                /**
+                 * TODO write your code
+                 */
+            }
+
+            /**
+             * 异步方式：调用producer异步方法发送消息
+             * @param callback  实现SendCallback接口并构建相应的callback实例，响应返回时将自动调用callback实例内的方法
+             */
+            MusicMsgSendCallback callback = new MusicMsgSendCallback(message);
+            long timeout = 5000;
+            producer.sendMessage(message, callback, timeout, TimeUnit.MILLISECONDS);
+
+
+            /**
+             * 构建多条rock_music主题的消息
+             * 示列中通过;号分隔多个消息体（实际可结合业务特点进行定制，此处没有唯一的标准，只需消费者消费时按照约定的格式进行解析即可）
+             */
+            String rockMusicTopic = "rock_music";
+            byte[] mutiMessageBody = "rock music message body1;rock music message body2;rock music message body3".getBytes(Charsets.UTF_8);
+            Message messagePack = new Message(rockMusicTopic, mutiMessageBody);
+            /**
+             * 消息公共属性
+             *     系统属性（属性名称固定） timestamp 消息时间戳、h_cnt 消息包中包含的记录条数,服务端会根据系统属性生成指标
+             *     自定义属性（属性名称自定义）
+             */
+            String timeStamp = String.valueOf(System.currentTimeMillis());
+            //系统属性
+            messagePack.addHeader(HippoConstants.TIMESTAMP, timeStamp);
+            messagePack.addHeader(HippoConstants.MSG_CNT, String.valueOf(3));
+            //自定义属性
+            messagePack.addHeader("custom_attr", "custom_attr_value");
+            SendResult result = producer.sendMessage(messagePack);
+            if (result.isSuccess()) {
+                LOG.info("Send message success.");
+            } else {
+                LOG.info("Send message fail,error message:" + result.getErrorMessage() + ",error code:" + result.getCode());
+            }
+        } catch (Exception e) {
+            LOG.error("producer failed.", e);
+        }
+    }
+
+    static class MusicMsgSendCallback implements SendCallback {
+        private Message message;
+
+        MusicMsgSendCallback(Message message) {
+            this.message = message;
+        }
+
+        /**
+         * 消息发送成功将会回调onMessageSent方法
+         *
+         * @param result
+         */
+        public void onMessageSent(SendResult result) {
+            if (result.isSuccess()) {
+                LOG.info("Send message success.");
+                /**
+                 * TODO write your code
+                 */
+            } else {
+                LOG.info("Send message fail,error message:" + result.getErrorMessage() + ",error code:" + result.getCode());
+            }
+        }
+
+        /**
+         * 消息发送失败或者网络超时，将会回调onException方法
+         *
+         * @param e
+         */
+        public void onException(Throwable e) {
+            LOG.info("Send message fail,error message:" + e.getClass().getSimpleName() + "#" + e.getMessage());
+            /**
+             * TODO write your code
+             */
+        }
+    }
+
+}
+```
+
+## 消费者示例代码
+
+```
+import com.google.common.base.Charsets;
+import com.tencent.hippo.Message;
+import com.tencent.hippo.client.MessageResult;
+import com.tencent.hippo.client.consumer.ConsumerConfig;
+import com.tencent.hippo.client.consumer.PullMessageConsumer;
+import com.tencent.hippo.common.HippoConstants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Created by mayozhang on 2017/4/12.
+ */
+public class Consumer {
+    private static final Logger LOG = LoggerFactory.getLogger(Consumer.class);
+
+    public static void main(String[] args) {
+
+
+        /**
+         * 初始化consumer配置信息
+         * @param controllerIpList  所属集群地址列表,根据实际情况填写
+         * @param consumerGroupName 消费组名称,消费相同topic的进程使用相同的消费组名
+         */
+        String controllerIpList = "10.151.139.83:8066,10.151.139.83:8066，10.151.139.83:8066";
+        String consumerGroupName = "music_consumer_group";
+        ConsumerConfig consumerConf = new ConsumerConfig(controllerIpList, consumerGroupName);
+        consumerConf.setSecretId("igeU2BeH0BJFmstP8uikuAiRvpuEoHFN16hR");
+        consumerConf.setSecretKey("wdR8rihoNt0fhUKcV2ibBRPCbvM8J7Io");
+        consumerConf.setUserName("admin");
+        /**
+         * 确认超时时间，如果在超过当前时间内服务端还没收到对当前批次的确认,那么当前批次的消息不再支持确认提交
+         * 当前拉取的信息存在被重复拉取的可能
+         */
+        consumerConf.setConfirmTimeout(10000, TimeUnit.MILLISECONDS);
+
+        try {
+            /**
+             * 根据consumerConf创建一个consumer实例
+             * consumer全局共享，只需要实例化一次
+             */
+            PullMessageConsumer consumer = new PullMessageConsumer(consumerConf);
+            String topic = "rock_music";    //消费的主题
+            int batchSize = 100;             //一次最大拉取条数，如服务端消息数不足batchSize条时则返回条数将小于batchSize值
+            int timeout = 5000;              //单位 ms
+            MessageResult result = consumer.receiveMessages(topic, batchSize, timeout);
+            if (result.isSuccess()) {
+                for (Message message : (List<Message>) result.getValue()) {
+                    try {
+                        /**
+                         * 获取指定的属性：通过生产者自定义的属性名称可以获取响应的属性值
+                         * 获取所有属性值：message.getAttribute();
+                         */
+                        String customAttrValue = message.getHeader("custom_attr");
+                        LOG.info("message attr :{} ", message.getAttribute());
+                        /**解码方式需要与生产者保持一致*/
+                        String messageBody = new String(message.getData(), Charsets.UTF_8);
+                        LOG.info("message customAttrValue :{} ", customAttrValue);
+                        LOG.info("message messageBody :{} ", messageBody);
+                        //TODO  write your consume logic code
+                    } catch (Exception e) {
+                        LOG.info("consume message error", e);
+                    }
+                }
+                /**
+                 * 处理完消息后，需要对当前拉取批次的消息进行成功确认
+                 * 确认是针对当前拉取批次的所有消息，不支持针对其中某条消息的确认
+                 * 要么全部确认成功，要么超时导致全部确认失败（确认失败当前批次的消息会被消费者再次拉取到）
+                 */
+                boolean confirmResult = result.getContext().confirm();
+                if (!confirmResult) {
+                    /**
+                     *   TODO 可能因为上述消息处理过程(consume logic code)耗时超出了consumerConf.setConfirmTimeout(10000, TimeUnit.MILLISECONDS)设置的时间
+                     *        可根据具体的业务耗时调整setConfirmTimeout时间,避免消息处理完后进行确认超时导致消费重复的情况
+                     */
+                    LOG.info("consume confirm failed");
+                }
+            } else if (result.getCode() == HippoConstants.NO_MORE_MESSAGE) {
+                /**
+                 * 该返回码表示服务端已经没有更多消息，当前消费者可以睡眠一段时间再去拉取
+                 */
+                LOG.info("No more message.");
+                Thread.currentThread().sleep(100);
+            } else {
+                LOG.info("Receive message failed! code:{},msg:{}", result.getCode(), result.getErrorMsg());
+            }
+
+            /**
+             * 进程退出前调用shutdonw方法
+             */
+            consumer.shutdown();
+        } catch (Exception e) {
+            LOG.error("consumer failed.", e);
+        }
+    }
+}
+```
