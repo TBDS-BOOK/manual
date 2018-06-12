@@ -26,6 +26,7 @@
 - 接口名：命名规定``源DB名_源Table名``
 - 文件大小限制：默认120M，即文件达到对应限制值后，会执行一次TDSort落地HDFS。如文件尚未达到限制值，TDSort默认每个小时调度一次，如果期望文件快速落地，可调小限制值
 - 创建hive表：是->默认在接入所属的项目下创建对应的库表，库名：``tbds_{小写接入Hippo topic名称}``，表名：``{小写的接口名称}``， 创建hive表是方便之后基于【工作流】将hdfs数据导入Hive表
+- 创建hive的hive表，默认会带有分区字段：``frequency_date``,按照小时入库
 
 3、【资源信息】配置
 
@@ -142,7 +143,6 @@ queueDataTTL=20
 failoverQueuePath=/data/metric-2.0/failover
 ```
 
-
 6、【指标查询】
 
 点击数据接入详情，查看数据流向：
@@ -153,5 +153,3 @@ failoverQueuePath=/data/metric-2.0/failover
 
 在【进度监控】->【数据明细】查看对账数据
 ![pic_25](images/pic_25.png)
-
-查看HDFS的路径文件
