@@ -66,7 +66,7 @@
       * [HDFS导出HBASE](/workflow/workflow/demo/HDFStoHBASE.md)
       * [HDFS导出Mysql](/workflow/workflow/demo/HDFStoMysql.md)
       * [HDFS导入HIVE](/workflow/workflow/demo/HDFSfromHIVE.md)
-      * [Hive SQL脚本](/workflow/workflow/demo/Hive SQL.md)
+      * [Hive SQL脚本](/workflow/workflow/demo/HiveSQL.md)
       * [Hive导出MySQL](/workflow/workflow/demo/HivetoMySQL.md)
       * [Hive导入HDFS](/workflow/workflow/demo/HivefromHDFS.md)
       * [KAFKA导出HBASE](/workflow/workflow/demo/KAFKAtoHBASE.md)
