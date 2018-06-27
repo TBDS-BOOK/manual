@@ -42,6 +42,13 @@ mr 可执行脚本,可以包括多个文件，最终压缩为zip
 8. 后置done命令  
 任务执行后的done命令,在hdfs中touchz一个文件或执行清理脚本。对在hdfs中touchz 一个文件，采用“done hdfsdir”; 对于清理脚本，采用“ ***.sh  argv”
 
+### 重要：
+对于用户自己编写的mr 代码,一定要在main函数中写入一行如下代码：
+```
+args = new GenericOptionsParser(conf, args).getRemainingArgs();
+```
+代码位置在 Configuration 对象初始化之后，使用args参数之前。
+因为系统会在执行命令中添加一些环境变量，添加上面的代码，则不会将环境变量的参数带入到执行逻辑中。
 
 ### demo
 如上图所示
