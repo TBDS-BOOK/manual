@@ -14,6 +14,8 @@ kafka接入hbase
 #### 2. 调度  
 参考 [调度设置](/workflow/workflow/runnerCycle.md)  
 #### 3. 参数
+参数配置如下图所示：
+![kafka2hbase](/workflow/workflow/images/kafka2hbase.png)
 kafka 接入hbase 参数设置分成三个部分：kafka配置，hbase 配置，topology 配置信息。
 ###### 3.1 kafka 配置信息  
 1. 消息中间件主题  

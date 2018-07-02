@@ -21,3 +21,32 @@
 > * 最大重启次数：指定任务的最大重启次数
 
 其他配置操作与Spark组件类似。
+
+
+##  SparkStreaming使用建议
+
+1. 增加AM & Spark Driver重试次数以及长时运行保证
+```
+// tdw-spark default: 1
+spark.yarn.maxAppAttempts=4
+spark.yarn.am.attemptFailuresValidityInterval=1h
+```
+
+2. 增加Executor失败最大容忍次数
+```
+// default: max(2 * num executors, 3)
+spark.yarn.max.executor.failures={8 * num_executors}
+spark.yarn.executor.failuresValidityInterval=1h
+```
+
+3. 开启推测执行，淘汰那些跑的慢的Task， **注意action操作是幂等的**
+```
+spark.speculation=true
+```
+
+4. 如果数据源是来自Receiver，建议num_receiver=num_executor，同时控制每个batch
+的partition数
+```
+// num_partition = (batch_interval / blockInterval) * num_receiver
+spark.streaming.blockInterval=200ms
+```

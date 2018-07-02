@@ -3,10 +3,11 @@
 ## 1. 介绍
 
 * [系统简介](README.md)
+* [机器学习资源申请策略](resource.md)
 
 ## 2. TDInsight功能介绍
 
-* [工作流](gong-zuo-liu.md)
+* [创建你的工作流](workflow.md)
   * [新建工程](new_project.md)
   * [新建工作流](new_workflow.md)
   * [创建和配置节点](config_parameter.md)
@@ -17,12 +18,19 @@
   * [Spark组件](spark.md)
   * [Sparkstreaming组件](spark-streaming.md)
   * [pySpark组件](pyspark.md)
+  * [xgboost组件](xgboost.md)
 * [多实例并发](duo-shi-li-bing-fa.md)
   * [3种方式驱动实例](multiple_drive.md)
   * [实例查询](instanceview.md)
   * [历史实例](history_instance.md)
 
-## 3. TDInsight算法组件说明
+## 3. TDInsight模型与在线推理
+
+* [数据流](data_flow.md)
+* [模型的训练与使用](model.md)
+* [模型在线服务](modelservice.md)
+
+## 4. TDInsight算法/组件说明
 
 * [数据说明](./javis/tdw_ml_jarvis_dataformat.md)
 * [特征工程](javis/te-zheng-gong-cheng.md)
@@ -46,10 +54,7 @@
   * [分布](./javis/tdw_ml_jarvis_visualization.md#2-分布)
   * [对比](./javis/tdw_ml_jarvis_visualization.md#3-对比)
   * [组合](./javis/tdw_ml_jarvis_visualization.md#4-组合)
-
-## 4. TDInsight模型组建指引
-
-* [数据流](data_flow.md)
-* [模型的训练与使用](model.md)
-* [模型在线服务](modelservice.md)
-
+* [深度学习算法简介](./deeplearning/Introduction_deeplearning.md)
+  * [计算机视觉](./deeplearning/tdw-dl-cv.md)
+  * [自然语言处理](./deeplearning/tdw-dl-nlp.md)
+  * [表示学习](./deeplearning/tdw-dl-representation_learning.md)

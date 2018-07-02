@@ -44,7 +44,14 @@ hdfs存放的数据文件，每行记录被分隔符切分的个数。
 
 3. 行key规则  
 指定行主键的生成方式：  
-a. RANDOM(5)表示生成生成一个随机长度为5字符串作为hbase的row key.
+a. RANDOM(n)表示生成生成一个随机长度n个数字作为hbase的row key.  
+b. REVERSE(n) 表示使用hdfs记录中被切分后的第n个部分反转值作为主键.  
+c. n 表示使用hdfs记录中被切分后的第n个部分作为主键.   
+d. ```'__'``` 表示使用常量```__```作为row key.   
+e. PADLEFT(n;m;str) 表示使用hdfs记录中被切分后的第n个部分，作为row key 最右边的部分，余下的m-n个部分由str组成。比如PADLEFT(0;5;c) 表示row key 最右边的部分为hdfs记录被切分的第一部分内容，余下不足的部分由字符串c 填充。  
+f. PADRIGHT(n;m;a) 表示使用hdfs记录中被切分后的第n个部分，作为row key 最左边的部分，余下的m-n个部分由str填充。比如PADRIGHT(0;5;c) 表示row key 最左边的部分为hdfs记录被切分后的第一个内容，余下不足的部分由字符串c 填充。  
+——     
+**PS:** 当然你也可以使用以上几者的组合比如``` RANDOM(5),'__',0``` ，主键将是随机的五个数字加```__```加hdfs记录被切分后的第一个部分作为rowkey
 
 4. 列规则  
 使用逗号分隔，跟列列表对应。用来表示对应的列名被写入的数值为hdfs记录被切分生成数组的下标。  
@@ -54,7 +61,7 @@ a. RANDOM(5)表示生成生成一个随机长度为5字符串作为hbase的row k
 则表示 hello 将被写入 列簇为f1 列名为c1的位置
 
 5. 时间戳所在列索引  
-不填或者或者为-1 ,使用HConstants.LATEST_TIMESTAMP  
+为-1时，使用HConstants.LATEST_TIMESTAMP  
 其他情况下，将使用 列规则对应位置的数值为下标的被切分的数组的数值。该数值必须能够被转为long 类型，否则该记录写入hbase失败。  
 例如：   
 如hdfs 其中一行的为: hello,word,i,come,from,20171216120000   
