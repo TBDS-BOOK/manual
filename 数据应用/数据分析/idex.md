@@ -96,8 +96,8 @@ notebook文件后缀名为.ipynb，用来执行python以及pyspark代码。启�
  Q:notebook执行的pyspark是定制过的吗，版本是多少？
  A:pyspark是标准的spark2.1版本。
 
- Q:notebook执行的pyspark是定制过的吗，版本是多少？
- A:pyspark是标准的spark2.1版本。
+ Q:notebook可以自动补全吗？
+ A:可以按tab键进行补全。
     
 
 
