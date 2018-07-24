@@ -14,6 +14,9 @@
 10. 重启lhotse runner  
 11. 更新lhotse service  
 
+**安装前准备**  
+务必确保添加的该节点时区和tbds集群内节点时区设置一致。
+
 ### 一、添加yum 源
 假设需要安装runner服务的节点是10.0.0.1。  
 __ps:__ 同时请确保安装前已经在yum 源更新了lhotse-runners*.rpm   
