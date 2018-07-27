@@ -49,5 +49,5 @@ do_redo_parallelism: 10
 2. 在某一时刻，37任务类型对应的某个任务在所有runner节点上允许运行的实例数的上限  
 对应task_parallelism 值  
 
-3. 在某一个时刻，37任务类型对应的某个任务在所有runner节点上允许重跑（运行次数>1）的实例数上限  
-对应do_redo_parallelism 值
+3. 在某一个时刻，37任务类型任务在所有runner节点上允许重跑（redo_flag=1）的实例数上限  
+对应do_redo_parallelism 值 
