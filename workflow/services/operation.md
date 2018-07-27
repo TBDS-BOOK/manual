@@ -68,16 +68,30 @@
 #### 6、HIVE
 选择服务器类型:hive，进行HIVE类型的服务器配置。
 
-- 连接地址：Hive server的主机地址；
-- 端口：Hive server的端口，默认：10000；
+- 连接地址：  
+a. 指定节点：Hive server的主机地址ip；  
+<br>
+b. hive HA: zookeeper ip:port列表/hive在zk 上的命名空间   
+其中zookeeper ip:port列表对应 hive-site 配置的hive.cluster.delegation.token.store.zookeeper.connectString 属性值。 
+![](./pictures/hiveHA2.png) 
+其中hive在zk 上的命名空间 对应 hive-site 配置的hive.server2.zookeeper.namespace属性值。
+![](./pictures/hiveHA3.png)
+
+- 端口：  
+Hive server 端口  
+默认：10000；
+hive HA 模式下，可不填
 
 **备注：**
 1. 选择创建Hive服务器配置时，默认会加载套件内安装的Hive服务的配置信息；
 2. 服务器配置目前仅支持套件内的Hive集群，不支持外部的Hive集群；
 3. Hive的连接信息用户默认取任务的执行用户和对应的LDAP密码；
 
+**连接指定节点**  
 ![](./pictures/hive.png)
 
+**使用hive AH**  
+![](./pictures/hiveHA.png)
 
 #### 7、HDFS
 选择服务器类型:HDFS，进行HDFS类型的服务器配置。
