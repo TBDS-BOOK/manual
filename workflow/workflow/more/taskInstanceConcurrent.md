@@ -38,16 +38,13 @@ broker_parallelism: 1000
 对应lhotse_open.lb_task_type 表。  
 ```
             type_id: 37
- broker_parallelism: 10
    task_parallelism: 10
 do_redo_parallelism: 10
 ```
-该控制又可以细分为三个方面  
-1. 在某一时刻,37任务类型对应的某任务在某个runner节点(看哪个节点请求了该实例)上允许运行的实例数上限    
-对应broker_parallelism 字段值
+该控制可以细分为两个方面  
 
-2. 在某一时刻，37任务类型对应的某个任务在所有runner节点上允许运行的实例数的上限  
+1. 在某一时刻，37任务类型对应的某个任务在所有runner节点上允许运行的实例数的上限  
 对应task_parallelism 值  
 
-3. 在某一个时刻，37任务类型任务在所有runner节点上允许重跑（redo_flag=1）的实例数上限  
+2. 在某一个时刻，37任务类型任务在所有runner节点上允许重跑（redo_flag=1）的实例数上限  
 对应do_redo_parallelism 值 
