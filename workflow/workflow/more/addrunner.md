@@ -53,8 +53,10 @@ root 用户操作
 yum install -y lhotse-runners
 
 ### 四、安装httpd服务
-root 用户操作  
-yum install -y httpd
+版本要求：2.4  
+root 用户执行  
+yum install -y httpd  
+
 
 ### 五、修改httpd配置  
 **使用hdfs用户做如下操作**  
@@ -69,11 +71,25 @@ IncludeOptional conf.d/*.conf
 ```
 Listen lhotse-runner 配置是 cgi.port 属性值    
 ScriptAlias /runner/ /usr/local/lhotse_runners/getlog/  
+<Directory "/usr/local/lhotse_runners/getlog/">
+ AllowOverride None
+ Require all granted
+ Options +ExecCGI
+ Order allow,deny
+ Allow from all
+</Directory>
 ```
 例子如下：  
 ```
 Listen 56986    
-ScriptAlias /runner/ /usr/local/lhotse_runners/getlog/ 
+ScriptAlias /runner/ /usr/local/lhotse_runners/getlog/
+<Directory "/usr/local/lhotse_runners/getlog/">
+ AllowOverride None
+ Require all granted
+ Options +ExecCGI
+ Order allow,deny
+ Allow from all
+</Directory> 
 ``` 
 3. 修改httpd 项目目录权限  
 ```
