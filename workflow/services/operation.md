@@ -17,6 +17,9 @@
 - 数据库密码：连接MYSQL的用户所对应的密码；
 - 服务器并发度：并行执行的数量，默认是10，在运行任务时，规定使用该server的任务实例数的上限。
 
+__ps: 支持TDSQL版本__  
+如果配置TDSQL版本，在创建tdsql 服务器时（mysql）,在 服务器说明 中填写tdsql关键字。
+
 ![](pictures/3.png)
 
 
@@ -62,6 +65,11 @@
 - ftp用户密码：连接FTP的用户所对应的密码；
 
 **备注：** 选择创建FTP服务器配置时，默认会加载套件内安装的FTP服务的配置信息，如果新增非套件内的FTP服务器，则修改对应的连接信息即可。
+
+**ps:有关ftps协议**  
+添加如下两个配置，能支持ftps 协议  
+- 传输协议 选择：ftps  
+认证信息 填写格式为：jks absolute path;storePassword（例如/tmp/ftpclient.jks;39604a9b0c816abfb971b16701825810）
 
 ![](./pictures/ftp.png)
 
