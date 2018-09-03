@@ -86,6 +86,7 @@
        * [常用操作](/workflow/workflow/qa/common_operation.md)
        * [实时接入任务hdfs2hive \(tdsort\)](/workflow/workflow/qa/hdfs2hive_tdsort.md)
        * [实例日志获取失败](/workflow/workflow/qa/loaderLogFailed.md)
+       * [实例日志中提示下载文件失败](/workflow/workflow/qa/ftpLoadFailed.md)
    * [任务管理](/workflow/tasks/readme.md)
      * [工作流列表](/workflow/tasks/workflowlist.md)
      * [任务管理](/workflow/tasks/taskmanager.md)
