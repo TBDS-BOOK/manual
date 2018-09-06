@@ -54,3 +54,7 @@
 如上图所示
 
 ### demo资源
+
+### 其他
+oracle版本对应ojdbc驱动版本号[查看](
+https://www.oracle.com/technetwork/database/enterprise-edition/jdbc-faq-090281.html#01_01)
