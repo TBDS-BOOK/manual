@@ -58,3 +58,8 @@
 ### 其他
 oracle版本对应ojdbc驱动版本号[查看](
 https://www.oracle.com/technetwork/database/enterprise-edition/jdbc-faq-090281.html#01_01)
+
+可能存在的异常情况
+![](../images/oracle1.png)
+解决版本参考
+http://www.dba-oracle.com/t_ora_01017.htm
