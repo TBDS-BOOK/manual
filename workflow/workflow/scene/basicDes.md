@@ -3,31 +3,35 @@
 
 #### 二、需求 
 **场景一**  
+用户支付意愿权值  
+涉及如下任务类型：  
+thive2hdfs  -> mr -> spark  -> hdfs2hive -> hive sql ->hive2mysql  ->shell 
+
+**场景二**  
 统计不同平台每天的登录次数，并将结果导出到mysql，方便后续使用黄金眼（报表）  
 涉及如下任务类型：  
 thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql 
 
-**场景二**  
-用户登陆趋势图  
-涉及如下任务类型：  
-thive2hdfs  -> mr —> spark  -> hive2mysql  
 		
 下面将通过实现场景1和场景2来说明相关任务类型的功能和使用。  
 
 #### 三、 业务分析
 根据具体业务梳理出需要用到任务
 ###### 3.1 场景一
+1. 创建thive导入hdfs 任务，将数据入HDFS  
+2. 创建MR任务将用户登陆数据按平台拆分  
+3. 创建spark 任务实现根据登陆平台和网络类型计算用户支付意愿权值  
+4. 创建hdfs到hive 任务将计算结果写入hive 表
+5. 创建 hive sql 任务按天计算每个用户价值权值总和
+6. 创建hive2mysql任务将统计结果导入关系型db（mysql）
+7. 创建shell 任务，判断结果是否生成
+
+###### 3.2 场景二
 1. 创建thive导入hdfs 任务，将数据入HDFS
 2. 创建MR任务将用户登陆数据按平台拆分
 3. 创建hdfs2hive任务将苹果平台数据导入对应hive表
 4. 创建hive sql 任务实现统计
 5. 创建hive2mysql任务将统计结果导入关系型db(mysql)
-
-###### 3.2 场景二
-1. 创建thive导入hdfs 任务，将数据入HDFS
-2. 创建MR任务将用户登陆数据按平台拆分
-3. 创建spark 任务实现登陆次数趋势统计
-4. 创建hive2mysql任务将统计结果导入关系型db（mysql）
 
 #### 四、具体实现
 ##### 4.1 数据准备
@@ -136,4 +140,4 @@ lhotse-base: /usr/local/lhotse_base/log/lhotse_base.log
 lhotse-runner: /usr/local/lhotse_runners/log/lhotse_task_loader.log
 
 ##### 6. 测试
-统计不同平台每天充值金额最多的top10用户和金额，并将结果导出到mysql，
+统计不同平台每天充值金额最多的top100用户和金额，并将结果导出到mysql，
