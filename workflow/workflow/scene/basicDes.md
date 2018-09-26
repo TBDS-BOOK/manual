@@ -1,18 +1,18 @@
 #### 一、目标
 以游戏用户数据为例，介绍工作流相关功能和使用以及常见问题的定位方法。  
 
-#### 二、需求 
+#### 二、需求
 **场景一**  
 用户支付意愿权值  
 涉及如下任务类型：  
-thive2hdfs  -> mr -> spark  -> hdfs2hive -> hive sql ->hive2mysql  ->shell 
+thive2hdfs  -> mr -> spark  -> hdfs2hive -> hive sql ->hive2mysql  ->shell
 
 **场景二**  
 统计不同平台每天的登录次数，并将结果导出到mysql，方便后续使用黄金眼（报表）  
 涉及如下任务类型：  
-thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql 
+thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql
 
-		
+
 下面将通过实现场景1和场景2来说明相关任务类型的功能和使用。  
 
 #### 三、 业务分析
@@ -55,7 +55,7 @@ thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql
 
 ##### 4.3 创建任务
 ###### 4.3.1 创建thive导入hdfs  
-目标：将thive 中的导入数据按小时落地到hdfs 目录  
+目标：将thive 中的导入数据按小时落地到hdfs 目录   
 ![](../images/prepare_task1.png)  
 任务实现逻辑  
 利用导出目录创建hive 外表，执行insert into ... select ...   
@@ -64,7 +64,7 @@ thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql
 2. 目标文件路径为hive 表 location 指定的位置，要特别注意。处理不好会导致表数据被删。
 
 ###### 4.3.2 mapreduce 任务
-目标:将用户登陆数据按平台拆分到不同目录  
+目标:将用户登陆数据按平台拆分到不同目录   
 ![](../images/prepare_task_mr.png)   
 任务实现逻辑   
 拼接hadoop -jar 执行命令，并导入环境变量。  
@@ -73,7 +73,7 @@ thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql
 2. 如果需要用到yarn 相关配置文件，需要在代码中指定。  
 
 ###### 4.3.3 hdfs导入hive 任务
-目标：将被拆分的苹果平台的数据导入到不同的hive 表
+目标：将被拆分的苹果平台的数据导入到不同的hive 表  
 ![](../images/prepare_task_hdfs2hive.png)   
 任务实现逻辑   
 基于源目录创建hive 外表，执行 insert into ... select ...   
@@ -133,11 +133,11 @@ thive2hdfs  -> mr -> hdfs2hive  -> hive sql -> hive2mysql
 1. 全局结构  
 ![](../images/prepare_all.png)
 
-2. 相关组件日志位置
-portal :/usr/local/tbds-portal/log/application.log
-lhotse-service: /usr/local/lhotse_service/logs/lhotse_service.log
-lhotse-base: /usr/local/lhotse_base/log/lhotse_base.log
-lhotse-runner: /usr/local/lhotse_runners/log/lhotse_task_loader.log
+2. 相关组件日志位置  
+portal :/usr/local/tbds-portal/log/application.log  
+lhotse-service: /usr/local/lhotse_service/logs/lhotse_service.log  
+lhotse-base: /usr/local/lhotse_base/log/lhotse_base.log  
+lhotse-runner: /usr/local/lhotse_runners/log/lhotse_task_loader.log  
 
 ##### 6. 测试
 统计不同平台每天充值金额最多的top100用户和金额，并将结果导出到mysql，
