@@ -134,3 +134,6 @@ portal :/usr/local/tbds-portal/log/application.log
 lhotse-service: /usr/local/lhotse_service/logs/lhotse_service.log
 lhotse-base: /usr/local/lhotse_base/log/lhotse_base.log
 lhotse-runner: /usr/local/lhotse_runners/log/lhotse_task_loader.log
+
+##### 6. 测试
+统计不同平台每天充值金额最多的top10用户和金额，并将结果导出到mysql，
