@@ -2,8 +2,8 @@
 
 数据血缘是集成在库表管理服务中的一个功能模块提供关联表的血缘图：
  ##### 工作流（lhotse）血缘
- * hbase库表节点
- * hive库表节点
+ * hbase库表节点 （hdfs到hbase）
+ * hive库表节点 （hdfs到hive,hive到hdfs,hiveSql<insert table from table <join>）
 
 ## 2.portal界面入口
 如果该库表存在上下可追溯的lhotse调度任务，则判断它存有血缘关系该关联表数值不为0：
