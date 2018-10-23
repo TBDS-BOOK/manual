@@ -23,7 +23,7 @@
 /data/bigdata/tbds/usr/local/lhotse_base]$ tailf log/lhotse_base.log |grep v_opentsdb
 如果出现下图内容，则表示base正在发送指标信息  
 ![](../images/index5.png)
-监听base 本地7777端口，如果显示正在监听，则表示监听端口ok
+监听base 本地7777端口，如果显示正在监听，则表示监听端口ok  
 ![](../images/index7.png)
 
 4. 查询portal 页面是否其中某个指标类型  
