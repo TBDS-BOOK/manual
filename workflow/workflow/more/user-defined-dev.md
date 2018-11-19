@@ -18,6 +18,20 @@
  </dependency>
 ```
 
+如果是5.0 以后的版本 需要依赖对应的版本  
+比如tbds 安装的是5.0 版本
+```
+        <dependency>
+            <groupId>com.tencent.tbds</groupId>
+            <artifactId>runner-common</artifactId>
+            <version>5.0</version>
+            <scope>provided</scope>
+        </dependency>
+```
+**5.0 以后版本需要注意**
+1. 依赖的runner-common 建议加上provided .这样能减少打包文件大小。
+2. 如果要引入runner-common 中没有的依赖jar,需要添加到跟主类同一层的目录下。
+
 ### 2 .继承的基类  
 1. HDFS与传统数据库导入的runner可以继承HDFSToDBRunner或者DBToHdfsRunner，调用DBUtil类来调用JDBC执行DAO  
 2. 普通的runner直接继承jar包中的AbstractCustomTaskTypeRunner基类就可以了。
