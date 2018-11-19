@@ -19,9 +19,8 @@
 ```
 
 ### 2 .继承的基类  
-1. 与hive相关的实现可以继承AbstractTDWDDCTaskRunner这个基类，继承其中对数据库表的debug。    
-2. HDFS与传统数据库导入的runner可以继承HDFSToDBRunner或者DBToHdfsRunner，调用DBUtil类来调用JDBC执行DAO  
-3. 普通的runner直接继承jar包中的AbstractTaskRunner基类就可以了。
+1. HDFS与传统数据库导入的runner可以继承HDFSToDBRunner或者DBToHdfsRunner，调用DBUtil类来调用JDBC执行DAO  
+2. 普通的runner直接继承jar包中的AbstractCustomTaskTypeRunner基类就可以了。
        
 ### 3 .必须实现的抽象方法  
 重载AbstractTaskRunner的execute()方法和kill（）方法。
@@ -67,8 +66,17 @@ private String userGroup;// 当前不用
 private String version;// 当前不用
 ```
 
+2.4 通过服务发现，获取服务地址  
+getServerListConnectInfoByDiscovery(String serverName,String component,String protocol,String role)
+比如  
+```java
+        List<ServiceConnectInfo> serveListrConnectInfo = getServerListConnectInfoByDiscovery(
+                    "portal", "portal", "rpc", "MASTER");
+```
+
 ### 6 .日志输出方法  
-this.writeLocalLog(Level.INFO, "****");      
+this.writeLocalLog(Level.INFO, "****");   
+或直接System.out.println("******")   
     
 ### 7 .提交任务实例执行状态  
 this.commitTask(state, runtimeId, desc);  
