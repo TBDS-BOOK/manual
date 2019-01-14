@@ -50,7 +50,8 @@ License
     ...
     # /data/tools/tbds-install-portal.sh
     ...
-    # /data/tools/tbds-bootstrap.sh postinit   （/data/tools/tbds-bootstrap.sh postinit  129.204.145.71(公网ip地址若内网访问不需要添加)）
+    # /data/tools/tbds-bootstrap.sh postinit   （/data/tools/tbds-bootstrap.sh postinit  129.204.145.71(如果外网需要访问，需要在postinit
+    后加上公网ip地址，若内网访问不需要添加)）
 
 部署成功后会显示portal的访问地址，接下来通过portal进行TBDS集群部署
 
