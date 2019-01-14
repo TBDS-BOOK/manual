@@ -38,11 +38,11 @@ License
 
 初始化集群并部署portal
 
-    # tar xzf tbds-mirror-$**version**.tar.gz -C /data
+    # tar xzf tbds-mirror-$**version**.tar.gz -C /data     (解压安装包，解压后目录为/data/rpm)
     ...
     # tar xzf tbds-mirror-patches-$**version**.tar.gz -C /data
     ...
-    # tar xzf tbds-tools.tar.gz -C /data
+    # tar xzf tbds-tools.tar.gz -C /data    （解压工具包，解压后目录/data/tools）
     ...
     # /data/tools/tbds-bootstrap.sh init
     ...
@@ -50,7 +50,7 @@ License
     ...
     # /data/tools/tbds-install-portal.sh
     ...
-    # /data/tools/tbds-bootstrap.sh postinit
+    # /data/tools/tbds-bootstrap.sh postinit   （/data/tools/tbds-bootstrap.sh postinit  129.204.145.71(公网ip地址若内网访问不需要添加)）
 
 部署成功后会显示portal的访问地址，接下来通过portal进行TBDS集群部署
 
