@@ -21,10 +21,10 @@ License
 修改 **/data/.tbds.ini**
 
     ROOTPWD="123456"    # 主机root密码，用于portal部署和机器初始化
-    DATAETH=eth0        # 用于内网数据传输的网卡，多网卡机型注意填写正确，必须填写
-    PUBLICIP=公网IP     # portal对外提供访问的ip，如纯内网访问则填内网ip，必须填写
-    SLAVELOCALIP=slave内网IP     # portal slave 节点的内网IP，必须填写
-    SLAVEPUBLICIP=slave公网IP     # portal slave 节点的公网IP，如纯内网访问则填内网ip，必须填写
+    LOCALIP=xxx.xxx.xxx.xxx # portal用于数据传输网段内网ip，非管理网段ip
+    PUBLICIP=xxx.xxx.xxx.xxx   # portal提供web访问的公网ip，无公网ip则填内网ip
+    SLAVELOCALIP=xxx.xxx.xxx.xxx   # portal slave节点内网ip，生产环境必须填写，测试环境无slave portal节点可留空
+    SLAVEPUBLICIP=xxx.xxx.xxx.xxx   # portal slave节点公网ip，生产环境必须填写，测试环境无slave portal节点可留空
 
 
 创建 **cluster.info** 集群描述文件
