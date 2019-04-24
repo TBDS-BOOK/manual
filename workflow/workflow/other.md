@@ -5,3 +5,4 @@
 [下发并发数说明和调整操作](/workflow/workflow/more/taskInstanceConcurrent.md)   
 [Issues版本说明](/workflow/workflow/more/release.md)
 [设置分组](/workflow/workflow/more/instanceRequestGap.md) 
+[诊断和定位操作参考](/workflow/workflow/more/availableCheck.md) 
