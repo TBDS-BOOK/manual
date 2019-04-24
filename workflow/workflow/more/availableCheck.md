@@ -31,22 +31,27 @@ jstack -pid
 base 卡主定位分析  
 
 通过调用频率来确认线程是否卡死  
-monitor -c 3 com.tencent.teg.dc.lhotse.base.socket.ServerWorkThread addRequest
-monitor -c 3 com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer addRequest
-monitor -c 3 com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer issueTask  
-
+```
+monitor -c 3 com.tencent.teg.dc.lhotse.base.socket.ServerWorkThread addRequest  
+monitor -c 3 com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer addRequest  
+monitor -c 3 com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer issueTask    
+```
 一览方法的输入和输出，可带条件  
-watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer addRequest "{target.requests.length}" -x 3 -n 1
-watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer addRequest "{params,target.requests}" -x 2
-watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer getTaskToIssue "{params,target.requests}" -x 2
-watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer issueTask "{params,target.requests}" -x 2
-watch com.tencent.teg.dc.lhotse.message.MessageBroker receiveMessage "{params,returnObj}" -x 2 -n 2
-
+```
+watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer addRequest "{target.requests.length}" -x 3 -n 1  
+watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer addRequest "{params,target.requests}" -x 2  
+watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer getTaskToIssue "{params,target.requests}" -x 2  
+watch com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer issueTask "{params,target.requests}" -x 2  
+watch com.tencent.teg.dc.lhotse.message.MessageBroker receiveMessage "{params,returnObj}" -x 2 -n 2  
+```
 查询方法调用栈  
-  trace -j com.tencent.teg.dc.lhotse.message.MessageBroker sendMessage  'params.length==3' -n 2
-  trace -j  com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer getTaskToIssue 'returnObj==null' -n 2
-  trace -j com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer validateCheck 'returnObj==false' -n 1
-
+  ```
+  trace -j com.tencent.teg.dc.lhotse.message.MessageBroker sendMessage  'params.length==3' -n 2  
+  trace -j  com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer getTaskToIssue 'returnObj==null' -n 2  
+  trace -j com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer validateCheck 'returnObj==false' -n 1  
+```
  向上查询方法执行路径   
-  stack com.tencent.teg.dc.lhotse.message.MessageBroker sendMessage  'params.length==3' -n 2
-  stack  com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer getTaskToIssue  'returnObj==null' -n 2
+ ```
+  stack com.tencent.teg.dc.lhotse.message.MessageBroker sendMessage  'params.length==3' -n 2  
+  stack  com.tencent.teg.dc.lhotse.base.issuer.TaskIssuer getTaskToIssue  'returnObj==null' -n 2  
+```
