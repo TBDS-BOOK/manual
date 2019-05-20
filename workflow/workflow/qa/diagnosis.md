@@ -7,7 +7,7 @@
 hermes 查询 对应节点为 Hermes Server(HERMESOFFLINE_SERVER)
 
 1. 查询表结构  
-curl http://172.16.32.8:8080/config -d "cmd=desctables&tablename=lhotseScheduleStatistic"
+curl http://172.16.32.8:8080/config -d "cmd=desctables&tablename=lhotseScheduleStatistic"  
 curl http://172.16.32.8:8080/config -d "cmd=desctables&tablename=lhotseSchedule"
 
 2. 创建一个hermes 表  
@@ -38,11 +38,13 @@ curl http://172.16.32.8:8080/sql -d "sql=select * from lhotseSchedule where thed
 
 如果上面的操作出现异常，定位方式如下：  
 首先 确认是否为 kafka 问题
-1. 添加认证信息： vi config/client_sasl.properties
-添加如下
-security.protocol=SASL_PLAINTEXT
-sasl.mechanism=PLAIN
-
+1. 添加认证信息：   
+vi config/client_sasl.properties  
+添加如下  
+```
+security.protocol=SASL_PLAINTEXT  
+sasl.mechanism=PLAIN 
+```
 2. 消费数据demo  
 bin/kafka-console-consumer.sh --bootstrap-server 10.0.0.33:6668 --topic lhotseSchedule --new-consumer --consumer.config config/client_sasl.properties --from-beginning
 
@@ -50,21 +52,23 @@ bin/kafka-console-consumer.sh --bootstrap-server 10.0.0.33:6668 --topic lhotseSc
 bin/kafka-console-producer.sh --broker-list tbds-172-16-32-8:6668  --topic lhotseSchedule --producer.config config/client_sasl.properties
 
 然后 确认是否为 hermes 问题  
-1. 是否有表 查 hdfs
-hadoop fs -ls /user/hermes/tbds/hermesconf
-结果如：
-Found 3 items
+1. 是否有表 查 hdfs  
+hadoop fs -ls /user/hermes/tbds/hermesconf  
+结果如： 
+``` 
+Found 3 items  
 drwxrwxr-x   - hermes hdfs          0 2019-03-04 17:20 /user/hermes/tbds/hermesconf/lhotseSchedule
 drwxrwxr-x   - hermes hdfs          0 2019-03-04 17:20 /user/hermes/tbds/hermesconf/lhotseScheduleStatistic
 drwxrwxr-x   - hermes hdfs          0 2019-03-04 17:11 /user/hermes/tbds/hermesconf/ranger_audits
-
+```
 2. 是否有数据 查 hdfs  
-hadoop fs -ls /user/hermes/tbds/index
-结果如
+hadoop fs -ls /user/hermes/tbds/index  
+结果如:  
+```
 Found 2 items
 drwxrwxr-x   - hermes hdfs          0 2019-03-04 17:25 /user/hermes/tbds/index/lhotseSchedule
 drwxrwxr-x   - hermes hdfs          0 2019-03-04 17:26 /user/hermes/tbds/index/lhotseScheduleStatistic
-
+```
 3. 查询sql的日志在（如命令：curl http://10.0.0.45:8080/hermes?type=count）  
 HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 
@@ -73,21 +77,21 @@ HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 
 
 更多统计  
-1. 今天生成的实例数目
+1. 今天生成的实例数目  
 curl http://172.16.32.8:8080/sql -d "sql=select count(*) from lhotseSchedule where thedate=20190222 and instance_2='1'"
 
-2. 今天通过依赖判断的实例数目
+2. 今天通过依赖判断的实例数目  
 http://10.215.128.43:8080/sql?sql=select count(*) from schedulerMsgTable where thedate=20181205 and instance_2='38'
 
-3. 今天下发的实例实例数目
+3. 今天下发的实例实例数目  
 http://10.215.128.43:8080/sql?sql=select count(*) from schedulerMsgTable where thedate=20181205 and instance_2='99'
 
-半小时统计曲线
-1. 今天生成的实例数目
+半小时统计曲线  
+1. 今天生成的实例数目  
 http://10.215.128.43:8080/sql?sql=select count(*) from schedulerMsgTable where thedate=20181206 and instance_2=1 and instance_1<'2018-12-06 17:00:00' and instance_1>'2018-12-06 16:30:00'
 
-2. 今天通过依赖判断的实例数目
+2. 今天通过依赖判断的实例数目  
 http://10.215.128.43:8080/sql?sql=select count(*) from schedulerMsgTable where thedate=20181206 and instance_2=30 and instance_1<'2018-12-06 17:00:00' and instance_1>'2018-12-06 16:30:00'
 
-3. 今天下发的实例实例数目
+3. 今天下发的实例实例数目  
 http://10.215.128.43:8080/sql?sql=select count(*) from schedulerMsgTable where thedate=20181206 and instance_2=99 and instance_1<'2018-12-07 17:30:00' and instance_1>'2018-12-07 17:00:00'
