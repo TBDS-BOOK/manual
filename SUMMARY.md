@@ -85,6 +85,7 @@
        * [Issues版本说明](/workflow/workflow/more/release.md)  
        * [设置分组](/workflow/workflow/more/instanceRequestGap.md)   
        * [诊断和定位操作参考](/workflow/workflow/more/availableCheck.md)  
+       * [跨工作流依赖](/workflow/workflow/more/gapWorkflow.md)   
      * [常见问题定位和解决方式](/workflow/workflow/qa.md)
        * [常用操作](/workflow/workflow/qa/common_operation.md)
        * [实时接入任务hdfs2hive \(tdsort\)](/workflow/workflow/qa/hdfs2hive_tdsort.md)
