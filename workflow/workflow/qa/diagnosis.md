@@ -78,11 +78,11 @@ HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 
 诊断序列梳理  
 按照判断的顺序，id 号从小到大
-```JAVA
+```
 DEPENDENCY_STATUS_CHECK("检查任务状态",2,"任务不是运行状态"),
 DEPENDENCY_RETRIES_CHECK("重试次数判断",4,"任务实例重试次数已经大于或等于设置的最大重试次数"),
 DEPENDENCY_STARTUP_CHECK("执行时间窗口判断",6,"任务设置的开始时间异常(>1440)"),
-DEPENDENCY_PRIORITY_CHECK("优先级合规判断",8,"任务优先级设置异常,需要满足(>0且<9)"),
+DEPENDENCY_PRIORITY_CHECK("优先级合规判断",8,"任务优先级设置异常,需要满足 0到9之间"),
 DEPENDENCY_DATATIME_CHECK("数据时间合规判断",10,"实例初始化数据时间失败(或为空)"),
 
 DEPENDENCY_NOBRIDGE_PARENTINSTANCES_CHECK("无边依赖条件下,基于父实例运行成功的执行条件判断",12,"任务配置了自身依赖,但前周期的实例没有全部运行成功"),
