@@ -78,7 +78,7 @@ HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 
 诊断序列梳理  
 按照判断的顺序，id 号从小到大
-```java
+```JAVA
     DEPENDENCY_STATUS_CHECK("检查任务状态",2,"任务不是运行状态"),
     DEPENDENCY_RETRIES_CHECK("重试次数判断",4,"任务实例重试次数已经大于或等于设置的最大重试次数"),
     DEPENDENCY_STARTUP_CHECK("执行时间窗口判断",6,"任务设置的开始时间异常(>1440)"),
