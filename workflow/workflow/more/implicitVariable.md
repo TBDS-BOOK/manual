@@ -18,6 +18,7 @@ b. 更多复杂的格式
 '${YYYY}'-'${MM}'-'${dd}' '${HH}':'${mm}':'${ss}':${SSSSSS}
 又或者  
 ${yyyy}${MM}${dd}/${yyyy}${MM}${dd}${HH}
+${yyyy}-${MM}-${dd} ${HH}:${mm}:${ss}
 ```
 c. 当然也向下兼容   
 ```
@@ -36,4 +37,6 @@ $TimeCompute(${yyyy-1}${MM}${dd-1})
 $TimeCompute(${yyyy-1}${MM-1}${dd-1})
 $TimeCompute(${yyyy-1}${MM-1}${dd-1}${HH-2})
 $TimeCompute(${yyyy-1}${MM-1}${dd-1}${HH+1})
+$TimeCompute(${yyyy}-${MM}-${dd-1} ${HH}:${mm}:${ss})
+$TimeCompute(${yyyy}-${MM}-${dd+1} ${HH}:${mm}:${ss})
 ```
