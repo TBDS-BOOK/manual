@@ -1,4 +1,4 @@
-### 隐式参数
+addSubTime### 隐式参数
 
 #### 1. 时间隐式参数
 a. 支持如下格式： 
@@ -28,15 +28,15 @@ d. 时间加减表达式
 基于V5.0+版本   
 必须使用如下表达式（小时只支持24小时）  
 ```
-$TimeCompute(${yyyy-1}${MM+13}${dd+31})
-$TimeCompute(${yyyy}${MM}${dd-1}) 
-$TimeCompute(${yyyy}${MM-1}${dd})
-$TimeCompute(${yyyy}${MM-1}${dd-1})
-$TimeCompute(${yyyy-1}${MM}${dd})
-$TimeCompute(${yyyy-1}${MM}${dd-1})
-$TimeCompute(${yyyy-1}${MM-1}${dd-1})
-$TimeCompute(${yyyy-1}${MM-1}${dd-1}${HH-2})
-$TimeCompute(${yyyy-1}${MM-1}${dd-1}${HH+1})
-$TimeCompute(${yyyy}-${MM}-${dd-1} ${HH}:${mm}:${ss})
-$TimeCompute(${yyyy}-${MM}-${dd+1} ${HH}:${mm}:${ss})
+$addSubTime(${yyyy-1}${MM+13}${dd+31})
+$addSubTime(${yyyy}${MM}${dd-1}) 
+$addSubTime(${yyyy}${MM-1}${dd})
+$addSubTime(${yyyy}${MM-1}${dd-1})
+$addSubTime(${yyyy-1}${MM}${dd})
+$addSubTime(${yyyy-1}${MM}${dd-1})
+$addSubTime(${yyyy-1}${MM-1}${dd-1})
+$addSubTime(${yyyy-1}${MM-1}${dd-1}${HH-2})
+$addSubTime(${yyyy-1}${MM-1}${dd-1}${HH+1})
+$addSubTime(${yyyy}-${MM}-${dd-1} ${HH}:${mm}:${ss})
+$addSubTime(${yyyy}-${MM}-${dd+1} ${HH}:${mm}:${ss})
 ```
