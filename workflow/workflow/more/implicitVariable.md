@@ -23,3 +23,17 @@ c. 当然也向下兼容
 ```
 ${YYYYMMDD} 以及 ${YYYYMMDDHH} ，${YYYYMMDDHHmm} 等格式
 ```
+d. 时间加减表达式  
+基于V5.0+版本   
+必须使用如下表达式（小时只支持24小时）  
+```
+$TimeCompute(${yyyy-1}${MM+13}${dd+31})
+$TimeCompute(${yyyy}${MM}${dd-1}) 
+$TimeCompute(${yyyy}${MM-1}${dd})
+$TimeCompute(${yyyy}${MM-1}${dd-1})
+$TimeCompute(${yyyy-1}${MM}${dd})
+$TimeCompute(${yyyy-1}${MM}${dd-1})
+$TimeCompute(${yyyy-1}${MM-1}${dd-1})
+$TimeCompute(${yyyy-1}${MM-1}${dd-1}${HH-2})
+$TimeCompute(${yyyy-1}${MM-1}${dd-1}${HH+1})
+```
