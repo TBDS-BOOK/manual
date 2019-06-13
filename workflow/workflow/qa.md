@@ -5,3 +5,4 @@
 * [taskSchedule指标为空定位方法](/workflow/workflow/qa/task_index.md)
 * [实例依赖失效确认方式](/workflow/workflow/qa/dependencyFailed.md)
 * [任务实例诊断按钮无调度信息](/workflow/workflow/qa/diagnosis.md)
+* [mongodb 常见问题和处理办法](/workflow/workflow/qa/mongodbopt.md)
