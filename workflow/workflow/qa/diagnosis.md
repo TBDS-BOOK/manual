@@ -51,6 +51,9 @@ bin/kafka-console-consumer.sh --bootstrap-server 10.0.0.33:6668 --topic lhotseSc
 3. 生产数据demo  
 bin/kafka-console-producer.sh --broker-list tbds-172-16-32-8:6668  --topic lhotseSchedule --producer.config config/client_sasl.properties
 
+4. 查看消费情况  
+bin/kafka-consumer-groups.sh --bootstrap-server 10.0.0.14:6667 --command-config ./config/client_sasl.properties --new-consumer --describe --group lhotseScheduleGroup
+
 然后 确认是否为 hermes 问题  
 1. 是否有表 查 hdfs  
 hadoop fs -ls /user/hermes/tbds/hermesconf  
