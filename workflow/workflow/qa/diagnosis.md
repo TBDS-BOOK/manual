@@ -76,6 +76,14 @@ HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 /usr/hdp/2.2.0.0-2041/hermes/logs/worker.log 
 
 
+跟 flume 调试   
+1. 配置确认  
+/var/lib/ambari-agent/cache/common-services/FLUME/1.4.0.2.0/configuration/flume-conf.xml  
+有scheduler_statistic 关键字
+2. 确认配置生效  
+/var/log/flume/flume-agent.log
+有关键字  lhotse_base_scheduler_statistic_src
+
 诊断序列梳理  
 按照判断的顺序，id 号从小到大
 ```
