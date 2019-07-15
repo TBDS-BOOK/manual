@@ -2,6 +2,15 @@
 
 调度信息的流程为： base 打印到本地 > flume 采集 > 发送kafka > hermes 消费。
 
+快捷方式：
+1. 重启base 节点（激活） log agent 服务   
+如果hdfs /user/hermes/tbds/index/lhotseSchedule 目录有数据，通常是log agent 的问题
+  
+2. 重启kafka 服务  
+ 
+3. 重启 hermes 服务  
+
+4. 重启base
   
 定位问题  
 hermes 查询 对应节点为 Hermes Server(HERMESOFFLINE_SERVER)
