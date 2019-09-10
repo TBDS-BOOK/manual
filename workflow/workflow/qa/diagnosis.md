@@ -13,8 +13,8 @@
 4. 重启base
   
 定位问题  
-hermes 查询 对应节点为 Hermes Server(HERMESOFFLINE_SERVER)
-
+## 1. 检查hermes 
+访问节点为 Hermes Server(HERMESOFFLINE_SERVER)
 1. 查询表结构  
 curl http://172.16.32.8:8080/config -d "cmd=desctables&tablename=lhotseScheduleStatistic"  
 curl http://172.16.32.8:8080/config -d "cmd=desctables&tablename=lhotseSchedule"
@@ -45,8 +45,7 @@ curl http://10.0.0.45:8080/sql -d "sql=select * from lhotseSchedule where thedat
 8. 实例诊断（浏览器）  
 curl http://172.16.32.8:8080/sql -d "sql=select * from lhotseSchedule where thedate=20190221 and instance_2=20190221155033872 and instance_3='2019-02-21 00:00:00' order by instance_1 desc limit 10"
 
-如果上面的操作出现异常，定位方式如下：  
-首先 确认是否为 kafka 问题
+## 2. kafka 检查  
 1. 添加认证信息：   
 vi config/client_sasl.properties  
 添加如下  
@@ -63,7 +62,11 @@ bin/kafka-console-producer.sh --broker-list tbds-172-16-32-8:6668  --topic lhots
 4. 查看消费情况  
 bin/kafka-consumer-groups.sh --bootstrap-server 10.0.0.14:6667 --command-config ./config/client_sasl.properties --new-consumer --describe --group lhotseScheduleGroup
 
-然后 确认是否为 hermes 问题  
+5. 新建kafka topic
+ bin/kafka-topics.sh --create --bootstrap-server brokerIp:6668 --replication-factor 2 --partitions 26 --topic lhotseSchedule --command-config ./config/client_sasl.properties 
+ bin/kafka-topics.sh --create --bootstrap-server brokerIp:6668 --replication-factor 2 --partitions 26 --topic lhotseScheduleStatistic --command-config ./config/client_sasl.properties 
+ 
+## 3. 确认HDFS 数据  
 1. 是否有表 查 hdfs  
 hadoop fs -ls /user/hermes/tbds/hermesconf  
 结果如： 
@@ -87,8 +90,7 @@ HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 4. 数据处理（有表，但是没有数据，需要查看work 节点的日志）  
 /usr/hdp/2.2.0.0-2041/hermes/logs/worker.log 
 
-
-跟 flume 调试   
+## 4.  flume 检查
 1. 配置确认  
 /var/lib/ambari-agent/cache/common-services/FLUME/1.4.0.2.0/configuration/flume-conf.xml  
 有scheduler_statistic 关键字
@@ -96,8 +98,9 @@ HERMESOFFLINE_SERVER 节点的 /usr/hdp/2.2.0.0-2041/hermes/logs/server.log
 /var/log/flume/flume-agent.log
 有关键字  lhotse_base_scheduler_statistic_src
 
-诊断序列梳理  
-按照判断的顺序，id 号从小到大
+## 其他信息
+诊断序列梳理   
+按照判断的顺序，id 号从小到大   
 ```
 DEPENDENCY_STATUS_CHECK("检查任务状态",2,"任务不是运行状态"),
 DEPENDENCY_RETRIES_CHECK("重试次数判断",4,"任务实例重试次数已经大于或等于设置的最大重试次数"),
