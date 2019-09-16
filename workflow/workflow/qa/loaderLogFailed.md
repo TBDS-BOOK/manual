@@ -34,14 +34,16 @@ curl  -X POST --data "task_id=20170520150634270&ip=101&statis_date=2017052900000
 比如下图现实，也表示httpd 服务正常。  
 ![](../images/loaderLogFile3.png)
 ### 三、确认任务实例是否运行正常
-   * 确保实例运行超过一分钟。确保实例已经下发到runner节点。
-   * 切到显示主机节点，通过命令确认实例日志真实存在(/usr/local/lhotse_runners/log]# find ./ |grep realtaskId)。
+ * 确保实例运行超过一分钟。确保实例已经下发到runner节点。
+ * 切到显示主机节点，通过命令确认实例日志真实存在(/usr/local/lhotse_runners/log]# find ./ |grep realtaskId)  
 ``` 
 /usr/local/lhotse_runners/log]# find ./ |grep 20180822160802085
 ```
+
 如果存在20180712000000.*.log 类型文件，则说明文件真实存在。   
-   * 如果文件不存在，但是页面显示任务运行中，则可能是实例假运行。  
-    1. 查询runner节点是否有对应runner进程存在。  
+如果文件不存在，但是页面显示任务运行中，则可能是实例假运行。   
+如何任务实例是假运行？  
+  1. 查询runner节点是否有对应runner进程存在。  
 ps -ef|grep realTaskId
 ```
 比如
@@ -49,27 +51,35 @@ ps -ef|grep 20180822160802085
 ```
 如果实例存在出现如下图内容
 ![](../images/loaderLogFile5.png)
-    2. 查询runner节点中loader日志文件（/usr/local/lhotse_runners]# vi log/lhotse_task_loader.log），通过realtaskId 关键字查询启动实例是否有失败日志.  
+  2. 查询runner节点中loader日志文件（/usr/local/lhotse_runners]# vi log/lhotse_task_loader.log），通过realtaskId 关键字查询启动实例是否有失败日志.  
 如果实例进程启动成功出现如下图内容。
 ![](../images/loaderLogFile6.png)
 
 ### 更多定位操作
 在portal 节点执行  
 #### 获取 runner 节点某个实例最新日志  
+请求   
 123.206.32.155/api/dataexploit/instance/loglast?taskId=e7d82ff4-83a2-4325-ae33-316e41ecb8af&dataTime=2018-11-15+00%3A00%3A00
-task_log_last_list_lhotse.py
+task_log_last_list_lhotse.py  
+测试  
  curl  -X POST --data "task_id=20180517170341575&ip=101&statis_date=20180516000000&program_type=38" http://10.0.0.35:8800/runner/task_log_last_list_lhotse.py
 
- #### 获取runner 节点某个实例 日志列表 list  
+#### 获取runner 节点某个实例 日志列表 list  
+请求  
 123.206.32.155/api/dataexploit/instance/listlog?taskId=e7d82ff4-83a2-4325-ae33-316e41ecb8af&dataTime=2018-11-15+00%3A00%3A00
-task_list_log_lhotse.py
+task_list_log_lhotse.py  
+测试  
  curl  -X POST --data "task_id=20170520150634270&ip=101&statis_date=20170529000000&program_type=38"  http://10.254.97.136:80/runner/task_list_log_lhotse.py 
 
 #### 获取 runner 节点上 某个实例指定日志
+请求   
 123.206.32.155/api/dataexploit/instance/log?taskId=e7d82ff4-83a2-4325-ae33-316e41ecb8af&dataTime=2018-11-15+00%3A00%3A00&ip=10.0.0.142&tries=4
-task_log_last_lhotse.py
+task_log_last_lhotse.py  
+测试  
 curl  -X POST --data "tries=1&task_id=20190214141640542&statis_date=20190214000000&program_type=38"  http://10.254.83.16:8800/runner/task_log_last_lhotse.py
 
 #### runner 节点上实例 日志下载
+请求   
 http://123.206.32.155/api/dataexploit/instance/downloadRunLog?taskId=e7d82ff4-83a2-4325-ae33-316e41ecb8af&dataTime=2018-11-15+00:00:00&tries=4
-task_log_list_lhotse_down.py
+task_log_list_lhotse_down.py  
+测试  
