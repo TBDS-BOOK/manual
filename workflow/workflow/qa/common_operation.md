@@ -50,3 +50,4 @@ lhotse_task_loader.log
 
 4031和 411 版本使用了dx，其日志位置  
 /usr/local/lhotse_runners/DX/logs/{taskId}/{cur_run_date}  
+包括三个部分 log，badlog, bad 在执行异常情况下，bad 和 badlog 不为空，会列出相关的异常信息。 
