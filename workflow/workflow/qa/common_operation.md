@@ -40,8 +40,8 @@ lhotse-base 有三个日志：
 
 
 #### 7. 查看lhotse-runner 运行日志
-存放loader 请求和执行runner 记录
-lhotse_task_loader.log
+存放loader 请求和执行runner 记录  
+/usr/local/lhotse_runners/log/lhotse_task_loader.log
 
 #### 8. 实例日志
 任务实例运行日志  
