@@ -30,11 +30,11 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 
 <br>
 ### demo
-执行一个简单的while 循环  
-执行包路径：[简单while循环](https://share.weiyun.com/f53b310ad6ffde819830d522a8dd51de)  
+执行一个简单的打印例子  
+执行包路径：[打印参数](https://share.weiyun.com/5SBOB6M)  
 &nbsp;&nbsp;如果要测试 执行失败，可以下载[任务失败](https://share.weiyun.com/11c232afeb32c12ccbefadd9a520526f)  
 shell执行命令：  
-&nbsp;&nbsp;./testovertime.sh  
+&nbsp;&nbsp;./testMultiParameter.sh
 &nbsp;&nbsp;任务失败 使用./testerror.sh 
 
 有关在shell命令执行hdfs 命令说明
