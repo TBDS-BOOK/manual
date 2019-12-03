@@ -42,6 +42,16 @@ shell 任务会将hdfs 认证信息和鉴权用户加上，用户不用手动导
 
 <br>
 <br>
-#### 注意
-1. 如果在windows 上编辑，确认文件编码为： 无 BOM 的 UTF-8
-2. 如果在shell 文件中执行跟多复杂操作，比如execRemoteCmd.exp文件等，可能会出现中文乱码，需要在shell 文件中显示指定编码export LANG="zh_CN.UTF-8"
+#### 注意  
+1. 如果在windows 上编辑，确认文件编码为： 无 BOM 的 UTF-8   
+2. 如果在shell 文件中执行跟多复杂操作，比如execRemoteCmd.exp文件等，可能会出现中文乱码，需要在shell 文件中显示指定编码export LANG="zh_CN.UTF-8"   
+3. shell 中有多个命令，其中有命令执行失败，需要抛出对应异常   
+比如：  
+```
+hadoop fs -ls /tmp
+exit_status=$?
+if [ $exit_status -eq 1 ]; then
+    echo "failed"
+    exit 1
+fi
+```
