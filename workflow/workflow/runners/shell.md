@@ -41,7 +41,6 @@ shell执行命令：
 shell 任务会将hdfs 认证信息和鉴权用户加上，用户不用手动导入对应的认证ID和KEY。只需要保证任务第一责任人在对应hdfs 目录上有权限就ok。
 
 <br>
-<br>
 #### 注意  
 1. 如果在windows 上编辑，确认文件编码为： 无 BOM 的 UTF-8   
 2. 如果在shell 文件中执行跟多复杂操作，比如execRemoteCmd.exp文件等，可能会出现中文乱码，需要在shell 文件中显示指定编码export LANG="zh_CN.UTF-8"   
