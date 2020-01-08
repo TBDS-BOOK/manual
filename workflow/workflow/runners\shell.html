@@ -62,7 +62,7 @@ shell &#x4EFB;&#x52A1;&#x4F1A;&#x5C06;hdfs &#x8BA4;&#x8BC1;&#x4FE1;&#x606F;&#x54
 <li>&#x5982;&#x679C;&#x5728;shell &#x6587;&#x4EF6;&#x4E2D;&#x6267;&#x884C;&#x8DDF;&#x591A;&#x590D;&#x6742;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;execRemoteCmd.exp&#x6587;&#x4EF6;&#x7B49;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x4E2D;&#x6587;&#x4E71;&#x7801;&#xFF0C;&#x9700;&#x8981;&#x5728;shell &#x6587;&#x4EF6;&#x4E2D;&#x663E;&#x793A;&#x6307;&#x5B9A;&#x7F16;&#x7801;export LANG=&quot;zh_CN.UTF-8&quot;   </li>
 <li>shell &#x4E2D;&#x6709;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x5176;&#x4E2D;&#x6709;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#xFF0C;&#x9700;&#x8981;&#x629B;&#x51FA;&#x5BF9;&#x5E94;&#x5F02;&#x5E38;<br>&#x6BD4;&#x5982;&#xFF1A;  <pre><code>hadoop fs -ls /tmp
 exit_status=$?
-if [ $exit_status -eq 1 ]; then
+if [ $exit_status -ne 0 ]; then
  echo &quot;failed&quot;
  exit 1
 fi</code></pre></li>

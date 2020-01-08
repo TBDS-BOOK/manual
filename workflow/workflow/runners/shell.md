@@ -48,7 +48,7 @@ shell 任务会将hdfs 认证信息和鉴权用户加上，用户不用手动导
 ```
 hadoop fs -ls /tmp
 exit_status=$?
-if [ $exit_status -eq 1 ]; then
+if [ $exit_status -ne 0 ]; then
     echo "failed"
     exit 1
 fi
