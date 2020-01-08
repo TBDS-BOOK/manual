@@ -35,7 +35,7 @@ shell脚本执行者为任务第一个责任人（portal登录用户)
 &nbsp;&nbsp;如果要测试 执行失败，可以下载[任务失败](https://share.weiyun.com/11c232afeb32c12ccbefadd9a520526f)  
 shell执行命令：  
 &nbsp;&nbsp;./testMultiParameter.sh
-&nbsp;&nbsp;任务失败 使用./testerror.sh 
+&nbsp;&nbsp;任务失败 使用./testerror.sh
 
 有关在shell命令执行hdfs 命令说明
 shell 任务会将hdfs 认证信息和鉴权用户加上，用户不用手动导入对应的认证ID和KEY。只需要保证任务第一责任人在对应hdfs 目录上有权限就ok。
@@ -53,4 +53,5 @@ if [ $exit_status -eq 1 ]; then
     exit 1
 fi
 ```
-4. shell 脚本的功能尽可能单一，不建议在shell脚本中写复杂逻辑。
+4. shell 脚本的功能尽可能单一，不建议在shell脚本中写复杂逻辑   
+比如不建议通过shell 的方式来处理跨工作流依赖，而是使用虚拟任务来实现跨工作流依赖。
